@@ -1,0 +1,19 @@
+{
+  "name": "MyBolg",
+  "version": "1.0.0",
+  "description": "我的个人博客，使用vuepress",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-nprogress": "^1.2.0"
+  }
+}
