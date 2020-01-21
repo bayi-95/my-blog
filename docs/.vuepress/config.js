@@ -1,17 +1,42 @@
 module.exports = {
-    title: '神氏八易の博客', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
-    description: '神氏八易の博客，学习心得，日志，笔记...', // meta 中的描述文字，用于SEO
+    title: '秋殇の博客', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
+    description: '秋殇の博客，学习心得，日志，笔记...', // meta 中的描述文字，用于SEO
     head: [
-        ['link', { rel: 'icon', href: '/egg.png' }],  //浏览器的标签栏的网页图标
+        ['link', { rel: 'icon', href: '/images/leaf-1.jpg' }],  //浏览器的标签栏的网页图标
+        ['link', { rel: 'manifest', href: '/manifest.json' }],
+        ['meta', { name: 'theme-color', content: '#235dc8' }],
+        ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+        ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+        ['link', { rel: 'apple-touch-icon', href: '/images/leaf-1.jpg' }],
+        ['link', { rel: 'mask-icon', href: '/images/leaf-1.jpg', color: '#235dc8' }],
+        ['meta', { name: 'msapplication-TileImage', content: '/images/leaf-1.jpg' }],
+        ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
     ],
     markdown: {
         lineNumbers: true
     },
-    plugins: ['@vuepress/back-to-top', '@vuepress/nprogress'],
+    plugins: [
+        ['@vuepress/back-to-top', true],
+        ['@vuepress/pwa', {
+            serviceWorker: true,
+            updatePopup: true
+        }],
+        ['container', {
+            type: 'vue',
+            before: '<pre class="vue-container"><code>',
+            after: '</code></pre>'
+        }],
+        ['container', {
+            type: 'upgrade',
+            before: info => `<UpgradePath title="${info}">`,
+            after: '</UpgradePath>'
+        }],
+    ],
     serviceWorker: true,
     themeConfig: {
-        logo: '/egg.png',
-        lastUpdated: 'lastUpdate', // string | boolean
+        logo: '/images/leaf-1.jpg',
+        smoothScroll: true,
+        lastUpdated: '上次更新', // string | boolean
         nav: [
             { text: '首页', link: '/' },
             {
@@ -25,7 +50,7 @@ module.exports = {
                     { text: 'javascript', link: '/pages/javascript/code.md' },
                 ]
             },
-            { text: '日志', link: '/pages/logs/logs.md' },
+            { text: '日志', link: '/pages/logs/index.md' },
             { text: 'Github', link: 'https://github.com/bayi-95' },
         ],
         sidebar: {
