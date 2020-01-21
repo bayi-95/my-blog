@@ -1,6 +1,7 @@
 module.exports = {
     title: '秋殇の博客', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
     description: '秋殇の博客，学习心得，日志，笔记...', // meta 中的描述文字，用于SEO
+    repo: 'vuejs/vuepress',
     head: [
         ['link', { rel: 'icon', href: '/images/leaf-1.jpg' }],  //浏览器的标签栏的网页图标
         ['link', { rel: 'manifest', href: '/manifest.json' }],
@@ -13,13 +14,16 @@ module.exports = {
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
     ],
     markdown: {
-        lineNumbers: true
+        lineNumbers: false
     },
     plugins: [
         ['@vuepress/back-to-top', true],
         ['@vuepress/pwa', {
             serviceWorker: true,
-            updatePopup: true
+            updatePopup: {
+                message: "发现新内容可用.",
+                buttonText: "刷新"
+            }
         }],
         ['container', {
             type: 'vue',

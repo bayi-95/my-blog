@@ -3,6 +3,12 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+if [ !$1 ];then
+    message=$1
+else
+    message='deploy'
+fi
+
 # 生成静态文件
 npm run build
 
@@ -11,7 +17,8 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'deploy'
+
+git commit -m $message
 
 # 如果发布到 https://<USERNAME>.github.io
 git push -f git@github.com:bayi-95/bayi-95.github.io.git master
