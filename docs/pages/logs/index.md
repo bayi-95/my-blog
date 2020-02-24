@@ -5,6 +5,14 @@ metaTitle: 我的日志
 
 ## 我的日志
 
+#### 1/22/20
+∆ Git ignore 修改无效
+```shell script
+git rm -r --cached .
+git add .
+git commit -m 'removed xxx from repository'
+```
+
 #### 1/21/20
 ∆ 我还有哪些30岁前想要尝试的事？
 
