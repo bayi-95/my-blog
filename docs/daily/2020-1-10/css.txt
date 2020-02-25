@@ -1,0 +1,195 @@
+∆ part 1
+描述：
+    照片列表的排列方式 css3；
+    新属性：column-gap； -- (css函数) var；
+
+// HTML
+<div class="masonry-container">
+  <div class="masonry-columns">
+    <img class="masonry-brick" src="https://picsum.photos/id/1016/384/256" alt="An image">
+    <img class="masonry-brick" src="https://picsum.photos/id/1025/495/330" alt="Another image">
+    <img class="masonry-brick" src="https://picsum.photos/id/1024/192/128" alt="Another image">
+    <img class="masonry-brick" src="https://picsum.photos/id/1028/518/345" alt="One more image">
+    <img class="masonry-brick" src="https://picsum.photos/id/1035/585/390" alt="And another one">
+    <img class="masonry-brick" src="https://picsum.photos/id/1074/384/216" alt="Last one">
+  </div>
+</div>
+
+/* Container */
+.masonry-container {
+  --column-count-small: 1;
+  --column-count-medium: 2;
+  --column-count-large: 3;
+  --column-gap: 0.125rem;
+  padding: var(--column-gap);
+}
+
+/* Columns */
+.masonry-columns {
+  column-gap: var(--column-gap);
+  column-count: var(--column-count-small);
+  column-width: calc(1 / var(--column-count-small) * 100%);
+}
+
+@media only screen and (min-width: 640px) {
+  .masonry-columns {
+    column-count: var(--column-count-medium);
+    column-width: calc(1 / var(--column-count-medium) * 100%);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .masonry-columns {
+    column-count: var(--column-count-large);
+    column-width: calc(1 / var(--column-count-large) * 100%);
+  }
+}
+
+/* Bricks */
+.masonry-brick {
+  width: 100%;
+  height: auto;
+  margin: var(--column-gap) 0;
+  display: block;
+}
+
+.masonry-brick:first-child {
+  margin: 0 0 var(--column-gap);
+}
+
+transform: skewX(var(--transform)); // 倾斜
+
+
+∆ part 2
+描述：
+    通过两个元素的叠加 生成三角形（两个三角尺寸、位置不同、背景色有要求）；
+    新属性：column-gap； -- (css函数) var；
+
+// html
+<div class="container">
+  Border with top triangle
+</div>
+
+// css
+.container {
+  position: relative;
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  margin-top: 20px;
+}
+
+.container:before, .container:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 19px;
+  border: 11px solid transparent;
+  border-bottom-color: #dddddd;
+}
+
+.container:after {
+  left: 20px;
+  border: 10px solid transparent;
+  border-bottom-color: #ffffff;
+}
+
+animation: bouncing-loader 0.6s infinite alternate; // alternate 循环往复的意思
+
+child(1) child(2) .. animation-delay: 0.4s; // 通过animation-delay 通过延迟生成动画
+
+
+∆ part 3
+描述：
+    很漂亮的按钮hover效果
+
+// html
+<button class="mouse-cursor-gradient-tracking"><span>Hover me</span></button>
+
+// css
+.mouse-cursor-gradient-tracking {
+  position: relative;
+  background: #7983ff;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+}
+
+.mouse-cursor-gradient-tracking span {
+  position: relative;
+}
+
+.mouse-cursor-gradient-tracking::before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, pink, transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.mouse-cursor-gradient-tracking:hover::before {
+  --size: 200px;
+}
+
+// not选择器 除了最后一个元素
+li:not(:last-child) {
+  border-right: 2px solid #d2d5e4;
+}
+
+// 段首字母大写 first-letter
+p:first-child::first-letter {
+  color: #5f79ff;
+  float: left;
+  margin: 0 8px 0 4px;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+// javascript
+var btn = document.querySelector('.mouse-cursor-gradient-tracking')
+btn.onmousemove = function(e) {
+  var rect = e.target.getBoundingClientRect()
+  var x = e.clientX - rect.left
+  var y = e.clientY - rect.top
+  btn.style.setProperty('--x', x + 'px')
+  btn.style.setProperty('--y', y + 'px')
+}
+
+// 全屏
+var el = document.getElementById('element');
+el.requestFullscreen();
+
+// scrollHeight
+该值等于该元素在不使用滚动条的情况下为了适应视口中所用内容所需的最小高度。
+
+
+∆ part 4
+描述：
+    hover时 其它的元素opacity变小
+
+// html
+<div class="sibling-fade">
+  <span>Item 1</span> <span>Item 2</span> <span>Item 3</span> <span>Item 4</span>
+  <span>Item 5</span> <span>Item 6</span>
+</div>
+
+
+// css
+span {
+  padding: 0 1rem;
+  transition: opacity 0.2s;
+}
+
+.sibling-fade:hover span:not(:hover) {
+  opacity: 0.5;
+}
