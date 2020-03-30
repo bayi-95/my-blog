@@ -5,6 +5,16 @@ metaTitle: 我的日志
 
 ## 我的日志
 
+
+#### 3/25/20
+∆ Mac 内存cpu占用大 查是 Spotlight引起
+```shell script
+# 关闭
+sudo mdutil -a -i off
+# 打开
+sudo mdutil -a -i on
+```
+
 #### 2/24/20
 ∆ 疫情没那么严重了 复工第一天 我的日志也开始写起来了
 
