@@ -6,6 +6,64 @@ metaTitle: 我的日志
 ## 我的日志
 
 
+#### 3/31/20
+
+∆ 关于学习
+1. 能把对知识的熟练掌握表达出来
+2. 记得慢慢的笔记，满书的荧光笔等等，这些方法不好，是实际上的思想懒惰，我们的大脑会以为我们记住了，实则不然。
+3. 只有不断检索知识，给知识打结，才能保证知识是属于自己的。
+4. 如果能够间隔练习，并穿插着不同的内容记性练习才是最能帮助长期记忆的。
+5. 在别人交给你答案之前，先尝试自己解决问题，这样效果会更好，哪怕在尝试中犯下一下错误，也是有助于帮助自己提升认知的。
+6. 思考自己工作中的问题会更有助于提高自己的专业水平。
+
+∆ js代码规范
+```javascript
+// 超长的不可分割的代码允许例外，比如复杂的正则表达式。长字符串不在例外之列。
+// [强制] 运算符处换行时，运算符必须在新行的行首。
+// 示例：
+if (user.isAuthenticated()
+    && user.isInRole('admin')
+    && user.hasAuthority('add-admin')
+    || user.hasAuthority('delete-admin')
+) {
+    // Code
+}
+
+var html = '' // 此处用一个空字符串，以便整个 HTML 片段都在新行严格对齐
+    + '<article>'
+    +     '<h1>Title here</h1>'
+    +     '<p>This is a paragraph</p>'
+    +     '<footer>Complete</footer>'
+    + '</article>';
+
+// 三元运算符由3部分组成，因此其换行应当根据每个部分的长度不同，形成不同的情况。
+var result = thisIsAVeryVeryLongCondition
+    ? resultA : resultB;
+
+var result = condition
+    ? thisIsAVeryVeryLongResult
+    : resultB;
+
+
+// [强制] 在 if / else / for / do / while 语句中，即使只有一行，也不得省略块 {...}。
+// 示例：
+if (condition) {
+    callFunc();
+}
+
+// TODO: 有功能待实现。此时需要对将要实现的功能进行简单说明。
+// FIXME: 该处代码运行没问题，但可能由于时间赶或者其他原因，需要修正。此时需要对如何修正进行简单说明。
+// HACK: 为修正某些问题而写的不太好或者使用了某些诡异手段的代码。此时需要对思路或诡异手段进行描述。
+// XXX: 该处存在陷阱。此时需要对陷阱进行描述。
+```
+
+#### 3/30/20
+∆ 看了`lavas`的文档：关于移动端、vue、pwa的开发框架，可以在手机桌面上生成图标
+
+[lavas参考文档](https://lavas.baidu.com/guide/v2/basic/introduction)
+
+
+
 #### 3/25/20
 ∆ Mac 内存cpu占用大 查是 Spotlight引起
 ```shell script
@@ -182,7 +240,7 @@ git reset --soft HEAD^
 1. 检查`SSH`密钥是否存在
 ```shell script
 ls -l ~/.ssh
-cd ~/.ssh，ls -l ~/
+cd ~/.ssh, ls -l ~/
 # 如果有文件id_rsa.pub 或 id_dsa.pub，则密钥存在。
 ```
 
