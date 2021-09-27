@@ -1,21 +1,46 @@
 {
-  "name": "MyBolg",
+  "name": "my-blog",
   "version": "1.0.0",
-  "description": "我的个人日志，使用vuepress",
+  "description": "我的个人日志，使用vue-press",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "deploy": "bash deploy.sh",
+	"lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, styl, json, md}\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+	"博客", "申光普"
+  ],
+  "author": "申光普",
   "license": "ISC",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-nprogress": "^1.2.0",
     "@vuepress/plugin-pwa": "^1.2.0",
     "vue-toasted": "^1.1.25",
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.2.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^4.3.7",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.8.0",
+    "eslint": "^6.8.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-vue": "^6.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --write",
+      "git add -A"
+    ]
   }
 }
