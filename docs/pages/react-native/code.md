@@ -3,6 +3,7 @@
 参考项目 https://github.com/react-navigation/react-navigation.git
 
 ∆ react-navigation / exapmle / App.tsx
+
 ```jsx
 1.最外层"<View style={{ flex: 1 }}>"包裹
 2.<NativeViewGestureHandler> 源自 react-native-gesture-handler（在UI线程中识别和跟踪手势，防止手势操作被一些Native组件劫持）
@@ -45,4 +46,3 @@ const translateY = this.state.scrollY.interpolate({
     React Navigation Examples
 </Text>
 ```
-

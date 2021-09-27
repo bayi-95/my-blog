@@ -1,6 +1,8 @@
-## nginx一键配置
+## nginx 一键配置
+
 https://nginxconfig.io/
-```  js{4}
+
+```js{4}
     function reject(reason) { // reason失败态时接收的拒因
         setTimeout(() => {
             // 调用reject 回调对应onRejected函数

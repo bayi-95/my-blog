@@ -1,7 +1,7 @@
 <template>
-  <div class="svg-container">
-    <slot />
-  </div>
+	<div class="svg-container">
+		<slot />
+	</div>
 </template>
 
 <style lang="stylus">
