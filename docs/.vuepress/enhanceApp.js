@@ -1,4 +1,4 @@
-import { rewriteCopy } from './plugin'
+import { rewriteCopy } from './plugins'
 
 export default ({ Vue, isServer, router }) => {
 	if (!isServer) {

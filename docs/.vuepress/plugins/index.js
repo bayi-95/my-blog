@@ -3,7 +3,7 @@ export const rewriteCopy = function () {
 		let copyTxt = ''
 		e.preventDefault() // 取消默认的复制事件
 		copyTxt = window.getSelection(0).toString()
-		copyTxt = `${copyTxt} \n\n原文地址：${window.location.href} \n商业转载请联系作者获得授权，非商业转载请注明出处。`
+		copyTxt = `${copyTxt} \n\n原文地址：${window.location.href} \n非商业转载请注明出处，商业转载请联系作者获得授权。`
 		const clipboardData = e.clipboardData || window.clipboardData
 		clipboardData.setData('text', copyTxt)
 	}

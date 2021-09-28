@@ -10,7 +10,7 @@ export default {
 		content: {
 			type: String,
 			default:
-				'部分文章收集于网络，转载请著名出处，联系博主可以发邮件至<necro.vice@yahoo.com>',
+				'部分文章收录于网络，转载请著名出处，联系博主可以发邮件至<necro.vice@yahoo.com>',
 		},
 	},
 }
