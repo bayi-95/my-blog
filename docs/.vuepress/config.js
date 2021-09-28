@@ -12,14 +12,14 @@ module.exports = {
 		['link', { rel: 'mask-icon', href: '/images/fish.jpg', color: '#235dc8' }],
 		['meta', { name: 'msapplication-TileImage', content: '/images/fish.jpg' }],
 		['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-			['script', {}, `
-				var _hmt = _hmt || [];
-				(function() {
-				  var hm = document.createElement("script");
-				  hm.src = "https://hm.baidu.com/hm.js?f00a6211b690ac3505105511f6b90b30";
-				  var s = document.getElementsByTagName("script")[0];
-				  s.parentNode.insertBefore(hm, s);
-				})();
+		['script', {}, `
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?f00a6211b690ac3505105511f6b90b30";
+			  var s = document.getElementsByTagName("script")[0];
+			  s.parentNode.insertBefore(hm, s);
+			})();
         `]
 	],
 	markdown: {
