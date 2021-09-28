@@ -1,16 +1,16 @@
 module.exports = {
 	title: '秋殇の博客', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
-	description: '秋殇の博客，学习心得，日志，笔记...', // meta 中的描述文字，用于SEO
+	description: '申光普，博客，学习心得，日志，笔记...', // meta 中的描述文字，用于SEO
 	repo: 'vuejs/vuepress',
 	head: [
-		['link', { rel: 'icon', href: '/images/leaf-1.jpg' }], //浏览器的标签栏的网页图标
+		['link', { rel: 'icon', href: '/images/fish.jpg' }], //浏览器的标签栏的网页图标
 		['link', { rel: 'manifest', href: '/manifest.json' }],
 		['meta', { name: 'theme-color', content: '#235dc8' }],
 		['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
 		['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-		['link', { rel: 'apple-touch-icon', href: '/images/leaf-1.jpg' }],
-		['link', { rel: 'mask-icon', href: '/images/leaf-1.jpg', color: '#235dc8' }],
-		['meta', { name: 'msapplication-TileImage', content: '/images/leaf-1.jpg' }],
+		['link', { rel: 'apple-touch-icon', href: '/images/fish.jpg' }],
+		['link', { rel: 'mask-icon', href: '/images/fish.jpg', color: '#235dc8' }],
+		['meta', { name: 'msapplication-TileImage', content: '/images/fish.jpg' }],
 		['meta', { name: 'msapplication-TileColor', content: '#000000' }],
 	],
 	markdown: {
@@ -40,14 +40,14 @@ module.exports = {
 			'container',
 			{
 				type: 'upgrade',
-				before: (info) => `<UpgradePath title="${info}">`,
-				after: '</UpgradePath>',
+				before: (info) => `<upgrade-path title="${info}">`,
+				after: '</upgrade-path>',
 			},
 		],
 	],
 	serviceWorker: true,
 	themeConfig: {
-		logo: '/images/leaf-1.jpg',
+		logo: '/images/fish.jpg',
 		smoothScroll: true,
 		lastUpdated: '上次更新', // string | boolean
 		nav: [
@@ -124,5 +124,16 @@ module.exports = {
 				},
 			],
 		},
+	},
+	gitalkConfig: {
+		createIssueManually: true,
+		clientID: '298ace17e028f2ed1d5c',
+		clientSecret: '316d30782c708825120674f6ce4854082e4db82a',
+		repo: 'bayi-95.github.io',
+		owner: 'bayi-95',
+		admin: ['bayi-95'],
+		id: 1,
+		number: 1, // issue id
+		distractionFreeMode: false, // Facebook-like distraction free mode
 	},
 }
