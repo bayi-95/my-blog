@@ -15,5 +15,3 @@ features:
 ---
 
 <layout-footer/>
-
-<gitalk-comment :options="{ id: 1, number: 1}" />

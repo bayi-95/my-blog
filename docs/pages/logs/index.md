@@ -363,3 +363,6 @@ ssh-keygen -t rsa -C "your_email@example.com"
 
 生成 ssh 密钥后，可以到~/.ssh 目录下查看相关文件，一般来说 ssh 密钥会包含 id_rsa 和 id_rsa.pub 两个文件，分别表示生成的私钥和公钥。
 在 git 等源代码管理中，使用 cat ~/.ssh/id_rsa.pub 命令，打印并将相应内容复制到源代码管理服务器即可实现 git 的无密码管理。
+
+
+<gitalk-comment :options="{ id: 'log_1', number: 1}" />
