@@ -4,7 +4,6 @@ module.exports = {
 		node: true,
 	},
 	extends: [
-		'@vue/typescript',
 		'eslint:recommended',
 		'plugin:vue/essential',
 		'plugin:prettier/recommended',
