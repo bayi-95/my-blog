@@ -3,7 +3,7 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-if [ !$1 ];then
+if [ $1 ];then
     message=$1
 else
     message='deploy：更新博客'
