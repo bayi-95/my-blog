@@ -1,3 +1,5 @@
+import { rewriteCopy } from './plugin'
+
 export default ({ Vue, isServer, router }) => {
 	if (!isServer) {
 		import('vue-toasted' /* webpackChunkName: "notification" */).then((module) => {
@@ -8,11 +10,25 @@ export default ({ Vue, isServer, router }) => {
 	// 路由切换事件处理
 	router.beforeEach((to, from, next) => {
 		//触发百度的pv统计
-		if (typeof _hmt != "undefined") {
+		if (typeof _hmt != 'undefined') {
 			if (to.path) {
-				_hmt.push(["_trackPageview", to.fullPath]);
+				_hmt.push(['_trackPageview', to.fullPath])
 			}
 		}
-		next();
-	});
+		next()
+	})
+
+	// 重写copy监听，带上版权信息
+	setTimeout(() => {
+		try {
+			// 对document的判断是防止编译的时候报错
+			if (document) {
+				(()=>{
+					rewriteCopy()
+				})()
+			}
+		} catch (e) {
+			console.error(e.message)
+		}
+	}, 500)
 }
