@@ -12,6 +12,15 @@ module.exports = {
 		['link', { rel: 'mask-icon', href: '/images/fish.jpg', color: '#235dc8' }],
 		['meta', { name: 'msapplication-TileImage', content: '/images/fish.jpg' }],
 		['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+			['script', {}, `
+				var _hmt = _hmt || [];
+				(function() {
+				  var hm = document.createElement("script");
+				  hm.src = "https://hm.baidu.com/hm.js?f00a6211b690ac3505105511f6b90b30";
+				  var s = document.getElementsByTagName("script")[0];
+				  s.parentNode.insertBefore(hm, s);
+				})();
+        `]
 	],
 	markdown: {
 		lineNumbers: false,
@@ -132,8 +141,8 @@ module.exports = {
 		repo: 'bayi-95.github.io',
 		owner: 'bayi-95',
 		admin: ['bayi-95'],
-		id: 1,
-		number: 1, // issue id
+		id: 1, // `${type}_${issueId}`
+		number: 1, // issueId
 		distractionFreeMode: false, // Facebook-like distraction free mode
 	},
 }
