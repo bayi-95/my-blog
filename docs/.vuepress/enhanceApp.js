@@ -18,17 +18,16 @@ export default ({ Vue, isServer, router }) => {
 		next()
 	})
 
-	// 重写copy监听，带上版权信息
-	setTimeout(() => {
+	window.onload = () => {
 		try {
 			// 对document的判断是防止编译的时候报错
 			if (document) {
-				(()=>{
+				;(() => {
 					rewriteCopy()
 				})()
 			}
 		} catch (e) {
 			console.error(e.message)
 		}
-	}, 500)
+	}
 }
