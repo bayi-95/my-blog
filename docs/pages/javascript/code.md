@@ -1,3 +1,9 @@
+---
+title: 'javascript'
+label: ['javascript']
+description: javascript相关
+---
+
 ## 关于 Vue 下组件引入第三方外部外链 Js 几种方式
 
 https://blog.csdn.net/u010881899/article/details/80895661

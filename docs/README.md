@@ -4,7 +4,7 @@ heroImage: /images/plumery.jpg
 heroText: 秋殇の博客
 tagline: 一点一滴都是积累
 actionText: 马上进入 →
-actionLink: /pages/react-native/code.md
+actionLink: /pages/react-native/index.html
 features:
     - title: 开始 · start
       details: 1/20/2020 从今天开始，写我的日志，记录我的每一天

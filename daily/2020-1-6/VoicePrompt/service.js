@@ -16,7 +16,6 @@ export function fetchSessionKey() {
     })
     .query({ output: 'jsonp' })
     .then(res => {
-      debugger
       if (res && res.access_token) {
         return res.access_token
       } else {
