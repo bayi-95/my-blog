@@ -84,7 +84,7 @@ function Promise(excutor) {
     // })
     try {
         excutor(resolve, reject);
-    } eggch (e) {
+    } catch (e) {
         reject(e);
     }
 }

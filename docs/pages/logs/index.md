@@ -1,9 +1,25 @@
 ---
 title: My-DailyLogs
 metaTitle: 我的日志
+description: 我的日记、记录、感悟
 ---
 
 # 我的日志
+
+#### 9/30/21
+
+1. 早上去体检，做彩超等的人真多
+2. blog：修复注册评论组件的问题：enhanceApp的触发时机问题，改为在路由变化时注册组件，且设定时器（因为没有回调、生命周期），等dom渲染完
+3. 规划、开发博客列表组件，接下来去整理下博客内容
+4. blog：新增文章列表
+
+#### 9/29/21
+
+1. 下载了 element-plus 源码，结合 [文章：从 Element UI 源码的构建流程来看前端 UI 库设计](https://mp.weixin.qq.com/s?__biz=Mzg3MTU4NTI3OA==&mid=2247488540&idx=1&sn=a201dc3d84c443012b6881b38d9383e9&scene=21#wechat_redirect) 学习
+2. 发现了 pnpm（npm/yarn升级版）、vitepress（vuepress升级版：vite + vue3.0）
+3. 学习 UI 库的构造结构、复习 vue3.0 的语法结构（steup、hook）、学习 vitepress 对比 vuepress
+4. 昨晚暴雨，真刺激。
+5. 根据md文件title的参数`gitalkConfig`，判断是否渲染评论组件
 
 #### 9/28/21
 
@@ -20,14 +36,14 @@ metaTitle: 我的日志
 
 #### 9/26/21
 
-1. 使用 wd 评判备份我的 mac（之前安装了虚拟机）识别 wd 很慢，考虑是接触不良，或者反应慢要等一会儿
+1. 使用 wd 硬盘备份我的 mac（之前安装了虚拟机）识别 wd 很慢，考虑是接触不良，或者反应慢要等一会儿
 2. 继续整理浏览器书签
 3. 完善每日计划
 
 #### 5/14/20
 
 反思：
-机会给我了但我没有抓住 需要反思
+摸到 bug 的脚了但我没有抓住它 需要反思
 
 描述：晚上周伟有反馈问题 / 样式丢失问题 / dev 环境正常？？
 
@@ -372,5 +388,3 @@ ssh-keygen -t rsa -C "your_email@example.com"
 
 生成 ssh 密钥后，可以到~/.ssh 目录下查看相关文件，一般来说 ssh 密钥会包含 id_rsa 和 id_rsa.pub 两个文件，分别表示生成的私钥和公钥。
 在 git 等源代码管理中，使用 cat ~/.ssh/id_rsa.pub 命令，打印并将相应内容复制到源代码管理服务器即可实现 git 的无密码管理。
-
-<gitalk-comment :options="{ id: 'log_1', number: 1}" />
