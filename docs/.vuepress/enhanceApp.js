@@ -1,6 +1,6 @@
-import { rewriteCopy } from './plugins'
+import { rewriteCopy, registerGitalk } from './plugins'
 
-export default ({ Vue, isServer, router }) => {
+export default ({ Vue, isServer, router, siteData }) => {
 	if (!isServer) {
 		import('vue-toasted' /* webpackChunkName: "notification" */).then((module) => {
 			Vue.use(module.default)
@@ -15,6 +15,12 @@ export default ({ Vue, isServer, router }) => {
 				_hmt.push(['_trackPageview', to.fullPath])
 			}
 		}
+		// 注册评论组件
+		if (siteData && siteData.pages) {
+			setTimeout(() => {
+				registerGitalk(siteData.pages || [])
+			}, 1000)
+		}
 		next()
 	})
 
@@ -23,6 +29,7 @@ export default ({ Vue, isServer, router }) => {
 			// 对document的判断是防止编译的时候报错
 			if (document) {
 				;(() => {
+					// 重写copy事件
 					rewriteCopy()
 				})()
 			}
