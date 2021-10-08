@@ -12,7 +12,11 @@ module.exports = {
 		['link', { rel: 'mask-icon', href: '/images/fish.jpg', color: '#235dc8' }],
 		['meta', { name: 'msapplication-TileImage', content: '/images/fish.jpg' }],
 		['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-		['script', {}, `
+		// 百度统计
+		[
+			'script',
+			{},
+			`
 			var _hmt = _hmt || [];
 			(function() {
 			  var hm = document.createElement("script");
@@ -20,13 +24,15 @@ module.exports = {
 			  var s = document.getElementsByTagName("script")[0];
 			  s.parentNode.insertBefore(hm, s);
 			})();
-        `]
+        `,
+		],
 	],
 	markdown: {
 		lineNumbers: false,
 	},
 	plugins: [
-		['@vuepress/back-to-top', true],
+		'@vuepress/back-to-top',
+		'@vuepress/nprogress',
 		[
 			'@vuepress/pwa',
 			{
@@ -61,18 +67,19 @@ module.exports = {
 		lastUpdated: '上次更新', // string | boolean
 		nav: [
 			{ text: '首页', link: '/' },
+			{ text: '文章', link: '/pages/list/' },
 			{
 				text: '分类',
 				ariaLabel: '分类',
 				items: [
 					{ text: 'vue', link: '/pages/vue/code.md' },
 					{ text: 'react', link: '/pages/react/code.md' },
-					{ text: 'react-native', link: '/pages/react-native/code.md' },
+					{ text: 'react-native', link: '/pages/react-native/index.md' },
 					{ text: 'python', link: '/pages/python/code.md' },
 					{ text: 'javascript', link: '/pages/javascript/code.md' },
 				],
 			},
-			{ text: '日志', link: '/pages/logs/index.md' },
+			{ text: '日志', link: '/pages/logs/' },
 			{ text: 'Github', link: 'https://github.com/bayi-95' },
 		],
 		sidebar: {
@@ -126,7 +133,7 @@ module.exports = {
 					collapsable: false, // 可选的, 默认值是 true,
 					sidebarDepth: 1, // 可选的, 默认值是 1
 					children: [
-						['basics.md', '环境搭建'],
+						['index.md', '环境搭建'],
 						['code.md', '30 seconds of code'],
 						['source.md', '资源链接 🔗'],
 					],
@@ -135,13 +142,12 @@ module.exports = {
 		},
 	},
 	gitalkConfig: {
-		createIssueManually: true,
 		clientID: '298ace17e028f2ed1d5c',
 		clientSecret: '316d30782c708825120674f6ce4854082e4db82a',
 		repo: 'bayi-95.github.io',
 		owner: 'bayi-95',
 		admin: ['bayi-95'],
-		id: 1, // `${type}_${issueId}`
+		id: 1,
 		number: 1, // issueId
 		distractionFreeMode: false, // Facebook-like distraction free mode
 	},
