@@ -8,7 +8,7 @@ import Config from '../config'
 import 'gitalk/dist/gitalk.css'
 
 export default {
-	name: 'gitalk-comment',
+	name: 'GitalkComment',
 	props: {
 		options: {
 			type: Object,

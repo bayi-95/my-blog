@@ -30,11 +30,13 @@ export const registerGitalk = function (pages = []) {
 		let gitalkWrap = document.querySelector('#gitalk-container')
 		if (!gitalkWrap) {
 			const pageWrap = document.querySelector('.content__default')
-			// 创建容器
-			gitalkWrap = document.createElement('div')
-			gitalkWrap.id = 'gitalk-container'
-			gitalkWrap.style.paddingTop = '20px'
-			pageWrap.appendChild(gitalkWrap)
+			if(pageWrap){
+				// 创建容器
+				gitalkWrap = document.createElement('div')
+				gitalkWrap.id = 'gitalk-container'
+				gitalkWrap.style.paddingTop = '20px'
+				pageWrap?.appendChild(gitalkWrap)
+			}
 		}
 		const gitalk = new Gitalk({
 			...Config.gitalkConfig,

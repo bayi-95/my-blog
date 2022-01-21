@@ -21,7 +21,7 @@
 
 <script>
 export default {
-	name: 'pageList',
+	name: 'page-list',
 	data() {
 		return {
 			list: [],

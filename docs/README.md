@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/plumery.jpg
+heroImage: /images/fish.jpg
 heroText: 秋殇の博客
 tagline: 一点一滴都是积累
 actionText: 马上进入 →
@@ -14,4 +14,4 @@ features:
       details: 以后我自学的东西，记录，笔记，日记什么的...都可以放在这里了 哈哈。
 ---
 
-<layout-footer/>
+<LayoutFooter/>

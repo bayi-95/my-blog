@@ -1,4 +1,4 @@
-## react-navigation 篇
+## react-navigation
 
 参考项目 https://github.com/react-navigation/react-navigation.git
 
