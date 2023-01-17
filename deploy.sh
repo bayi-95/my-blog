@@ -16,6 +16,8 @@ npm run build
 cd docs/.vuepress/dist
 
 git init
+git remote add origin git@github.com:bayi-95/bayi-95.github.io.git
+git checkout -b master
 git add -A
 
 git commit -m $message
