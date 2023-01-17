@@ -29,12 +29,11 @@ export const registerGitalk = function (pages = []) {
 	if (gitalkConfig && gitalkConfig.id) {
 		let gitalkWrap = document.querySelector('#gitalk-container')
 		if (!gitalkWrap) {
-			const pageWrap = document.querySelector('.content__default')
+			const pageWrap = document.querySelector('main.page')
 			if(pageWrap){
 				// 创建容器
 				gitalkWrap = document.createElement('div')
 				gitalkWrap.id = 'gitalk-container'
-				gitalkWrap.style.paddingTop = '20px'
 				pageWrap?.appendChild(gitalkWrap)
 			}
 		}

@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: 'UpgradePath',
 	functional: true,
 	props: {
 		title: {

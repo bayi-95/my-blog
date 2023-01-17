@@ -54,8 +54,8 @@ module.exports = {
 			'container',
 			{
 				type: 'upgrade',
-				before: (info) => `<upgradePath title="${info}">`,
-				after: '</upgradePath>',
+				before: (info) => `<UpgradePath title="${info}">`,
+				after: '</UpgradePath>',
 			},
 		],
 	],
@@ -87,9 +87,7 @@ module.exports = {
 					title: 'Vue 学习',
 					collapsable: false, // 可选的, 默认值是 true,
 					sidebarDepth: 1, // 可选的, 默认值是 1
-					children: [
-                        ['code.md', 'Vue'],
-					],
+					children: [['code.md', 'Vue']],
 				},
 			],
 			'/pages/python/': [
@@ -97,9 +95,7 @@ module.exports = {
 					title: 'Python 学习',
 					collapsable: false, // 可选的, 默认值是 true,
 					sidebarDepth: 1, // 可选的, 默认值是 1
-					children: [
-                        ['code.md', 'Python'],
-                    ],
+					children: [['code.md', 'Python']],
 				},
 			],
 			'/pages/javascript/': [
@@ -107,9 +103,7 @@ module.exports = {
 					title: 'JavaScript 学习',
 					collapsable: false, // 可选的, 默认值是 true,
 					sidebarDepth: 1, // 可选的, 默认值是 1
-					children: [
-                        ['code.md', 'JavaScript'],
-                    ],
+					children: [['code.md', 'JavaScript']],
 				},
 			],
 			'/pages/react/': [
@@ -117,9 +111,7 @@ module.exports = {
 					title: 'React 学习',
 					collapsable: false, // 可选的, 默认值是 true,
 					sidebarDepth: 1, // 可选的, 默认值是 1
-					children: [
-                        ['code.md', 'React'],
-                    ],
+					children: [['code.md', 'React']],
 				},
 			],
 			'/pages/react-native/': [
@@ -127,9 +119,7 @@ module.exports = {
 					title: 'ReactNative 学习',
 					collapsable: false, // 可选的, 默认值是 true,
 					sidebarDepth: 1, // 可选的, 默认值是 1
-					children: [
-						['code.md', 'react-navigation'],
-					],
+					children: [['code.md', 'react-navigation']],
 				},
 			],
 		},

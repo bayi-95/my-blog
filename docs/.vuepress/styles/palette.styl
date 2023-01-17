@@ -7,12 +7,22 @@ $badgeTipColor = #42b983
 $badgeWarningColor = darken(#ffe564, 35%)
 $badgeErrorColor = #DA5961
 
-body {
-  background: #fff;
-  min-height: 100%;
-  font-family: Hannotate SC,PingFang SC,Microsoft YaHei,sans-serif;
-}
+body
+  background #fff
+  min-height 100%
+  font-family Hannotate SC,PingFang SC,Microsoft YaHei,sans-serif
+  word-break break-all
 
-.home .hero img {
-  height 220px;
-}
+
+.home .hero img
+  height 220px
+
+#gitalk-container
+  padding 0 1.5rem 1.5rem
+  max-width 740px
+  margin 0 auto
+
+.theme-default-content
+    overflow-x hidden
+    div[class*="language-"]
+      margin .85em auto
