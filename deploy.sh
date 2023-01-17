@@ -3,10 +3,12 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-if [ $1 ];then
-    message=$1
-else
-    message='deploy：更新博客'
+read -p '请输入提交信息：' message
+
+# 给默认值
+if [ -z "$message" ]; then
+  message='deploy：更新博客'
+  echo 'deploy：更新博客'
 fi
 
 # 生成静态文件
@@ -22,7 +24,7 @@ git add -A
 
 git commit -m $message
 
-# 如果发布的 github 地址
+# 发布的 github 仓库地址
 git push -f git@github.com:bayi-95/bayi-95.github.io.git master
 
 cd -
