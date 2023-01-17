@@ -1,5 +1,5 @@
 <template>
-	<div class="layout-footer"><span v-html="content"/> | Copyright © 2021</div>
+	<div class="layout-footer"><span v-html="content"/> | Copyright © {{year}}</div>
 </template>
 
 <script>
@@ -14,15 +14,20 @@ export default {
 			`,
 		},
 	},
+    data(){
+        return {
+            year: new Date().getFullYear()
+        }
+    }
 }
 </script>
 
 <style>
 .layout-footer {
-	/*position: fixed;*/
-	/*bottom: 0;*/
-	/*left: 0;*/
-	/*z-index: 1;*/
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
 	width: 100%;
 	height: 54px;
 	background-color: #fff;
@@ -30,6 +35,10 @@ export default {
 	text-align: center;
 	border-top: 1px solid #eaecef;
 	font-size: 14px;
+}
+
+.home .features {
+    padding-bottom: 5rem;
 }
 
 @media (max-width: 768px) {

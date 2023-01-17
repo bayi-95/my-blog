@@ -7,7 +7,7 @@ actionText: 马上进入 →
 actionLink: /pages/react-native/index.html
 features:
     - title: 开始 · start
-      details: 1/20/2020 从今天开始，写我的日志，记录我的每一天
+      details: 1/20/2020 从今天开始，写日志，记录我的每一天
     - title: 个人语录 · ideas
       details: 有了想法，想着把它们一个个记录下来，去完善它，慢慢去实现它
     - title: 我的目标 · goals

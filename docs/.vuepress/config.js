@@ -72,10 +72,10 @@ module.exports = {
 				ariaLabel: '分类',
 				items: [
 					{ text: 'vue', link: '/pages/vue/code.md' },
-					{ text: 'react', link: '/pages/react/code.md' },
+                    { text: 'javascript', link: '/pages/javascript/code.md' },
+                    { text: 'react', link: '/pages/react/code.md' },
 					{ text: 'react-native', link: '/pages/react-native/code.md' },
 					{ text: 'python', link: '/pages/python/code.md' },
-					{ text: 'javascript', link: '/pages/javascript/code.md' },
 				],
 			},
 			{ text: '日志', link: '/pages/logs/' },
