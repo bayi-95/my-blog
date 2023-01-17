@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 export default ({ Vue, isServer, router, siteData }) => {
 	if (!isServer) {
 		import('vue-toasted' /* webpackChunkName: "notification" */).then((module) => {

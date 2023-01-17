@@ -44,6 +44,7 @@
     ]
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "gitalk": "^1.7.2"
   }
 }
