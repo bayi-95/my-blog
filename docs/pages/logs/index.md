@@ -17,7 +17,7 @@ description: 日记、记录、感悟
 
 ∆ 新增文章：暗黑模式方案
 
-∆ 新增 travis-ci 自动部署
+∆ 新增 github action 自动部署，调研 travis-ci
 
 #### 1/17/23
 
