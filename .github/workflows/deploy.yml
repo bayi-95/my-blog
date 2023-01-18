@@ -12,8 +12,8 @@ jobs:
 
       - name: Install and Build
         run: |
-          yarn install
-          yarn run build
+          pnpm install
+          pnpm run build
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
