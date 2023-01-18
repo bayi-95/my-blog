@@ -38,12 +38,15 @@ export default {
 }
 
 .home .features {
-    padding-bottom: 5rem;
+    padding-bottom: 55px;
 }
 
 @media (max-width: 768px) {
 	.layout-footer {
 		display: none;
 	}
+    .home .features {
+        padding-bottom: 0;
+    }
 }
 </style>
