@@ -6,4 +6,4 @@ gitalkConfig: { id: 'article_list', number: 1 }
 editLink: false
 ---
 
-<ArticleList />
+<ArticleList></ArticleList>

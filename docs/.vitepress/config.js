@@ -3,6 +3,9 @@ import { getArticles } from './utils'
 export default {
     title: '秋殇の博客',
     description: '申光普，博客，学习心得，日志，笔记...',
+    website: 'https://github.com/bayi-95/',
+    lastUpdated: true,
+    ignoreDeadLinks: true,
     head: [
         ['link', { rel: 'icon', href: '/images/fish.jpg' }], //浏览器的标签栏的网页图标
         ['link', { rel: 'manifest', href: '/manifest.json' }],
@@ -31,6 +34,7 @@ export default {
     themeConfig: {
         siteTitle: '秋殇の博客',
         logo: '/images/fish.jpg',
+        lastUpdated: '上次更新',
         nav: [
             { text: '首页', link: '/' },
             { text: '文章', link: '/pages/list/' },
@@ -47,22 +51,28 @@ export default {
             },
             { text: '日志', link: '/pages/logs/' }
         ],
+        // github 地址
         socialLinks: [{ icon: 'github', link: 'https://github.com/bayi-95/' }],
+        // 编辑页面地址
         editLink: {
-            pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+            pattern: 'https://github.com/bayi-95/my-bolg/tree/master/docs/:path',
             text: 'Edit this page'
         },
+        // 页面底部
         footer: {
-            message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2019-present Evan You'
+            message: '部分文章收录于网络，转载请署名出处 | 联系博主可以发邮件至 <a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a>',
+            copyright: 'Copyright © 2020-present'
         },
         // 获取文章列表
-        articles: await getArticles()
+        articles: await getArticles(),
+        // 搜索
+        algolia: {
+            appId: '5VSYJHYEBM',
+            apiKey: '3071496c8c2cbabf56c677eb7093170d',
+            indexName: 'blog_search'
+        }
     },
     markdown: {
         lineNumbers: false
     },
-    lastUpdated: true,
-    ignoreDeadLinks: true,
-    website: 'https://github.com/bayi-95/'
 }

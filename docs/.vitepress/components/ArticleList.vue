@@ -15,15 +15,20 @@
             </div>
         </div>
         <div v-if="pageNum > 1" class="pagination">
-            <span v-for="i in pageNum" class="link t" :class="{ active: current === i }" :key="i" @click="current = i">{{
-                i
-            }}</span>
+            <span
+                v-for="i in pageNum"
+                class="link t"
+                :class="{ active: current === i }"
+                :key="i"
+                @click="current = i"
+                >{{ i }}</span
+            >
         </div>
         <div v-if="articles[current].length < pageSize" class="no-more">没有更多了～</div>
     </template>
     <template v-else>
         <div class="empty-wrap flex-column item-center">
-            <img src="/images/nodata.svg" alt="icon-暂无数据">
+            <img src="/images/nodata.svg" alt="icon-nodata" />
             <p class="no-data">暂无文章</p>
         </div>
     </template>
@@ -46,12 +51,13 @@ const articles = computed(() => {
         let key = 1
         articles.forEach((item, index) => {
             if (index >= pageSize && index % pageSize === 0) {
-                key += 1;
-                res[key] = [];
+                key += 1
+                res[key] = []
             }
-            res[key].push(item);
+            res[key].push(item)
         })
-        return res;
+        console.log(res)
+        return res
     }
     return {
         1: []
@@ -91,9 +97,9 @@ const current = ref(1)
 }
 .article-info span {
     display: inline-block;
+    margin-left: 10px;
     padding: 0 8px;
     background-color: var(--vp-c-bg-alt);
-    margin-right: 10px;
     transition: 0.4s;
     border-radius: 2px;
     color: var(--vp-c-text-1);
@@ -141,7 +147,8 @@ const current = ref(1)
     margin-top: 3rem;
 }
 
-.empty-wrap .no-data, .no-more {
+.empty-wrap .no-data,
+.no-more {
     color: var(--vp-c-text-2);
 }
 

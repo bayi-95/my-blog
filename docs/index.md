@@ -1,0 +1,22 @@
+---
+layout: home
+
+hero:
+    name: 秋殇の博客
+    text: 探索本身就是一件很有趣的事情。
+    tagline: 一点一滴都是积累
+    image:
+        src: /images/autumn.png
+        alt: logo
+    actions:
+        - theme: brand
+          text: 马上开始 →
+          link: /pages/react-native/
+features:
+    - title: 开始 · start
+      details: 1/20/2020 从今天开始，写日志，记录我的每一天
+    - title: 个人语录 · ideas
+      details: 有了想法，想着把它们一个个记录下来，去完善它，慢慢去实现它
+    - title: 我的目标 · goals
+      details: 以后我自学的东西，记录，笔记，日记什么的...都可以放在这里了 哈哈。
+---
