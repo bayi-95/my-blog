@@ -12,8 +12,6 @@ https://blog.csdn.net/u010881899/article/details/80895661
 
 https://nginxconfig.io/
 
-![](/logo.jpg)
-
 ## lodash 按需加载
 
 https://www.jianshu.com/p/f03ff4f3a8b3
