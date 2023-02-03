@@ -69,7 +69,7 @@ export default {
         algolia: {
             appId: '5VSYJHYEBM',
             apiKey: '3071496c8c2cbabf56c677eb7093170d',
-            indexName: 'blog_search'
+            indexName: 'prod_bayi95'
         }
     },
     markdown: {
