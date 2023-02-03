@@ -6,6 +6,11 @@ sidebar: true
 
 # 我的日志
 
+
+### 2/2/23
+∆ 新增：思维模型
+∆ 新增：algolia 搜索 & Github Action 在 Docker 中执行的 AlgoliaDocSearch scraper action
+
 ### 1/18/23
 
 ∆ 暗黑模式疑问：
