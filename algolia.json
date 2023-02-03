@@ -1,5 +1,5 @@
 {
-    "index_name": "blog_search",
+    "index_name": "prod_bayi95",
     "start_urls": ["https://bayi-95.github.io/"],
     "rateLimit": 8,
     "maxDepth": 10,
@@ -14,5 +14,6 @@
         "lvl4": ".content h4",
         "lvl5": ".content h5",
         "content": ".content p, .content li"
-    }
+    },
+    "js_render": true
 }
