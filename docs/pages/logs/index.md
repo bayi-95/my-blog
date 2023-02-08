@@ -6,9 +6,14 @@ sidebar: true
 
 # 我的日志
 
+### 2/8/23
+∆ fix: `algolia` 因为 lang 导致无搜索结果的问题，修改 algolia.json 里关于 lang 的设置
+
+参考：[vuepress2.x文档和集成algolia配置过程](https://zhuanlan.zhihu.com/p/542544442)
 
 ### 2/2/23
-∆ 新增：思维模型
+∆ 新增：思维模型  
+
 ∆ 新增：algolia 搜索 & Github Action 在 Docker 中执行的 AlgoliaDocSearch scraper action
 
 ### 1/18/23
