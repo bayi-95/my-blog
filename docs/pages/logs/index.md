@@ -1,7 +1,7 @@
 ---
 title: 我的日志
 description: 日记、记录、感悟
-sidebar: true
+sidebar: auto
 ---
 
 # 我的日志
@@ -9,7 +9,11 @@ sidebar: true
 ### 2/8/23
 ∆ fix: `algolia` 因为 lang 导致无搜索结果的问题，修改 algolia.json 里关于 lang 的设置
 
-参考：[vuepress2.x文档和集成algolia配置过程](https://zhuanlan.zhihu.com/p/542544442)
+参考：[vuepress2.x 文档和集成 algolia 配置过程](https://zhuanlan.zhihu.com/p/542544442)
+
+∆ 把首页背景图转webp减小图片大小
+
+参考：[convertio 转换工具](https://convertio.co/zh/png-webp/)
 
 ### 2/2/23
 ∆ 新增：思维模型  
@@ -66,7 +70,7 @@ git clone https://hub.fastgit.xyz/PaddlePaddle/PaddleOCR.git
 5. 对时间表达成共识（敦促开发人员评估每一项任务，并要求他们注意工作范围）
 6. 及时的沟通、反馈、讨论和解决
 
-参考：[项目经验管理总结](https://mp.weixin.qq.com/s/QbBPLp1votLmAb5nVLCdag):
+参考：[项目经验管理总结](https://mp.weixin.qq.com/s/QbBPLp1votLmAb5nVLCdag)
 
 ### 8/17/22
 
@@ -415,7 +419,7 @@ git commit -m 'removed xxx from repository'
 
 ∆ web 学习路线
 
-![](/images/web学习路线2.png)
+![](/images/web学习路线.png)
 
 ### 1/20/20
 
@@ -527,9 +531,9 @@ Vue.use(VoicePrompt)
 
 ∆ 当别人问问题
 
-需要我做什么 我能帮到你什么
+需要我做什么，我能帮到你什么？
 
-你想知道什么 （明确目的） 耐心些 （觉得吃力）我帮不到你 你可以去找阿东
+你想知道什么 （明确目的） 耐心些 （分析下）我帮不到你，但我知道对应负责人你可以去找他，阿东
 
 ### 1/2/20
 

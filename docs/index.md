@@ -7,7 +7,7 @@ hero:
     text: 探索本身就是一件很有趣的事情。
     tagline: 一点一滴都是积累
     image:
-        src: /images/autumn.png
+        src: /images/autumn.webp
         alt: logo
     actions:
         - theme: brand
