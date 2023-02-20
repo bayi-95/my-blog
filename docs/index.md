@@ -12,7 +12,7 @@ hero:
     actions:
         - theme: brand
           text: 马上开始 →
-          link: /pages/react-native/
+          link: /pages/list/
 features:
     - title: 开始 · start
       details: 1/20/2020 从今天开始，写日志，记录我的每一天
