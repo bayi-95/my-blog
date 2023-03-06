@@ -9,7 +9,7 @@ export default {
 		content: {
 			type: String,
 			default: `
-				<span>部分文章收录于网络，转载请署名出处；联系博主可以发邮件至</span>
+				<span>部分文章收录于网络，转载请署名出处；联系博主可以发送邮件至</span>
 				<a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a>
 			`,
 		},

@@ -6,6 +6,14 @@ sidebar: auto
 
 # 我的日志
 
+### 3/6/23
+
+∆ feat: 新增组件 `CurtBirdButton`，首页跳转按钮替换为此组件
+
+∆ 新增：思维模型 - 刻意学习
+
+参考：[CSS 的快乐：画一个可爱的三只小鸟 Button](https://mp.weixin.qq.com/s?__biz=Mzg3OTYzMDkzMg==&mid=2247493043&idx=1&sn=197aca704daa784341a8dd8a5c9d0b73&chksm=cf032a88f874a39e712f7a2f8c29af9c4c371270a50ba49d0628fb07353cd18e6a4e6702c069&scene=178&cur_album_id=2150438405699174401#rd)
+
 ### 2/20/23
 
 看到一篇文章描述成熟的亲密关系，理论逻辑很完整，有受到启发，摘要：
