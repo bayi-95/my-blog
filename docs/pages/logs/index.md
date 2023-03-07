@@ -8,6 +8,13 @@ sidebar: auto
 
 ### 3/6/23
 
+∆ style(component): [CurtBirdButton] 响应式样式修改
+
+∆ blog：新增 思维模型 - 金字塔原理
+
+
+### 3/6/23
+
 ∆ feat: 新增组件 `CurtBirdButton`，首页跳转按钮替换为此组件
 
 ∆ 新增：思维模型 - 刻意学习
