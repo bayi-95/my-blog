@@ -1,6 +1,6 @@
 <template>
     <div class="comp-bird-button">
-        <a href="/pages/list/" class="button button--bird">
+        <a :href="href" class="button button--bird">
             <div class="button__wrapper">
                 <span class="button__text">马上进入</span>
             </div>
@@ -17,13 +17,19 @@
             </div>
         </a>
     </div>
-
 </template>
 
-<script>
-export default {
-    name: 'CuteBirdButton',
-}
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    props: {
+        href: {
+            type: String,
+            default: '/pages/list/'
+        }
+    }
+})
 </script>
 
 <style scoped>
@@ -32,12 +38,12 @@ export default {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    max-width: 1152px;
+    max-width: 1280px;
 }
 
 .button--bird {
     --main_color: var(--vp-c-brand-lighter);
-    --sub_color1: var(--vp-c-brand-light);
+    --sub_color1: var(--vp-c-brand);
     --sub_color2: var(--vp-c-brand-darker);
     --base_color: #000;
     --border_radius1: 60px 60px 40px 40px / 48px 48px 30px 30px;
@@ -355,8 +361,9 @@ export default {
         border-radius: var(--border_radius2);
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
     .comp-bird-button {
+        padding: 0 64px;
         margin: -10px auto 0;
         justify-content: flex-start;
     }
