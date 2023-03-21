@@ -56,7 +56,6 @@ const articles = computed(() => {
             }
             res[key].push(item)
         })
-        console.log(res)
         return res
     }
     return {
