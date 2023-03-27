@@ -43,7 +43,6 @@ sidebar: auto
 1. 我为我的人生负责，你为你的人生负责，但是我们俩的人生交织在一起，所以我会充分注意和理解我们对于彼此的影响。
 2. 我的存在价值，不会因为对方喜欢或不喜欢我，对我好或对我不好有所增减和改变，相反，它始终都在那里。
 3. 虽然，你是你，我是我，但是你的一举一动会影响到我，我的一举一动也会影响到你。 爱虽然不是控制，但爱也不是放任，爱是全心全意为了所爱之人的福祉考虑，为其做尽可能的事。 所以，我爱你，既是我的事，也与你有关。 当一个人，最终进入到“他人意识阶段”后，Ta会成为一个非常好的恋爱对象，也会成为一个非常好的结婚伴侣。
-4. -彩蛋- 被你发现了 : )  
 
 参考：[写在情人节：真正成熟的亲密关系是什么样的？](https://mp.weixin.qq.com/s/v0Ird2Pcle6QBnkv_fQCAg)
 
@@ -96,7 +95,7 @@ fi
 1. 解决 `github` 访问慢问题：修改 hosts，[访问获取最新 host 文件](https://github.com/521xueweihan/GitHub520)
 2. clone 慢：hub.fastgit.xyz 高速的 GitHub git 仓库镜像，使用：
 
-```javascript
+```shell
 git clone https://hub.fastgit.xyz/PaddlePaddle/PaddleOCR.git
 ```
 
@@ -249,6 +248,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 2. 还有每个晚上的，大致安排。
 3. 有目标，过得清楚，有意义。
 4. 整理了我的滴答清单，过了一遍。
+5. <EggBtn name="-彩蛋- 被你发现了 点它 : )" tips="点击空格，游戏开始！"><DinosaurRunner></DinosaurRunner></EggBtn>
 
 ### 9/30/21
 
