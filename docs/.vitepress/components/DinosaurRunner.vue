@@ -11,14 +11,15 @@
 </template>
 
 <script>
-const IS_MOBILE = /Mobi|Android|iPhone/i.test(navigator.userAgent);
-
 export default {
     name: 'DinosaurRunner',
     computed: {
         height() {
-            return IS_MOBILE ? 340 : 600
+            return this.isMobile ? 340 : 600
         },
+        isMobile() {
+            return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+        }
     },
     mounted() {
         this.initGame()
@@ -342,11 +343,14 @@ export default {
                     document.removeEventListener(Runner.events.MOUSEDOWN, this)
                     document.removeEventListener(Runner.events.MOUSEUP, this)
                 },
+                isMobile: function () {
+                    return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+                },
                 onKeyDown: function (e) {
                     if (e.target != this.detailsButton) {
                         if (
                             !this.crashed &&
-                            (Runner.keycodes.JUMP[e.keyCode] || (IS_MOBILE && e.type === 'mousedown'))
+                            (Runner.keycodes.JUMP[e.keyCode] || (this.isMobile() && e.type === 'mousedown'))
                         ) {
                             e.preventDefault()
                             if (!this.activated) {
