@@ -11,8 +11,15 @@
 </template>
 
 <script>
+const IS_MOBILE = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+
 export default {
     name: 'DinosaurRunner',
+    computed: {
+        height() {
+            return IS_MOBILE ? 340 : 600
+        },
+    },
     mounted() {
         this.initGame()
     },
@@ -22,7 +29,7 @@ export default {
                 a = document.getElementById('runner-container'),
                 ctx = canvas.getContext('2d')
             canvas.id = 'c'
-            canvas.width = 600
+            canvas.width = this.height || 600
             canvas.height = 150
             a.appendChild(canvas)
 
@@ -40,7 +47,7 @@ export default {
                     STAR: { x: 645, y: 2 } //星星
                 },
                 FPS = 60,
-                DEFAULT_WIDTH = 600,
+                DEFAULT_WIDTH = this.height || 600,
                 imgSprite = document.getElementById('sprite')
 
             Runner.config = {
@@ -67,7 +74,7 @@ export default {
             }
             Runner.defaultDimensions = {
                 HEIGHT: 150,
-                WIDTH: 600
+                WIDTH: this.height || 600
             }
 
             Runner.classes = {
@@ -176,7 +183,6 @@ export default {
                     this.ctx = ctx
                     this.ctx.fillStyle = '#f7f7f7'
                     this.ctx.fill()
-                    this.isMobile() && this.ctx.scale(0.526, .8);
 
                     this.horizon = new Horizon(
                         this.canvas,
@@ -336,14 +342,11 @@ export default {
                     document.removeEventListener(Runner.events.MOUSEDOWN, this)
                     document.removeEventListener(Runner.events.MOUSEUP, this)
                 },
-                isMobile() {
-                    return /Mobi|Android|iPhone/i.test(navigator.userAgent)
-                },
                 onKeyDown: function (e) {
                     if (e.target != this.detailsButton) {
                         if (
                             !this.crashed &&
-                            (Runner.keycodes.JUMP[e.keyCode] || (this.isMobile() && e.type === 'mousedown'))
+                            (Runner.keycodes.JUMP[e.keyCode] || (IS_MOBILE && e.type === 'mousedown'))
                         ) {
                             e.preventDefault()
                             if (!this.activated) {
