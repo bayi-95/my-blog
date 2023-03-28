@@ -7,20 +7,22 @@ sidebar: auto
 # 我的日志
 
 
-### 3/21/23
+### 3/28/23
 
-∆ blog：新增 思维模型 - 证实偏差、决策树、信息不对称、锚定效应
+∆ blog：新增 小彩蛋 —— 《恐龙快跑》小游戏
 
+∆ 查看依赖包
 
-### 3/10/23
+```shell
+# npm 全局依赖包
+npm ls -g --depth=0
 
-∆ blog：新增 思维模型 - 路径依赖、设计思维
+# brew 查看安装的依赖包
+brew search pnpm
+brew ls
+```
 
-
-### 3/8/23
-
-∆ blog：新增 思维模型 - 思维导图、禁果效应
-
+参考：[chrome 恐龙小游戏源码研究](https://www.cnblogs.com/undefined000/p/trex_1.html)
 
 ### 3/7/23
 
@@ -248,7 +250,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 2. 还有每个晚上的，大致安排。
 3. 有目标，过得清楚，有意义。
 4. 整理了我的滴答清单，过了一遍。
-5. <EggBtn name="-彩蛋- 被你发现了 点它 : )" tips="点击空格，游戏开始！"><DinosaurRunner></DinosaurRunner></EggBtn>
+5. <Egg name="-彩蛋- 被你发现了 点它 : )" tips="点击空格，游戏开始！"><DinosaurRunner></DinosaurRunner></Egg>
 
 ### 9/30/21
 
@@ -262,7 +264,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 1. 下载了 element-plus 源码，结合 [文章：从 Element UI 源码的构建流程来看前端 UI 库设计](https://mp.weixin.qq.com/s?__biz=Mzg3MTU4NTI3OA==&mid=2247488540&idx=1&sn=a201dc3d84c443012b6881b38d9383e9&scene=21#wechat_redirect) 学习
 2. 发现了 pnpm（npm/yarn 升级版）、vitepress（vuepress 升级版：vite + vue3.0）
 3. 学习 UI 库的构造结构、复习 vue3.0 的语法结构（steup、hook）、学习 vitepress 对比 vuepress
-4. 昨晚的暴雨，可真刺激。
+4. 昨晚的暴雨，可真刺激。乌云压的很低，天上是水，地上是水，天地之间被雨幕连接，雨水眯着眼睛看不清，穿着雨衣感觉车像在湖面上骑着，除了雨声听不到其它的声音。
 5. 博客：根据 md 文件 title 的参数`gitalkConfig`，判断是否渲染评论组件
 
 ### 9/28/21

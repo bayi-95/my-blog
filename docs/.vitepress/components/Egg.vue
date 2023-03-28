@@ -1,8 +1,8 @@
 <template>
-    <div class="comp-egg-button">
+    <div class="comp-egg-container">
         <span @click="visible = true">{{ name }}</span>
         <span v-show="visible" class="tips">{{ tips }}</span>
-        <div class="dialog-wrapper" :style="dialogStyle">
+        <div class="content-box" :style="contentStyle">
             <slot></slot>
         </div>
     </div>
@@ -12,7 +12,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    name: 'EggBtn',
+    name: 'Egg',
     props: {
         name: {
             type: String,
@@ -24,7 +24,7 @@ export default defineComponent({
         }
     },
     computed: {
-        dialogStyle() {
+        contentStyle() {
             return this.visible ? 'display: block' : 'display: none'
         }
     },
@@ -37,7 +37,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.comp-egg-button {
+.comp-egg-container {
     .tips {
         margin-left: 20px;
     }
