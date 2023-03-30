@@ -6,6 +6,9 @@ sidebar: auto
 
 # 我的日志
 
+### 3/29/23
+
+∆ blog: 文章列表新增 [《爱和治愈自己》](https://bayi-95.github.io/pages/idea/%E7%88%B1%E5%92%8C%E6%B2%BB%E6%84%88%E8%87%AA%E5%B7%B1.html)
 
 ### 3/28/23
 
@@ -30,7 +33,6 @@ brew ls
 
 ∆ blog：新增 思维模型 - 金字塔原理
 
-
 ### 3/6/23
 
 ∆ feat: 新增组件 `CurtBirdButton`，首页跳转按钮替换为此组件
@@ -42,23 +44,26 @@ brew ls
 ### 2/20/23
 
 看到一篇文章描述成熟的亲密关系，有受到启发，摘要：
+
 1. 我为我的人生负责，你为你的人生负责，但是我们俩的人生交织在一起，所以我会充分注意和理解我们对于彼此的影响。
 2. 我的存在价值，不会因为对方喜欢或不喜欢我，对我好或对我不好有所增减和改变，相反，它始终都在那里。
-3. 虽然，你是你，我是我，但是你的一举一动会影响到我，我的一举一动也会影响到你。 爱虽然不是控制，但爱也不是放任，爱是全心全意为了所爱之人的福祉考虑，为其做尽可能的事。 所以，我爱你，既是我的事，也与你有关。 当一个人，最终进入到“他人意识阶段”后，Ta会成为一个非常好的恋爱对象，也会成为一个非常好的结婚伴侣。
+3. 虽然，你是你，我是我，但是你的一举一动会影响到我，我的一举一动也会影响到你。 爱虽然不是控制，但爱也不是放任，爱是全心全意为了所爱之人的福祉考虑，为其做尽可能的事。 所以，我爱你，既是我的事，也与你有关。 当一个人，最终进入到“他人意识阶段”后，Ta 会成为一个非常好的恋爱对象，也会成为一个非常好的结婚伴侣。
 
 参考：[写在情人节：真正成熟的亲密关系是什么样的？](https://mp.weixin.qq.com/s/v0Ird2Pcle6QBnkv_fQCAg)
 
 ### 2/8/23
+
 ∆ fix: `algolia` 因为 lang 导致无搜索结果的问题，修改 algolia.json 里关于 lang 的设置
 
 参考：[vuepress2.x 文档和集成 algolia 配置过程](https://zhuanlan.zhihu.com/p/542544442)
 
-∆ 把首页背景图转webp减小图片大小
+∆ 把首页背景图转 webp 减小图片大小
 
 参考：[convertio 转换工具](https://convertio.co/zh/png-webp/)
 
 ### 2/2/23
-∆ 新增：思维模型  
+
+∆ 新增：思维模型
 
 ∆ 新增：algolia 搜索 & Github Action 在 Docker 中执行的 AlgoliaDocSearch scraper action
 
@@ -392,19 +397,19 @@ dev：要测试的往我这儿合并，但不要让我合并到你身上，否�
 // [强制] 运算符处换行时，运算符必须在新行的行首。
 // 示例：
 if (
-	(user.isAuthenticated() && user.isInRole('admin') && user.hasAuthority('add-admin')) ||
-	user.hasAuthority('delete-admin')
+    (user.isAuthenticated() && user.isInRole('admin') && user.hasAuthority('add-admin')) ||
+    user.hasAuthority('delete-admin')
 ) {
-	// Code
+    // Code
 }
 
 var html =
-	'' + // 此处用一个空字符串，以便整个 HTML 片段都在新行严格对齐
-	'<article>' +
-	'<h1>Title here</h1>' +
-	'<p>This is a paragraph</p>' +
-	'<footer>Complete</footer>' +
-	'</article>'
+    '' + // 此处用一个空字符串，以便整个 HTML 片段都在新行严格对齐
+    '<article>' +
+    '<h1>Title here</h1>' +
+    '<p>This is a paragraph</p>' +
+    '<footer>Complete</footer>' +
+    '</article>'
 
 // 三元运算符由3部分组成，因此其换行应当根据每个部分的长度不同，形成不同的情况。
 var result = thisIsAVeryVeryLongCondition ? resultA : resultB
@@ -414,7 +419,7 @@ var result = condition ? thisIsAVeryVeryLongResult : resultB
 // [强制] 在 if / else / for / do / while 语句中，即使只有一行，也不得省略块 {...}。
 // 示例：
 if (condition) {
-	callFunc()
+    callFunc()
 }
 
 // TODO: 有功能待实现。此时需要对将要实现的功能进行简单说明。
@@ -470,7 +475,7 @@ git commit -m 'removed xxx from repository'
 
 **参考:**
 
--   [1 小时搞定 vuepress 快速制作 vue 文档/博客+免费部署预览](https://juejin.im/post/5dce1e0e5188254eda3936c5)
+- [1 小时搞定 vuepress 快速制作 vue 文档/博客+免费部署预览](https://juejin.im/post/5dce1e0e5188254eda3936c5)
 
 ### 1/17/20
 
