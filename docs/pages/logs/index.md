@@ -8,8 +8,7 @@ sidebar: auto
 
 ### 3/29/23
 
-∆ blog: [文章列表](https://bayi-95.github.io/pages/list/) —— 新增《爱和治愈自己》
-∆ blog: 新增文章 - 前端 commit 提交规范
+∆ blog: [文章列表](https://bayi-95.github.io/pages/list/) 新增 爱和治愈自己、前端 commit 提交规范
 
 ### 3/28/23
 
