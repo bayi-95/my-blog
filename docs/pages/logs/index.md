@@ -8,7 +8,8 @@ sidebar: auto
 
 ### 3/29/23
 
-∆ blog: [文章列表](https://bayi-95.github.io/pages/list/)  —— 新增《爱和治愈自己》
+∆ blog: [文章列表](https://bayi-95.github.io/pages/list/) —— 新增《爱和治愈自己》
+∆ blog: 新增文章 - 前端 commit 提交规范
 
 ### 3/28/23
 
@@ -475,7 +476,7 @@ git commit -m 'removed xxx from repository'
 
 **参考:**
 
-- [1 小时搞定 vuepress 快速制作 vue 文档/博客+免费部署预览](https://juejin.im/post/5dce1e0e5188254eda3936c5)
+-   [1 小时搞定 vuepress 快速制作 vue 文档/博客+免费部署预览](https://juejin.im/post/5dce1e0e5188254eda3936c5)
 
 ### 1/17/20
 
