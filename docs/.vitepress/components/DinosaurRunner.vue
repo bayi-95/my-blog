@@ -15,17 +15,15 @@ export default {
     name: 'DinosaurRunner',
     computed: {
         height() {
+            const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
             return this.isMobile ? 340 : 600
         },
-        isMobile() {
-            return /Mobi|Android|iPhone/i.test(navigator.userAgent);
-        }
     },
     mounted() {
-        this.initGame()
+        this.startGame();
     },
     methods: {
-        initGame() {
+        startGame() {
             var canvas = document.createElement('canvas'),
                 a = document.getElementById('runner-container'),
                 ctx = canvas.getContext('2d')
