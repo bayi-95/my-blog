@@ -8,14 +8,14 @@ export default {
     lastUpdated: true,
     ignoreDeadLinks: true,
     head: [
-        ['link', { rel: 'icon', href: '/images/fish.jpg' }], //浏览器的标签栏的网页图标
-        ['link', { rel: 'manifest', href: '/manifest.json' }],
+        ['link', { rel: 'icon', href: '/my-blog/images/fish.jpg' }], //浏览器的标签栏的网页图标
+        ['link', { rel: 'manifest', href: '/my-blog/manifest.json' }],
         ['meta', { name: 'theme-color', content: '#235dc8' }],
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-        ['link', { rel: 'apple-touch-icon', href: '/images/fish.jpg' }],
-        ['link', { rel: 'mask-icon', href: '/images/fish.jpg', color: '#235dc8' }],
-        ['meta', { name: 'msapplication-TileImage', content: '/images/fish.jpg' }],
+        ['link', { rel: 'apple-touch-icon', href: '/my-blog/images/fish.jpg' }],
+        ['link', { rel: 'mask-icon', href: '/my-blog/images/fish.jpg', color: '#235dc8' }],
+        ['meta', { name: 'msapplication-TileImage', content: '/my-blog/images/fish.jpg' }],
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
         // 百度统计
         [
@@ -56,7 +56,7 @@ export default {
         socialLinks: [{ icon: 'github', link: 'https://github.com/bayi-95/' }],
         // 编辑页面地址
         editLink: {
-            pattern: 'https://github.com/bayi-95/my-bolg/tree/master/docs/:path',
+            pattern: 'https://github.com/bayi-95/my-blog/tree/master/docs/:path',
             text: 'Edit this page'
         },
         // 页面底部
