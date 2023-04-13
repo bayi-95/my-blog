@@ -30,7 +30,5 @@ jobs:
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.ACCESS_TOKEN }}
-          external_repository: bayi-95/bayi-95.github.io
-          publish_branch: master
+          github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: docs/.vitepress/dist
