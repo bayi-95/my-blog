@@ -4,6 +4,7 @@
             <div class="article-header">
                 <div class="article-title">
                     <a :href="withBase(article.regularPath)"> {{ article.frontMatter.title }}</a>
+                    <img v-if="article.frontMatter.isSticky" class="tag-sticky" src="/images/sticky.svg" alt="置顶" />
                 </div>
             </div>
             <p class="describe" v-html="article.frontMatter.description"></p>
@@ -76,70 +77,82 @@ const pageNum = computed(() => {
 const current = ref(1)
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .article-list {
     border-bottom: 1px dashed var(--vp-c-divider);
     padding: 14px 0 14px 0;
+    .article-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .article-title {
+        position: relative;
+        margin: 0.1rem 0;
+        width: 100%;
+        font-size: 1.125rem;
+        font-weight: 500;
+        .tag-sticky {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            width: 30px;
+            height: 30px;
+            transform: rotate(90deg);
+        }
+    }
+    .article-info {
+        font-size: 12px;
+        > span {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 0 8px;
+            background-color: var(--vp-c-bg-alt);
+            transition: 0.4s;
+            border-radius: 2px;
+            color: var(--vp-c-text-1);
+        }
+    }
+    .describe {
+        font-size: 0.9375rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        color: var(--vp-c-text-2);
+        margin: 10px 0;
+        line-height: 1.5rem;
+    }
+    .link {
+        display: inline-block;
+        width: 24px;
+        text-align: center;
+        border: 1px var(--vp-c-divider) solid;
+        border-right: none;
+        font-weight: 400;
+        cursor: pointer;
+        &.active {
+            background: var(--vp-c-text-1);
+            color: var(--vp-c-text-inverse-1);
+            border: 1px solid var(--vp-c-text-1) !important;
+        }
+        &:first-child {
+            border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+        }
+        &:last-child {
+            border-bottom-right-radius: 2px;
+            border-top-right-radius: 2px;
+            border-right: 1px var(--vp-c-divider) solid;
+        }
+    }
 }
-.article-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.article-title {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin: 0.1rem 0;
-}
-.article-info {
-    font-size: 12px;
-}
-.article-info span {
-    display: inline-block;
-    margin-left: 10px;
-    padding: 0 8px;
-    background-color: var(--vp-c-bg-alt);
-    transition: 0.4s;
-    border-radius: 2px;
-    color: var(--vp-c-text-1);
-}
-.describe {
-    font-size: 0.9375rem;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    color: var(--vp-c-text-2);
-    margin: 10px 0;
-    line-height: 1.5rem;
-}
+
 .pagination {
     margin-top: 16px;
     display: flex;
     justify-content: center;
-}
-.link {
-    display: inline-block;
-    width: 24px;
-    text-align: center;
-    border: 1px var(--vp-c-divider) solid;
-    border-right: none;
-    font-weight: 400;
-    cursor: pointer;
-}
-.link.active {
-    background: var(--vp-c-text-1);
-    color: var(--vp-c-text-inverse-1);
-    border: 1px solid var(--vp-c-text-1) !important;
-}
-.link:first-child {
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
-}
-.link:last-child {
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
-    border-right: 1px var(--vp-c-divider) solid;
 }
 
 .empty-wrap {
@@ -160,28 +173,28 @@ const current = ref(1)
 @media screen and (max-width: 768px) {
     .article-list {
         padding: 14px 0 14px 0;
-    }
-    .article-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .article-title {
-        font-size: 1.0625rem;
-        font-weight: 400;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        width: 17rem;
-    }
-    .describe {
-        font-size: 0.9375rem;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-        margin: 0.5rem 0 1rem;
+        .article-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .article-title {
+            font-size: 1.0625rem;
+            font-weight: 400;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            width: 17rem;
+        }
+        .describe {
+            font-size: 0.9375rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            margin: 0.5rem 0 1rem;
+        }
     }
 }
 </style>
