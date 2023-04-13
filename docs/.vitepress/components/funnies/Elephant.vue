@@ -40,13 +40,17 @@ export default {
         }
     },
     mounted() {
-        const footerWrap = document.querySelector('.VPFooter')
-        const elephant = document.querySelector('.ele-container')
-        if (footerWrap) {
-            footerWrap.append(elephant)
-            setTimeout(() => {
-                elephant.style.display = 'block'
-            }, 2000)
+        const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
+        if (!isMobile) {
+            const footerWrap = document.querySelector('.VPFooter')
+            const elephant = document.querySelector('.ele-container')
+
+            if (footerWrap) {
+                footerWrap.append(elephant)
+                setTimeout(() => {
+                    elephant.style.display = 'block'
+                }, 2000)
+            }
         }
     }
 }
@@ -54,7 +58,16 @@ export default {
 
 <style lang="scss" scoped>
 .ele-container {
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    z-index: 80;
     display: none;
+    width: 300px;
+    height: 174px;
+    transform: scale(0.3);
+    cursor: pointer;
+
     .ele-wrapper {
         -webkit-animation: ele-movement 1s infinite linear;
         animation: ele-movement 1s infinite linear;
@@ -807,19 +820,6 @@ export default {
         100% {
             height: 18px;
         }
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .ele-container {
-        position: absolute;
-        top: -30px;
-        right: 20px;
-        z-index: 80;
-        width: 300px;
-        height: 174px;
-        transform: scale(0.3);
-        cursor: pointer;
     }
 }
 </style>
