@@ -13,6 +13,8 @@ sidebar: auto
 
 ∆ blog: 文章列表，添加置顶功能
 
+∆ 修改博客的部署位置
+
 ### 3/29/23
 
 ∆ blog: [文章列表](https://bayi-95.github.io/pages/list/) 新增 爱和治愈自己、前端 commit 提交规范
