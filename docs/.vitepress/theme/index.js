@@ -1,16 +1,15 @@
-import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import ArticleList from '../components/pages/ArticleList.vue'
-import CuteBirdButton from '../components/funny/CuteBirdButton.vue'
-import DinosaurRunner from '../components/funny/DinosaurRunner.vue'
-import Egg from '../components/funny/Egg.vue'
+import { h } from 'vue'
+import { ArticleList, CuteBirdButton, Egg, DinosaurRunner, Elephant } from '../components'
+
 import '../style/index.scss'
 
 export default {
     ...DefaultTheme,
     Layout() {
         return h(DefaultTheme.Layout, null, {
-            'home-hero-after': () => h(CuteBirdButton)
+            'home-hero-after': () => h(CuteBirdButton),
+	        'layout-bottom':()=> h(Elephant),
         })
     },
     enhanceApp({ app }) {
@@ -18,7 +17,7 @@ export default {
         app.component('ArticleList', ArticleList)
         app.component('CuteBirdButton', CuteBirdButton)
         app.component('Egg', Egg)
-        app.component('DinosaurRunner', DinosaurRunner)
+	    app.component('DinosaurRunner', DinosaurRunner)
+	    app.component('Elephant', Elephant)
     }
 }
-
