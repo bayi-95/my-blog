@@ -9,14 +9,14 @@ export default {
     lastUpdated: true,
     ignoreDeadLinks: true,
     head: [
-        ['link', { rel: 'icon', href: '/my-blog/images/fish.jpg' }], //浏览器的标签栏的网页图标
+        ['link', { rel: 'icon', href: '/my-blog/images/fish.png' }], //浏览器的标签栏的网页图标
         ['link', { rel: 'manifest', href: '/my-blog/manifest.json' }],
         ['meta', { name: 'theme-color', content: '#235dc8' }],
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-        ['link', { rel: 'apple-touch-icon', href: '/my-blog/images/fish.jpg' }],
-        ['link', { rel: 'mask-icon', href: '/my-blog/images/fish.jpg', color: '#235dc8' }],
-        ['meta', { name: 'msapplication-TileImage', content: '/my-blog/images/fish.jpg' }],
+        ['link', { rel: 'apple-touch-icon', href: '/my-blog/images/fish.png' }],
+        ['link', { rel: 'mask-icon', href: '/my-blog/images/fish.png', color: '#235dc8' }],
+        ['meta', { name: 'msapplication-TileImage', content: '/my-blog/images/fish.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
         // 百度统计
         [
@@ -35,7 +35,7 @@ export default {
     ],
     themeConfig: {
         siteTitle: '秋殇の博客',
-        logo: '/images/fish.jpg',
+        logo: '/images/fish.png',
         lastUpdated: '上次更新',
         nav: [
             { text: '首页', link: '/' },
