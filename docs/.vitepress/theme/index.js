@@ -1,9 +1,9 @@
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import ArticleList from '../components/ArticleList.vue'
-import CuteBirdButton from '../components/CuteBirdButton.vue'
-import DinosaurRunner from '../components/DinosaurRunner.vue'
-import Egg from '../components/Egg.vue'
+import ArticleList from '../components/pages/ArticleList.vue'
+import CuteBirdButton from '../components/funny/CuteBirdButton.vue'
+import DinosaurRunner from '../components/funny/DinosaurRunner.vue'
+import Egg from '../components/funny/Egg.vue'
 import '../style/index.scss'
 
 export default {

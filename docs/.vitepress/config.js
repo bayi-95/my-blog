@@ -5,6 +5,7 @@ export default {
     title: '秋殇の博客',
     description: '申光普，博客，学习心得，日志，笔记...',
     website: 'https://github.com/bayi-95/',
+	outDir: '../public',
     lastUpdated: true,
     ignoreDeadLinks: true,
     head: [
