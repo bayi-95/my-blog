@@ -26,9 +26,7 @@
                 <div class="ele-foot"></div>
             </div>
         </div>
-        <div class="poetry">
-            象曰：「天行健，君子以自强不息。」
-        </div>
+        <div class="poetry">象曰：「天行健，君子以自强不息！」</div>
     </div>
 </template>
 
@@ -36,10 +34,11 @@
 export default {
     name: 'Elephant',
     mounted() {
-        const footerWrap = document.querySelector('.VPFooter');
-        const elephant = document.querySelector('.ele-container');
+        const footerWrap = document.querySelector('.VPFooter')
+        const elephant = document.querySelector('.ele-container')
         if (footerWrap) {
             footerWrap.append(elephant)
+            elephant.style.display = 'block'
         }
     }
 }
@@ -809,10 +808,9 @@ export default {
         top: -30px;
         right: 20px;
         z-index: 80;
-        display: block;
         width: 300px;
         height: 174px;
-        transform: scale(.3);
+        transform: scale(0.3);
         cursor: pointer;
     }
 }
