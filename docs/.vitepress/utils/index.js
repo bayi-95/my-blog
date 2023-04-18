@@ -22,7 +22,7 @@ async function getArticles() {
     pages = pages.filter((item) => item.frontMatter.isPage)
     // 排序
     pages.sort(compareDate)
-	// 置顶
+    // 置顶
     pages = sticky(pages, 'isSticky')
 
     return pages

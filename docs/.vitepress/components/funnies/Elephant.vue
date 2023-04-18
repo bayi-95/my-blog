@@ -26,19 +26,27 @@
                 <div class="ele-foot"></div>
             </div>
         </div>
-        <div class="poetry">象曰：「天行健，君子以自强不息！」</div>
+        <div class="poetry">象曰：「{{ poetry }}」</div>
     </div>
 </template>
 
 <script>
 export default {
     name: 'Elephant',
+    props: {
+        poetry: {
+            type: String,
+            default: '天行健，君子以自强不息！'
+        }
+    },
     mounted() {
         const footerWrap = document.querySelector('.VPFooter')
         const elephant = document.querySelector('.ele-container')
         if (footerWrap) {
             footerWrap.append(elephant)
-            elephant.style.display = 'block'
+            setTimeout(() => {
+                elephant.style.display = 'block'
+            }, 2000)
         }
     }
 }

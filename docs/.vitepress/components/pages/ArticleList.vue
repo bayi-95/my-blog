@@ -4,7 +4,7 @@
             <div class="article-header">
                 <div class="article-title">
                     <a :href="withBase(article.regularPath)"> {{ article.frontMatter.title }}</a>
-                    <img v-if="article.frontMatter.isSticky" class="tag-sticky" src="/images/sticky.svg" alt="置顶" />
+                    <img v-if="article.frontMatter.isSticky" class="tag-sticky" src="/images/blog/list/sticky.svg" alt="置顶" />
                 </div>
             </div>
             <p class="describe" v-html="article.frontMatter.description"></p>
@@ -29,7 +29,7 @@
     </template>
     <template v-else>
         <div class="empty-wrap flex-column item-center">
-            <img src="/images/nodata.svg" alt="icon-nodata" />
+            <img src="/images/blog/list/nodata.svg" alt="icon-nodata" />
             <p class="no-data">暂无文章</p>
         </div>
     </template>
