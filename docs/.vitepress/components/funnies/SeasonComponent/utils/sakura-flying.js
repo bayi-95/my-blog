@@ -160,10 +160,6 @@ window.onresize = function () {
 	sakuraCanvas.height = window.innerHeight
 }
 
-img.onload = function () {
-    startSakura()
-}
-
 export function stopSakura() {
     if (isSakura) {
 		window.cancelAnimationFrame(frame)
