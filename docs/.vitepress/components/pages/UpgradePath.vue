@@ -1,22 +1,22 @@
 <script>
 export default {
     name: 'UpgradePath',
-	functional: true,
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
-	},
-	render(h, { props, slots }) {
-		return h(
-			'div',
-			{
-				class: ['upgrade-path'],
-			},
-			[h('h4', props.title || 'Upgrade Path'), slots().default]
-		)
-	},
+    functional: true,
+    props: {
+        title: {
+            type: String,
+            required: true
+        }
+    },
+    render(h, { props, slots }) {
+        return h(
+            'div',
+            {
+                class: ['upgrade-path']
+            },
+            [h('h4', props.title || 'Upgrade Path'), slots().default]
+        )
+    }
 }
 </script>
 

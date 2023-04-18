@@ -17,10 +17,10 @@ export default {
         height() {
             const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
             return this.isMobile ? 340 : 600
-        },
+        }
     },
     mounted() {
-        this.startGame();
+        this.startGame()
     },
     methods: {
         startGame() {
@@ -342,7 +342,7 @@ export default {
                     document.removeEventListener(Runner.events.MOUSEUP, this)
                 },
                 isMobile: function () {
-                    return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+                    return /Mobi|Android|iPhone/i.test(navigator.userAgent)
                 },
                 onKeyDown: function (e) {
                     if (e.target != this.detailsButton) {
