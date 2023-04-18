@@ -1,43 +1,52 @@
 {
-  "name": "my-blog",
-  "version": "1.0.0",
-  "description": "我的博客，使用 vitepress 构建",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "vitepress dev docs --host 0.0.0.0",
-    "build": "vitepress build docs",
-    "preview": "vitepress preview docs",
-    "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, scss, json, md}\""
-  },
-  "keywords": [
-    "博客",
-    "申光普"
-  ],
-  "author": "申光普",
-  "license": "MIT",
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search"
-      ]
+    "name": "my-blog",
+    "version": "1.0.0",
+    "description": "我的博客，使用 vitepress 构建",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "vitepress dev docs --host 0.0.0.0",
+        "build": "vitepress build docs",
+        "prepare": "npx husky install",
+        "preview": "vitepress preview docs",
+        "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, scss, json, md}\""
+    },
+    "keywords": [
+        "博客",
+        "申光普"
+    ],
+    "author": "申光普",
+    "license": "MIT",
+    "pnpm": {
+        "peerDependencyRules": {
+            "ignoreMissing": [
+                "@algolia/client-search"
+            ]
+        }
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.18",
+        "@typescript-eslint/eslint-plugin": "^5.47.1",
+        "@typescript-eslint/parser": "^5.47.1",
+        "@typescript-eslint/types": "^5.47.1",
+        "autoprefixer": "^10.4.13",
+        "eslint": "^8.38.0",
+        "fs-extra": "^11.1.0",
+        "globby": "^13.1.3",
+        "gray-matter": "^4.0.3",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.1",
+        "postcss": "^8.1.0",
+        "prettier": "^2.8.1",
+        "sass": "^1.57.1",
+        "typescript": "^4.9.4",
+        "vitepress": "^1.0.0-alpha.65",
+        "vue": "^3.2.45"
+    },
+    "lint-staged": {
+        "{docs, daily}/**/*.{vue, js, scss, json, md}": [
+            "prettier --write",
+            "git add -A"
+        ]
     }
-  },
-  "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@typescript-eslint/eslint-plugin": "^5.47.1",
-    "@typescript-eslint/parser": "^5.47.1",
-    "@typescript-eslint/types": "^5.47.1",
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.38.0",
-    "fs-extra": "^11.1.0",
-    "globby": "^13.1.3",
-    "gray-matter": "^4.0.3",
-    "postcss": "^8.1.0",
-    "prettier": "^2.8.1",
-    "sass": "^1.57.1",
-    "typescript": "^4.9.4",
-    "vitepress": "^1.0.0-alpha.65",
-    "vue": "^3.2.45"
-  }
 }
