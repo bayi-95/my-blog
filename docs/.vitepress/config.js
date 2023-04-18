@@ -23,13 +23,13 @@ export default {
             'script',
             {},
             `
-			var _hmt = _hmt || [];
-			(function() {
-			  var hm = document.createElement("script");
-			  hm.src = "https://hm.baidu.com/hm.js?f00a6211b690ac3505105511f6b90b30";
-			  var s = document.getElementsByTagName("script")[0];
-			  s.parentNode.insertBefore(hm, s);
-			})();
+              var _hmt = _hmt || [];
+              (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?f00a6211b690ac3505105511f6b90b30";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+              })();
         `
         ]
     ],
