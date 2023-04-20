@@ -190,7 +190,6 @@ const current = ref(1)
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
             overflow: hidden;
-            width: 17rem;
         }
         .describe {
             font-size: 0.9375rem;
