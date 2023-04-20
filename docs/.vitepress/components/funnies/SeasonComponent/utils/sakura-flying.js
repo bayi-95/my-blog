@@ -113,6 +113,9 @@ function getRandom(option) {
 }
 
 export function startSakura() {
+    // 先暂停
+    stopSakura()
+    // 再开始
     const requestAnimationFrame =
         window.requestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -156,15 +159,15 @@ export function startSakura() {
 
 window.onresize = function () {
     const sakuraCanvas = document.getElementById('sakuraCanvas')
-	sakuraCanvas.width = window.innerWidth
-	sakuraCanvas.height = window.innerHeight
+    sakuraCanvas.width = window.innerWidth
+    sakuraCanvas.height = window.innerHeight
 }
 
 export function stopSakura() {
     if (isSakura) {
-		window.cancelAnimationFrame(frame)
-	    const sakuraCanvas = document.getElementById('sakuraCanvas')
-	    sakuraCanvas.parentNode.removeChild(sakuraCanvas)
+        window.cancelAnimationFrame(frame)
+        const sakuraCanvas = document.getElementById('sakuraCanvas')
+        sakuraCanvas.parentNode.removeChild(sakuraCanvas)
         isSakura = false
     }
 }
