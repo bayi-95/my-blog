@@ -351,12 +351,12 @@
 }
 
 .loading-container .fade-in {
-    animation: fade-in 2s ease;
-    -moz-animation: fade-in 2s ease;
+    animation: fade-in 1.5s ease;
+    -moz-animation: fade-in 1.5s ease;
     /* Firefox */
-    -webkit-animation: fade-in 2s ease;
+    -webkit-animation: fade-in 1.5s ease;
     /* Safari and Chrome */
-    -o-animation: fade-in 2s ease;
+    -o-animation: fade-in 1.5s ease;
     /* Opera */
 }
 
@@ -370,12 +370,12 @@
 }
 
 .loading-container .out {
-    animation: out 2s 15s ease;
-    -moz-animation: out 2s 15s ease;
+    animation: out 1.2s 1.7s ease;
+    -moz-animation: out 1.2s 1.7s ease;
     /* Firefox */
-    -webkit-animation: out 2s 15s ease;
+    -webkit-animation: out 1.2s 1.7s ease;
     /* Safari and Chrome */
-    -o-animation: out 2s 15s ease;
+    -o-animation: out 1.2s 1.7s ease;
     /* Opera */
 }
 
