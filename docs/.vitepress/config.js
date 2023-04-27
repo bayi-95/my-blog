@@ -1,4 +1,4 @@
-import { getArticles } from './utils'
+import { getArticles, EXTRA_CONFIG } from './utils'
 
 export default {
 	base: '/my-blog/',
@@ -31,7 +31,8 @@ export default {
                 s.parentNode.insertBefore(hm, s);
               })();
         `
-        ]
+        ],
+        ...EXTRA_CONFIG
     ],
     themeConfig: {
         siteTitle: '秋殇の博客',

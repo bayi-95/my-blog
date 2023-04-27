@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import { ArticleList, CuteBirdButton, Egg, DinosaurRunner, Elephant, SeasonComponent } from '../components'
+import { ArticleList, CuteBirdButton, Egg, DinosaurRunner, Elephant, FourSeasons } from '../components'
 
 import '../style/index.scss'
 
@@ -8,7 +8,7 @@ export default {
     ...DefaultTheme,
     Layout() {
         return h(DefaultTheme.Layout, null, {
-            'home-hero-before': () => h(SeasonComponent),
+            'home-hero-before': () => h(FourSeasons),
             'home-hero-after': () => h(CuteBirdButton),
             'layout-bottom': () => h(Elephant)
         })
@@ -20,6 +20,6 @@ export default {
         app.component('Egg', Egg)
         app.component('DinosaurRunner', DinosaurRunner)
 	    app.component('Elephant', Elephant)
-	    app.component('SeasonComponent', SeasonComponent)
+	    app.component('FourSeasons', FourSeasons)
     }
 }

@@ -4,6 +4,7 @@
 
 <script>
 import SakuraFlying from './modules/SakuraFlying.vue'
+import { markRaw } from 'vue'
 
 const SEASON_MAP = {
     spring: SakuraFlying,
@@ -21,7 +22,7 @@ export default {
         }
     },
     created() {
-        this.component = SEASON_MAP[this.judgeSeason()]
+        this.component = markRaw(SEASON_MAP[this.judgeSeason()])
     },
     methods: {
         judgeSeason() {
