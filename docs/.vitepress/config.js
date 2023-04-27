@@ -1,4 +1,4 @@
-import { getArticles, EXTRA_CONFIG } from './utils'
+import { getArticles } from './utils/article'
 
 export default {
 	base: '/my-blog/',
@@ -32,7 +32,6 @@ export default {
               })();
         `
         ],
-        ...EXTRA_CONFIG
     ],
     themeConfig: {
         siteTitle: '秋殇の博客',

@@ -13,13 +13,18 @@ export default {
             'layout-bottom': () => h(Elephant)
         })
     },
-    enhanceApp({ app }) {
-        // register global compoment
+    async enhanceApp({ app }) {
+        // 插入执行的方法
+        if (!import.meta.env.SSR) {
+            const { renderLoading } = await import('../utils')
+            renderLoading()
+        }
+        // register global components
         app.component('ArticleList', ArticleList)
         app.component('CuteBirdButton', CuteBirdButton)
         app.component('Egg', Egg)
         app.component('DinosaurRunner', DinosaurRunner)
-	    app.component('Elephant', Elephant)
-	    app.component('FourSeasons', FourSeasons)
+        app.component('Elephant', Elephant)
+        app.component('FourSeasons', FourSeasons)
     }
 }
