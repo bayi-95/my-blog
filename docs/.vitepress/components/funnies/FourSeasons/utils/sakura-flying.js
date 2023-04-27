@@ -126,7 +126,7 @@ export function startSakura() {
     hasSakura = true
     canvas.height = window.innerHeight
     canvas.width = window.innerWidth
-    canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;')
+    canvas.setAttribute('style', 'position: fixed;top: 0;left: 0;z-index: 50;pointer-events: none;')
     canvas.setAttribute('id', 'sakuraCanvas')
     document.getElementsByTagName('body')[0].appendChild(canvas)
     cxt = canvas.getContext('2d')
