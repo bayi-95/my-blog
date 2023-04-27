@@ -6,12 +6,12 @@
     <title>秋殇の博客 | 秋殇の博客</title>
     <meta name="description" content="申光普，博客，学习心得，日志，笔记...">
     <link rel="preload stylesheet" href="/my-blog/assets/style.96478005.css" as="style">
-    <script type="module" src="/my-blog/assets/app.c9764b10.js"></script>
+    <script type="module" src="/my-blog/assets/app.42b9527a.js"></script>
     <link rel="preload" href="/my-blog/assets/inter-roman-latin.2ed14f66.woff2" as="font" type="font/woff2" crossorigin="">
-  <link rel="modulepreload" href="/my-blog/assets/chunks/framework.3c6773dd.js">
-  <link rel="modulepreload" href="/my-blog/assets/chunks/theme.47866db9.js">
+  <link rel="modulepreload" href="/my-blog/assets/chunks/framework.7215de43.js">
+  <link rel="modulepreload" href="/my-blog/assets/chunks/theme.41bcdc01.js">
   <link rel="modulepreload" href="/my-blog/assets/chunks/sakura-flying.63746b43.js">
-  <link rel="modulepreload" href="/my-blog/assets/pages_vue_code.md.17590e32.lean.js">
+  <link rel="modulepreload" href="/my-blog/assets/pages_vue_code.md.5d1e4969.lean.js">
   <link rel="icon" href="/my-blog/images/index/fish.png">
   <link rel="manifest" href="/my-blog/manifest.json">
   <meta name="theme-color" content="#235dc8">
@@ -22,6 +22,329 @@
   <meta name="msapplication-TileImage" content="/my-blog/images/index/fish.png">
   <meta name="msapplication-TileColor" content="#000000">
   <script>var _hmt=_hmt||[];(function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?f00a6211b690ac3505105511f6b90b30";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+  <style type="text/css">
+            .loading-container {
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: 10000;
+              background: #161B29;
+              margin: 0 auto;
+              height: 100%;
+              width: 100%;
+            }
+            
+            .loading-container .container {
+              position: fixed;
+              width: 40vw;
+              height: 45vw;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              z-index: 666;
+            }
+            
+            .loading-container .common {
+              height: 5vw;
+              max-height: 100%;
+              overflow: auto;
+              width: 2vw;
+              margin: auto;
+              max-width: 100%;
+              position: absolute;
+              background-color: ;
+              border-radius: 0vw 10vw 0vw 10vw;
+              box-shadow: inset 0vw 0vw 0vw .1vw #E645D0, 0vw 0vw 1.5vw 0vw #E645D0;
+            }
+            
+            .loading-container .one {
+              transform: rotate(45deg);
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 7.5vw;
+            }
+            
+            .loading-container .two {
+              transform: rotate(90deg);
+              left: 5.5vw;
+              right: 0;
+              top: 0;
+              bottom: 5.5vw;
+            }
+            
+            .loading-container .three {
+              transform: rotate(135deg);
+              left: 7.5vw;
+              right: 0;
+              top: 0;
+              bottom: 0;
+            }
+            
+            .loading-container .four {
+              transform: rotate(180deg);
+              left: 5.5vw;
+              right: 0;
+              top: 5.5vw;
+              bottom: 0;
+            }
+            
+            .loading-container .five {
+              transform: rotate(225deg);
+              left: 0;
+              right: 0;
+              top: 7.5vw;
+              bottom: 0;
+            }
+            
+            .loading-container .six {
+              transform: rotate(270deg);
+              left: 0;
+              right: 5.5vw;
+              top: 5.5vw;
+              bottom: 0;
+            }
+            
+            .loading-container .seven {
+              transform: rotate(315deg);
+              left: 0;
+              right: 7.5vw;
+              top: 0;
+              bottom: 0;
+            }
+            
+            .loading-container .eight {
+              transform: rotate(360deg);
+              left: 0;
+              right: 5.5vw;
+              top: 0;
+              bottom: 5.5vw;
+            }
+            
+            .loading-container .bar {
+              width: 12vw;
+              height: .25vw;
+              left: 0;
+              right: 0;
+              top: 16vw;
+              bottom: 0;
+              margin: auto;
+              overflow: hidden;
+              background: #E645D0;
+            }
+            
+            .loading-container .one {
+              animation: one 1s ease infinite;
+              -moz-animation: one 1s ease infinite;
+              /* Firefox */
+              -webkit-animation: one 1s ease infinite;
+              /* Safari and Chrome */
+              -o-animation: one 1s ease infinite;
+              /* Opera */
+            }
+            
+            @keyframes one {
+              0%,
+              100% {}
+              50% {
+                background: ;
+                box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+              }
+            }
+            
+            .loading-container .two {
+              animation: two 1s .125s ease infinite;
+              -moz-animation: two 1s .125s ease infinite;
+              /* Firefox */
+              -webkit-animation: two 1s .125s ease infinite;
+              /* Safari and Chrome */
+              -o-animation: two 1s .125s ease infinite;
+              /* Opera */
+            }
+            
+            @keyframes two {
+              0%,
+              100% {}
+              50% {
+                background: ;
+                box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+              }
+            }
+            
+            .loading-container .three {
+              animation: three 1s .25s ease infinite;
+              -moz-animation: three 1s .25s ease infinite;
+              /* Firefox */
+              -webkit-animation: three 1s .25s ease infinite;
+              /* Safari and Chrome */
+              -o-animation: three 1s .25s ease infinite;
+              /* Opera */
+            }
+            
+            @keyframes three {
+              0%,
+              100% {}
+              50% {
+                background: ;
+                box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+              }
+            }
+            
+            .loading-container .four {
+              animation: four 1s .375s ease infinite;
+              -moz-animation: four 1s .375s ease infinite;
+              /* Firefox */
+              -webkit-animation: four 1s .375s ease infinite;
+              /* Safari and Chrome */
+              -o-animation: four 1s .375s ease infinite;
+              /* Opera */
+            }
+            
+            @keyframes four {
+              0%,
+              100% {}
+              50% {
+                background: ;
+                box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+              }
+            }
+            
+            .loading-container .five {
+              animation: five 1s .5s ease infinite;
+              -moz-animation: five 1s .5s ease infinite;
+              /* Firefox */
+              -webkit-animation: five 1s .5s ease infinite;
+              /* Safari and Chrome */
+              -o-animation: five 1s .5s ease infinite;
+              /* Opera */
+            }
+            
+            @keyframes five {
+              0%,
+              100% {}
+              50% {
+                background: ;
+                box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+              }
+            }
+            
+            .loading-container .six {
+              animation: six 1s .625s ease infinite;
+              -moz-animation: six 1s .625s ease infinite;
+              /* Firefox */
+              -webkit-animation: six 1s .625s ease infinite;
+              /* Safari and Chrome */
+              -o-animation: six 1s .625s ease infinite;
+              /* Opera */
+            }
+            
+            @keyframes six {
+              0%,
+              100% {}
+              50% {
+                background: ;
+                box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+              }
+            }
+            
+            .loading-container .seven {
+              animation: seven 1s .750s ease infinite;
+              -moz-animation: seven 1s .750s ease infinite;
+              /* Firefox */
+              -webkit-animation: seven 1s .750s ease infinite;
+              /* Safari and Chrome */
+              -o-animation: seven 1s .750s ease infinite;
+              /* Opera */
+            }
+            
+            @keyframes seven {
+              0%,
+              100% {}
+              50% {
+                background: ;
+                box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+              }
+            }
+            
+            .loading-container .eight {
+              animation: eight 1s .875s ease infinite;
+              -moz-animation: eight 1s .875s ease infinite;
+              /* Firefox */
+              -webkit-animation: eight 1s .875s ease infinite;
+              /* Safari and Chrome */
+              -o-animation: eight 1s .875s ease infinite;
+              /* Opera */
+            }
+            
+            @keyframes eight {
+              0%,
+              100% {}
+              50% {
+                background: ;
+                box-shadow: inset 0vw 0vw 0vw .1vw #17E1E6, 0vw 0vw 1.5vw 0vw #17E1E6;
+              }
+            }
+            
+            .loading-container .container {
+              animation: container 5s linear infinite;
+              -moz-animation: container 5s linear infinite;
+              /* Firefox */
+              -webkit-animation: container 5s linear infinite;
+              /* Safari and Chrome */
+              -o-animation: container 5s linear infinite;
+              /* Opera */
+            }
+            
+            @keyframes container {
+              from {
+                transform: rotate(0deg);
+              }
+              to {
+                transform: rotate(-360deg);
+              }
+            }
+            
+            .loading-container .fade-in {
+              animation: fade-in 2s ease;
+              -moz-animation: fade-in 2s ease;
+              /* Firefox */
+              -webkit-animation: fade-in 2s ease;
+              /* Safari and Chrome */
+              -o-animation: fade-in 2s ease;
+              /* Opera */
+            }
+            
+            @keyframes fade-in {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 1;
+              }
+            }
+            
+            .loading-container .out {
+              animation: out 2s 15s ease;
+              -moz-animation: out 2s 15s ease;
+              /* Firefox */
+              -webkit-animation: out 2s 15s ease;
+              /* Safari and Chrome */
+              -o-animation: out 2s 15s ease;
+              /* Opera */
+            }
+            
+            @keyframes out {
+              from {
+                opacity: 1;
+              }
+              to {
+                opacity: 0;
+              }
+            }
+        </style>
+  <script>const body=document.getElementsByTagName("body")[0],loading=document.createElement("div");loading.className="loading-container",loading.innerHTML='<div class="out"><div class="fade-in"><div class="container"><div class="one common"></div><div class="two common"></div><div class="three common"></div><div class="four common"></div><div class="five common"></div><div class="six common"></div><div class="seven common"></div><div class="eight common"></div></div></div></div>',body.appendChild(loading),setTimeout(function(){document.body.contains(loading)&&body.removeChild(loading)},3e3);</script>
   <script id="check-dark-light">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
   </head>
   <body>
@@ -84,8 +407,8 @@
 <span class="line"><span style="color:#F07178;">    </span><span style="color:#89DDFF;">}</span><span style="color:#F07178;"> </span><span style="color:#82AAFF;">eggch</span><span style="color:#F07178;"> (</span><span style="color:#A6ACCD;">e</span><span style="color:#F07178;">) </span><span style="color:#89DDFF;">{</span></span>
 <span class="line"><span style="color:#F07178;">        </span><span style="color:#82AAFF;">reject</span><span style="color:#F07178;">(</span><span style="color:#A6ACCD;">e</span><span style="color:#F07178;">)</span><span style="color:#89DDFF;">;</span></span>
 <span class="line"><span style="color:#F07178;">    </span><span style="color:#89DDFF;">}</span></span>
-<span class="line"><span style="color:#89DDFF;">}</span></span></code></pre></div></div></div></main><footer class="VPDocFooter" data-v-95d3a467 data-v-1558329e><!--[--><!--]--><div class="edit-info" data-v-1558329e><div class="edit-link" data-v-1558329e><a class="VPLink link edit-link-button" href="https://github.com/bayi-95/my-blog/tree/master/docs/pages/vue/code.md" target="_blank" rel="noreferrer" data-v-1558329e data-v-97fff0ac><!--[--><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="edit-link-icon" aria-label="edit icon" data-v-1558329e><path d="M18,23H4c-1.7,0-3-1.3-3-3V6c0-1.7,1.3-3,3-3h7c0.6,0,1,0.4,1,1s-0.4,1-1,1H4C3.4,5,3,5.4,3,6v14c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1v-7c0-0.6,0.4-1,1-1s1,0.4,1,1v7C21,21.7,19.7,23,18,23z"></path><path d="M8,17c-0.3,0-0.5-0.1-0.7-0.3C7,16.5,6.9,16.1,7,15.8l1-4c0-0.2,0.1-0.3,0.3-0.5l9.5-9.5c1.2-1.2,3.2-1.2,4.4,0c1.2,1.2,1.2,3.2,0,4.4l-9.5,9.5c-0.1,0.1-0.3,0.2-0.5,0.3l-4,1C8.2,17,8.1,17,8,17zM9.9,12.5l-0.5,2.1l2.1-0.5l9.3-9.3c0.4-0.4,0.4-1.1,0-1.6c-0.4-0.4-1.2-0.4-1.6,0l0,0L9.9,12.5z M18.5,2.5L18.5,2.5L18.5,2.5z"></path></svg> Edit this page<!--]--><!----></a></div><div class="last-updated" data-v-1558329e><p class="VPLastUpdated" data-v-1558329e data-v-225309bc>Last updated: <time datetime="2023-04-20T10:04:09.000Z" data-v-225309bc></time></p></div></div><!----></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter" data-v-4dce087c data-v-9df56115><div class="container" data-v-9df56115><p class="message" data-v-9df56115>部分文章收录于网络，转载请署名出处 | 联系博主可以发送邮件至 <a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a></p><p class="copyright" data-v-9df56115>Copyright © 2020-present</p></div></footer><!--[--><div class="ele-container" data-v-95a24612><div class="ele-wrapper" data-v-95a24612><div class="ele-tail" data-v-95a24612></div><div class="ele-body" data-v-95a24612><div class="ele-head" data-v-95a24612><div class="ele-eyebrows" data-v-95a24612></div><div class="ele-eyes" data-v-95a24612></div><div class="ele-eyeballs" data-v-95a24612></div><div class="ele-mouth" data-v-95a24612></div><div class="ele-fang-front" data-v-95a24612></div><div class="ele-fang-back" data-v-95a24612></div><div class="ele-ear" data-v-95a24612></div></div></div><div class="ele-leg-1 ele-leg-back" data-v-95a24612><div class="ele-foot" data-v-95a24612></div></div><div class="ele-leg-2 ele-leg-front" data-v-95a24612><div class="ele-foot" data-v-95a24612></div></div><div class="ele-leg-3 ele-leg-back" data-v-95a24612><div class="ele-foot" data-v-95a24612></div></div><div class="ele-leg-4 ele-leg-front" data-v-95a24612><div class="ele-foot" data-v-95a24612></div></div></div><div class="poetry" data-v-95a24612>象曰：「天行健，君子以自强不息！」</div></div><!--]--></div></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"9b18c3be\",\"pages_javascript_暗黑模式前端修改方案.md\":\"d3f4c0b4\",\"pages_javascript_code.md\":\"1b05a55e\",\"pages_javascript_前端commit规范.md\":\"81506d9d\",\"pages_idea_思维模型.md\":\"f1b784a2\",\"pages_idea_爱和治愈自己.md\":\"1a0d254d\",\"pages_javascript_source.md\":\"cbd86c70\",\"pages_javascript_使用tailwindcss.md\":\"7684f044\",\"pages_list_index.md\":\"0a5a2ddc\",\"pages_logs_index.md\":\"a83d0728\",\"pages_react-native_source.md\":\"e73ceecc\",\"pages_react-native_code.md\":\"0b53839e\",\"pages_react-native_index.md\":\"551bdf13\",\"pages_python_code.md\":\"d7778ebf\",\"pages_python_source.md\":\"d270c2b8\",\"pages_react_source.md\":\"a89a61bf\",\"pages_react_code.md\":\"25a4ebfe\",\"pages_vue_code.md\":\"17590e32\",\"pages_vue_source.md\":\"420ddb92\"}")
+<span class="line"><span style="color:#89DDFF;">}</span></span></code></pre></div></div></div></main><footer class="VPDocFooter" data-v-95d3a467 data-v-1558329e><!--[--><!--]--><div class="edit-info" data-v-1558329e><div class="edit-link" data-v-1558329e><a class="VPLink link edit-link-button" href="https://github.com/bayi-95/my-blog/tree/master/docs/pages/vue/code.md" target="_blank" rel="noreferrer" data-v-1558329e data-v-97fff0ac><!--[--><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="edit-link-icon" aria-label="edit icon" data-v-1558329e><path d="M18,23H4c-1.7,0-3-1.3-3-3V6c0-1.7,1.3-3,3-3h7c0.6,0,1,0.4,1,1s-0.4,1-1,1H4C3.4,5,3,5.4,3,6v14c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1v-7c0-0.6,0.4-1,1-1s1,0.4,1,1v7C21,21.7,19.7,23,18,23z"></path><path d="M8,17c-0.3,0-0.5-0.1-0.7-0.3C7,16.5,6.9,16.1,7,15.8l1-4c0-0.2,0.1-0.3,0.3-0.5l9.5-9.5c1.2-1.2,3.2-1.2,4.4,0c1.2,1.2,1.2,3.2,0,4.4l-9.5,9.5c-0.1,0.1-0.3,0.2-0.5,0.3l-4,1C8.2,17,8.1,17,8,17zM9.9,12.5l-0.5,2.1l2.1-0.5l9.3-9.3c0.4-0.4,0.4-1.1,0-1.6c-0.4-0.4-1.2-0.4-1.6,0l0,0L9.9,12.5z M18.5,2.5L18.5,2.5L18.5,2.5z"></path></svg> Edit this page<!--]--><!----></a></div><div class="last-updated" data-v-1558329e><p class="VPLastUpdated" data-v-1558329e data-v-225309bc>Last updated: <time datetime="2023-04-27T10:46:53.000Z" data-v-225309bc></time></p></div></div><!----></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter" data-v-4dce087c data-v-9df56115><div class="container" data-v-9df56115><p class="message" data-v-9df56115>部分文章收录于网络，转载请署名出处 | 联系博主可以发送邮件至 <a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a></p><p class="copyright" data-v-9df56115>Copyright © 2020-present</p></div></footer><!--[--><div class="ele-container" data-v-95a24612><div class="ele-wrapper" data-v-95a24612><div class="ele-tail" data-v-95a24612></div><div class="ele-body" data-v-95a24612><div class="ele-head" data-v-95a24612><div class="ele-eyebrows" data-v-95a24612></div><div class="ele-eyes" data-v-95a24612></div><div class="ele-eyeballs" data-v-95a24612></div><div class="ele-mouth" data-v-95a24612></div><div class="ele-fang-front" data-v-95a24612></div><div class="ele-fang-back" data-v-95a24612></div><div class="ele-ear" data-v-95a24612></div></div></div><div class="ele-leg-1 ele-leg-back" data-v-95a24612><div class="ele-foot" data-v-95a24612></div></div><div class="ele-leg-2 ele-leg-front" data-v-95a24612><div class="ele-foot" data-v-95a24612></div></div><div class="ele-leg-3 ele-leg-back" data-v-95a24612><div class="ele-foot" data-v-95a24612></div></div><div class="ele-leg-4 ele-leg-front" data-v-95a24612><div class="ele-foot" data-v-95a24612></div></div></div><div class="poetry" data-v-95a24612>象曰：「天行健，君子以自强不息！」</div></div><!--]--></div></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"pages_idea_思维模型.md\":\"d970ac14\",\"index.md\":\"9d112f51\",\"pages_idea_爱和治愈自己.md\":\"f179f634\",\"pages_react-native_source.md\":\"8c84777e\",\"pages_javascript_使用tailwindcss.md\":\"0dd95397\",\"pages_javascript_暗黑模式前端修改方案.md\":\"ba0f8335\",\"pages_list_index.md\":\"2539f21b\",\"pages_logs_index.md\":\"d87b3898\",\"pages_python_source.md\":\"7437a244\",\"pages_react-native_code.md\":\"b3f45b50\",\"pages_react-native_index.md\":\"6285ce7c\",\"pages_python_code.md\":\"1b9ed41d\",\"pages_javascript_前端commit规范.md\":\"d35d32c4\",\"pages_javascript_code.md\":\"f46b5bec\",\"pages_javascript_source.md\":\"b8164c02\",\"pages_vue_code.md\":\"5d1e4969\",\"pages_react_source.md\":\"4f130ea7\",\"pages_vue_source.md\":\"61a0915b\",\"pages_react_code.md\":\"245b2f8f\"}")
 __VP_SITE_DATA__ = JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"秋殇の博客\",\"description\":\"申光普，博客，学习心得，日志，笔记...\",\"base\":\"/my-blog/\",\"head\":[],\"appearance\":true,\"themeConfig\":{\"siteTitle\":\"秋殇の博客\",\"logo\":\"/images/index/fish.png\",\"lastUpdated\":\"上次更新\",\"nav\":[{\"text\":\"首页\",\"link\":\"/\"},{\"text\":\"文章\",\"link\":\"/pages/list/\"},{\"text\":\"分类\",\"ariaLabel\":\"分类\",\"items\":[{\"text\":\"vue\",\"link\":\"/pages/vue/code.md\"},{\"text\":\"javascript\",\"link\":\"/pages/javascript/code.md\"},{\"text\":\"react\",\"link\":\"/pages/react/code.md\"},{\"text\":\"react-native\",\"link\":\"/pages/react-native/code.md\"},{\"text\":\"python\",\"link\":\"/pages/python/code.md\"}]},{\"text\":\"日志\",\"link\":\"/pages/logs/\"}],\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/bayi-95/\"}],\"editLink\":{\"pattern\":\"https://github.com/bayi-95/my-blog/tree/master/docs/:path\",\"text\":\"Edit this page\"},\"footer\":{\"message\":\"部分文章收录于网络，转载请署名出处 | 联系博主可以发送邮件至 <a href=\\\"mailto:necro.vice@yahoo.com\\\">necro.vice@yahoo.com</a>\",\"copyright\":\"Copyright © 2020-present\"},\"articles\":[{\"frontMatter\":{\"title\":\"思维模型\",\"description\":\"思维模型\",\"date\":\"2023-04-13\",\"isPage\":true,\"isSticky\":true,\"tags\":[\"思维模型\",\"笔记\"]},\"regularPath\":\"/pages/idea/思维模型.html\",\"relativePath\":\"docs/pages/idea/思维模型.md\"},{\"frontMatter\":{\"title\":\"前端 commit 规范\",\"description\":\"通过遵循约定式提交规范，开发人员可以更容易地理解和管理代码的变更历史，同时也为自动化工具提供了更多可靠的信息，例如自动生成版本号、发布日志和代码库更新等操作。\",\"date\":\"2023-03-29\",\"isPage\":true,\"tags\":[\"前端\",\"commit\"]},\"regularPath\":\"/pages/javascript/前端commit规范.html\",\"relativePath\":\"docs/pages/javascript/前端commit规范.md\"},{\"frontMatter\":{\"title\":\"使用tailwindcss\",\"description\":\"css 预处理工具，提供原子化的样式，灵活的配置，使用方便，tree-shake 减小文件体积。\",\"date\":\"2023-03-29\",\"isPage\":true,\"tags\":[\"前端\",\"css\"]},\"regularPath\":\"/pages/javascript/使用tailwindcss.html\",\"relativePath\":\"docs/pages/javascript/使用tailwindcss.md\"},{\"frontMatter\":{\"title\":\"爱和治愈自己\",\"description\":\"幸运的人一生都在被童年治愈，不幸的人一生都在治愈童年。\",\"date\":\"2023-03-29\",\"isPage\":true,\"tags\":[\"情感\"]},\"regularPath\":\"/pages/idea/爱和治愈自己.html\",\"relativePath\":\"docs/pages/idea/爱和治愈自己.md\"},{\"frontMatter\":{\"title\":\"暗黑模式前端修改方案\",\"description\":\"之前我们做过公有云换肤方案，有长沙、乌鲁木齐几种主题包，使用的是样式变量的方式，可以支持在线动态换肤。结合这次暗黑模式的需求，综合考虑适用性、改动量，沿用这种方案，新增dark主题，做了些代码改造.\",\"isPage\":true,\"date\":\"2023-01-18\",\"tags\":[\"换肤\",\"暗黑\"]},\"regularPath\":\"/pages/javascript/暗黑模式前端修改方案.html\",\"relativePath\":\"docs/pages/javascript/暗黑模式前端修改方案.md\"}],\"algolia\":{\"appId\":\"5VSYJHYEBM\",\"apiKey\":\"3071496c8c2cbabf56c677eb7093170d\",\"indexName\":\"prod_bayi95\"}},\"locales\":{},\"scrollOffset\":90,\"cleanUrls\":false}")</script>
     
   </body>
