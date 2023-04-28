@@ -129,6 +129,12 @@ const current = ref(1)
         margin: 10px 0;
         line-height: 1.5rem;
     }
+}
+
+.pagination {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
     .link {
         display: inline-block;
         width: 24px;
@@ -154,25 +160,19 @@ const current = ref(1)
     }
 }
 
-.pagination {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-}
-
 .empty-wrap {
     margin-top: 3rem;
-}
-
-.empty-wrap .no-data,
-.no-more {
-    color: var(--vp-c-text-2);
 }
 
 .no-more {
     padding: 1rem;
     text-align: center;
     font-size: 14px;
+}
+
+.empty-wrap .no-data,
+.no-more {
+    color: var(--vp-c-text-2);
 }
 
 @media screen and (max-width: 768px) {

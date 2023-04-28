@@ -1,5 +1,20 @@
 // 插入页面的额外脚本或者style
-export const EXTRA_CONFIG = []
+export const EXTRA_CONFIG = [
+    // 百度统计
+    [
+        'script',
+        {},
+        `
+              var _hmt = _hmt || [];
+              (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?f00a6211b690ac3505105511f6b90b30";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+              })();
+        `
+    ],
+]
 
 // 渲染 loading
 export function renderLoading() {

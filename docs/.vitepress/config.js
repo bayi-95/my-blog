@@ -1,4 +1,5 @@
 import { getArticles } from './utils/article'
+import { EXTRA_CONFIG }  from './utils';
 
 export default {
 	base: '/my-blog/',
@@ -18,20 +19,8 @@ export default {
         ['link', { rel: 'mask-icon', href: '/my-blog/images/index/fish.png', color: '#235dc8' }],
         ['meta', { name: 'msapplication-TileImage', content: '/my-blog/images/index/fish.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-        // 百度统计
-        [
-            'script',
-            {},
-            `
-              var _hmt = _hmt || [];
-              (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?f00a6211b690ac3505105511f6b90b30";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-              })();
-        `
-        ],
+        // 额外要插入的 js、style
+        ...EXTRA_CONFIG
     ],
     themeConfig: {
         siteTitle: '秋殇の博客',
@@ -45,7 +34,7 @@ export default {
                 ariaLabel: '分类',
                 items: [
                     { text: 'vue', link: '/pages/vue/code.md' },
-                    { text: 'javascript', link: '/pages/javascript/code.md' },
+                    { text: 'javascript', link: '/pages/javascript/前端commit规范.md' },
                     { text: 'react', link: '/pages/react/code.md' },
                     { text: 'react-native', link: '/pages/react-native/code.md' },
                     { text: 'python', link: '/pages/python/code.md' }
