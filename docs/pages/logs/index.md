@@ -6,6 +6,13 @@ sidebar: auto
 
 # 我的日志
 
+
+### 5/5/23
+
+∆ update: 修改天气组件，天气数据过接口 api 获取
+
+来源：心知天气-天气实况 https://api.seniverse.com/v3/weather/now.json
+
 ### 4/28/23
 
 ∆ feat: 新增天气组件，是很漂亮的 css 动效

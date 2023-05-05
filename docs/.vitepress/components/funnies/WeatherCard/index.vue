@@ -39,9 +39,9 @@
                         <g id="cloud1" class="cloud"></g>
                     </svg>
                     <div class="details">
-                        <div class="temp">20<span>c</span></div>
+                        <div class="temp">{{ weather.now.temperature }}<span>°C</span></div>
                         <div class="right">
-                            <div id="date">Monday 22 August</div>
+                            <div id="date">{{ dateStr }}</div>
                             <div id="summary"></div>
                         </div>
                     </div>
@@ -74,13 +74,107 @@
 </template>
 
 <script>
+import { parseTime } from '../../../utils'
+
 export default {
     name: 'WeatherCard',
-    mounted() {
+    data() {
+        return {
+            weather: {
+                now: {},
+                location: {}
+            }
+        }
+    },
+    async mounted() {
+        const [weather] = await this.getWeatherData()
+        const { type } = this.getWeatherType(weather)
         import('./index').then(({ init, startFrame, unmounted }) => {
-            init()
+            init(type)
             startFrame()
         })
+    },
+    computed: {
+        dateStr() {
+            const time = parseTime(new Date(), ' {m}月{d}日 星期{a}')
+            return `${this.weather.location.name} / ${time}`
+        }
+    },
+    methods: {
+        getWeatherData() {
+            return new Promise((resolve) => {
+                var xhr = new XMLHttpRequest()
+                xhr.open(
+                    'GET',
+                    'https://api.seniverse.com/v3/weather/now.json?key=Sj_SMCO68wk7rkJyv&location=wuhan&language=zh-Hans&unit=c'
+                )
+                xhr.responseType = 'json'
+                xhr.send()
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        // 成功接收到响应
+                        resolve(xhr.response.results)
+                    } else {
+                        // 请求失败
+                        console.log('请求失败：' + xhr.status)
+                    }
+                }
+            })
+        },
+        getWeatherType(weather) {
+            const { now } = weather
+            const { text: name, code } = now
+
+            this.weather = weather
+
+            switch (code) {
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                    // 晴天
+                    return { type: 'sun', name }
+                case '4': // 多云
+                case '5': // 晴间多云
+                case '6': // 晴间多云 晚上
+                case '7': // 大部多云
+                case '8': // 大部多云晚上
+                case '9': // 阴
+                    // 多云
+                    return { type: '', name }
+                case '10': // 阵雨
+                case '11': // 雷阵雨
+                case '12': // 雷阵雨伴有冰雹
+                case '13': // 小雨
+                case '14': // 中雨
+                case '15': // 大雨
+                case '19': // 冻雨
+                    // 雨
+                    return { type: 'rain', name }
+                case '16': // 暴雨
+                case '17': // 大暴雨
+                case '18': // 特大暴雨
+                    // 暴雨
+                    return { type: 'thunder', name }
+                case '20': // 雨夹雪
+                case '21': // 阵雪
+                case '22': // 小雪
+                case '23': // 中雪
+                case '24': // 大雪
+                case '25': // 暴雪
+                    // 雪
+                    return { type: 'snow', name }
+                case '32': // 风
+                case '33': // 大风
+                case '34': // 飓风
+                case '35': // 热带风暴
+                case '36': // 龙卷风
+                    // 风
+                    return { type: 'wind', name }
+                default:
+                    return { type: 'sun', name }
+            }
+        }
     }
 }
 </script>
@@ -209,6 +303,7 @@ nav li a.active {
 }
 #card .details #date {
     margin: 4px 0;
+    font-size: 14px;
 }
 #card .details #summary {
     font-weight: 600;

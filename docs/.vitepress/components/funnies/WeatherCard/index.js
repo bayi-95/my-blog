@@ -82,7 +82,7 @@ var snow = []
 
 window.addEventListener('resize', onResize)
 
-export function init() {
+export function init(type) {
     onResize()
 
     // 🖱 bind weather menu buttons
@@ -106,7 +106,7 @@ export function init() {
     // ☀️ set initial weather
 
     TweenMax.set(sunburst.node, { opacity: 0 })
-    changeWeather(weather[0])
+    changeWeather(weather.find((item) => item.type === type) || weather[0])
 
     // 🏃 start animations
 
