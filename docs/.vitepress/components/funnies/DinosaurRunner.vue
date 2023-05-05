@@ -216,7 +216,11 @@ export default {
                             this.dimensions.WIDTH +
                             'px }' +
                             '}'
-                        document.styleSheets[0].insertRule(keyframes, 0)
+
+                        var style = document.createElement('style')
+                        style.appendChild(document.createTextNode(keyframes))
+                        document.getElementsByTagName('head')[0].appendChild(style)
+
                         this.containerEl = document.getElementById('runner-container')
                         this.containerEl.addEventListener('webkitAnimationEnd', this.startGame.bind(this))
 
