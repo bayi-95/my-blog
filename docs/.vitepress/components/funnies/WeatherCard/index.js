@@ -51,11 +51,12 @@ var clouds = [{ group: Snap.select('#cloud1') }, { group: Snap.select('#cloud2')
 // set weather types ☁️ 🌬 🌧 ⛈ ☀️
 
 var weather = [
-    { type: 'snow', name: 'Snow' },
-    { type: 'wind', name: 'Windy' },
-    { type: 'rain', name: 'Rain' },
-    { type: 'thunder', name: 'Storms' },
-    { type: 'sun', name: 'Sunny' }
+    { type: 'snow', name: '雪' },
+    { type: 'cloud', name: '多云' },
+    { type: 'wind', name: '有风' },
+    { type: 'rain', name: '有雨' },
+    { type: 'thunder', name: '雷雨' },
+    { type: 'sun', name: '晴' }
 ]
 
 // 🛠 app settings
@@ -82,7 +83,7 @@ var snow = []
 
 window.addEventListener('resize', onResize)
 
-export function init(type) {
+export function init(current) {
     onResize()
 
     // 🖱 bind weather menu buttons
@@ -90,10 +91,12 @@ export function init(type) {
     for (var i = 0; i < weather.length; i++) {
         var w = weather[i]
         var b = document.querySelector('#button-' + w.type)
-        w.button = b
-        ;(function (w) {
-            b.addEventListener('click', (e) => changeWeather(w, e))
-        })(w)
+        if (b) {
+            w.button = b
+            ;(function (w) {
+                b.addEventListener('click', (e) => changeWeather(w, e))
+            })(w)
+        }
     }
 
     // ☁️ draw clouds
@@ -106,7 +109,7 @@ export function init(type) {
     // ☀️ set initial weather
 
     TweenMax.set(sunburst.node, { opacity: 0 })
-    changeWeather(weather.find((item) => item.type === type) || weather[0])
+    changeWeather(current)
 
     // 🏃 start animations
 
@@ -498,7 +501,7 @@ export function startFrame() {
 function reset() {
     for (var i = 0; i < weather.length; i++) {
         container.classList.remove(weather[i].type)
-        weather[i].button.classList.remove('active')
+        weather[i].button?.classList.remove('active')
     }
 }
 
@@ -554,7 +557,7 @@ function changeWeather(weather) {
     TweenMax.to(summary, 1, { opacity: 0, x: -30, onComplete: updateSummaryText, ease: Power4.easeIn })
 
     container.classList.add(weather.type)
-    weather.button.classList.add('active')
+    weather.button?.classList.add('active')
 
     // windSpeed
 

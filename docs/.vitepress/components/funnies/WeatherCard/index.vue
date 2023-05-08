@@ -87,10 +87,10 @@ export default {
         }
     },
     async mounted() {
-        const [weather] = await this.getWeatherData()
-        const { type } = this.getWeatherType(weather)
-        import('./index').then(({ init, startFrame, unmounted }) => {
-            init(type)
+        const [data] = await this.getWeatherData()
+        const weather = this.getWeatherType(data)
+        import('./index').then(({ init, startFrame }) => {
+            init(weather)
             startFrame()
         })
     },
@@ -141,7 +141,7 @@ export default {
                 case '8': // 大部多云晚上
                 case '9': // 阴
                     // 多云
-                    return { type: '', name }
+                    return { type: 'cloud', name }
                 case '10': // 阵雨
                 case '11': // 雷阵雨
                 case '12': // 雷阵雨伴有冰雹
