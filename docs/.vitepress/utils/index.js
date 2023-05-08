@@ -13,11 +13,14 @@ export const EXTRA_CONFIG = [
                 s.parentNode.insertBefore(hm, s);
               })();
         `
-    ],
+    ]
 ]
 
 // 渲染 loading
 export function renderLoading() {
+    // 插入样式
+    createStyleSheet(`.loading-container{position:fixed;top:0;left:0;z-index:10000;background:hsl(220 14% 13%);margin:0 auto;height:100%;width:100%}.loading-container .container{position:fixed;width:40vw;height:45vw;left:0;right:0;top:0;bottom:0;margin:auto;z-index:666}.loading-container .common{position:absolute;overflow:auto;margin:auto;width:2vw;max-width:100%;height:5vw;max-height:100%;border-radius:0 10vw 0 10vw;box-shadow:inset 0 0 0 .1vw #e645d0,0 0 1.5vw 0 #e645d0}.loading-container .one{transform:rotate(45deg);left:0;right:0;top:0;bottom:7.5vw}.loading-container .two{transform:rotate(90deg);left:5.5vw;right:0;top:0;bottom:5.5vw}.loading-container .three{transform:rotate(135deg);left:7.5vw;right:0;top:0;bottom:0}.loading-container .four{transform:rotate(180deg);left:5.5vw;right:0;top:5.5vw;bottom:0}.loading-container .five{transform:rotate(225deg);left:0;right:0;top:7.5vw;bottom:0}.loading-container .six{transform:rotate(270deg);left:0;right:5.5vw;top:5.5vw;bottom:0}.loading-container .seven{transform:rotate(315deg);left:0;right:7.5vw;top:0;bottom:0}.loading-container .eight{transform:rotate(360deg);left:0;right:5.5vw;top:0;bottom:5.5vw}.loading-container .one{animation:one 1s ease infinite;-moz-animation:one 1s ease infinite;-webkit-animation:one 1s ease infinite;-o-animation:one 1s ease infinite}@keyframes one{50%{box-shadow:inset 0 0 0 .1vw #17e1e6,0 0 1.5vw 0 #17e1e6}}.loading-container .two{animation:two 1s .125s ease infinite;-moz-animation:two 1s .125s ease infinite;-webkit-animation:two 1s .125s ease infinite;-o-animation:two 1s .125s ease infinite}@keyframes two{50%{box-shadow:inset 0 0 0 .1vw #17e1e6,0 0 1.5vw 0 #17e1e6}}.loading-container .three{animation:three 1s .25s ease infinite;-moz-animation:three 1s .25s ease infinite;-webkit-animation:three 1s .25s ease infinite;-o-animation:three 1s .25s ease infinite}@keyframes three{50%{box-shadow:inset 0 0 0 .1vw #17e1e6,0 0 1.5vw 0 #17e1e6}}.loading-container .four{animation:four 1s .375s ease infinite;-moz-animation:four 1s .375s ease infinite;-webkit-animation:four 1s .375s ease infinite;-o-animation:four 1s .375s ease infinite}@keyframes four{50%{box-shadow:inset 0 0 0 .1vw #17e1e6,0 0 1.5vw 0 #17e1e6}}.loading-container .five{animation:five 1s .5s ease infinite;-moz-animation:five 1s .5s ease infinite;-webkit-animation:five 1s .5s ease infinite;-o-animation:five 1s .5s ease infinite}@keyframes five{50%{box-shadow:inset 0 0 0 .1vw #17e1e6,0 0 1.5vw 0 #17e1e6}}.loading-container .six{animation:six 1s .625s ease infinite;-moz-animation:six 1s .625s ease infinite;-webkit-animation:six 1s .625s ease infinite;-o-animation:six 1s .625s ease infinite}@keyframes six{50%{box-shadow:inset 0 0 0 .1vw #17e1e6,0 0 1.5vw 0 #17e1e6}}.loading-container .seven{animation:seven 1s .75s ease infinite;-moz-animation:seven 1s .75s ease infinite;-webkit-animation:seven 1s .75s ease infinite;-o-animation:seven 1s .75s ease infinite}@keyframes seven{50%{box-shadow:inset 0 0 0 .1vw #17e1e6,0 0 1.5vw 0 #17e1e6}}.loading-container .eight{animation:eight 1s .875s ease infinite;-moz-animation:eight 1s .875s ease infinite;-webkit-animation:eight 1s .875s ease infinite;-o-animation:eight 1s .875s ease infinite}@keyframes eight{50%{box-shadow:inset 0 0 0 .1vw #17e1e6,0 0 1.5vw 0 #17e1e6}}.loading-container .container{animation:container 5s linear infinite;-moz-animation:container 5s linear infinite;-webkit-animation:container 5s linear infinite;-o-animation:container 5s linear infinite}@keyframes container{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}.loading-container .fade-in{animation:fade-in 1.5s ease;-moz-animation:fade-in 1.5s ease;-webkit-animation:fade-in 1.5s ease;-o-animation:fade-in 1.5s ease}@keyframes fade-in{from{opacity:0}to{opacity:1}}.loading-container .out{animation:out 1.2s 1.7s ease;-moz-animation:out 1.2s 1.7s ease;-webkit-animation:out 1.2s 1.7s ease;-o-animation:out 1.2s 1.7s ease}@keyframes out{from{opacity:1}to{opacity:0}}@media screen and (min-width:960px){.loading-container .fade-in{height:100vh;transform:scale(.6)}}`);
+    // 插入 dom
     const body = document.getElementsByTagName('body')[0]
     const loading = document.createElement('div')
     loading.className = 'loading-container'
@@ -46,16 +49,30 @@ export function renderLoading() {
     }, 2400)
 }
 
-export function parseTime(time, cFormat) {
-    if (arguments.length === 0 || time === "0" || !time) {
-        return "无";
+function createStyleSheet(css) {
+    try {
+        //IE下可行
+        const style = document.createStyleSheet()
+        style.cssText = css
+    } catch (e) {
+        //Firefox,Opera,Safari,Chrome下可行
+        const style = document.createElement('style')
+        style.type = 'text/css'
+        style.textContent = css
+        document.getElementsByTagName('HEAD').item(0).appendChild(style)
     }
-    const format = cFormat || "{y}-{m}-{d} {h}:{i}:{s}";
-    let date;
-    if (typeof time === "object") {
-        date = time;
+}
+
+export function parseTime(time, cFormat) {
+    if (arguments.length === 0 || time === '0' || !time) {
+        return '无'
+    }
+    const format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}'
+    let date
+    if (typeof time === 'object') {
+        date = time
     } else {
-        date = new Date(time * 1000);
+        date = new Date(time * 1000)
     }
     const formatObj = {
         y: date.getFullYear(),
@@ -65,16 +82,16 @@ export function parseTime(time, cFormat) {
         i: date.getMinutes(),
         s: date.getSeconds(),
         a: date.getDay()
-    };
+    }
     return format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
-        let value = formatObj[key];
+        let value = formatObj[key]
         // Note: getDay() returns 0 on Sunday
-        if (key === "a") {
-            return ["日", "一", "二", "三", "四", "五", "六"][value];
+        if (key === 'a') {
+            return ['日', '一', '二', '三', '四', '五', '六'][value]
         }
         if (result.length > 0 && value < 10) {
-            value = "0" + value;
+            value = '0' + value
         }
-        return value || 0;
-    });
+        return value || 0
+    })
 }
