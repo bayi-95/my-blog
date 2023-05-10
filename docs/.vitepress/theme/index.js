@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
+import * as Components from '../components'
 import { h } from 'vue'
-import { ArticleList, CuteBirdButton, Egg, DinosaurRunner, Elephant, FourSeasons, WeatherCard } from '../components'
 
 import '../style/index.scss'
 
@@ -8,9 +8,9 @@ export default {
     ...DefaultTheme,
     Layout() {
         return h(DefaultTheme.Layout, null, {
-            'home-hero-before': () => h(FourSeasons),
-            'home-hero-after': () => h(CuteBirdButton),
-            'layout-bottom': () => h(Elephant)
+            'home-hero-before': () => h(Components['FourSeasons']),
+            'home-hero-after': () => h(Components['CuteBirdButton']),
+            'layout-bottom': () => h(Components['Elephant'])
         })
     },
     async enhanceApp({ app }) {
@@ -19,13 +19,9 @@ export default {
             const { renderLoading } = await import('../utils')
             renderLoading()
         }
-        // register global components
-        app.component('ArticleList', ArticleList)
-        app.component('CuteBirdButton', CuteBirdButton)
-        app.component('Egg', Egg)
-        app.component('DinosaurRunner', DinosaurRunner)
-        app.component('Elephant', Elephant)
-        app.component('FourSeasons', FourSeasons)
-        app.component('WeatherCard', WeatherCard)
+        // 注册全局组件
+        Object.keys(Components).forEach((key) => {
+            app.component(key, Components[key])
+        })
     }
 }
