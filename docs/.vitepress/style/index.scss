@@ -40,7 +40,7 @@
 
 .VPHome {
     .VPHero.has-image .text {
-        margin: 14px 0;
+        margin: 14px auto;
     }
 }
 
@@ -64,6 +64,9 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 16.5em;
+    }
+    .VPContent {
+        min-height: calc(100vh - var(--vp-nav-height));
     }
 }
 
