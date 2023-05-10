@@ -52,9 +52,9 @@ var clouds = [{ group: Snap.select('#cloud1') }, { group: Snap.select('#cloud2')
 
 var weather = [
     { type: 'snow', name: '雪' },
-    { type: 'cloud', name: '多云' },
-    { type: 'wind', name: '有风' },
-    { type: 'rain', name: '有雨' },
+    { type: 'cloud', name: '云' },
+    { type: 'wind', name: '风' },
+    { type: 'rain', name: '雨' },
     { type: 'thunder', name: '雷雨' },
     { type: 'sun', name: '晴' }
 ]

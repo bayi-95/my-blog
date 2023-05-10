@@ -128,20 +128,21 @@ export default {
             this.weather = weather
 
             switch (code) {
+                // 晴天
                 case '0':
                 case '1':
                 case '2':
                 case '3':
-                    // 晴天
                     return { type: 'sun', name }
+                // 多云
                 case '4': // 多云
                 case '5': // 晴间多云
                 case '6': // 晴间多云 晚上
                 case '7': // 大部多云
                 case '8': // 大部多云晚上
                 case '9': // 阴
-                    // 多云
                     return { type: 'cloud', name }
+                // 雨
                 case '10': // 阵雨
                 case '11': // 雷阵雨
                 case '12': // 雷阵雨伴有冰雹
@@ -149,30 +150,29 @@ export default {
                 case '14': // 中雨
                 case '15': // 大雨
                 case '19': // 冻雨
-                    // 雨
                     return { type: 'rain', name }
+                // 暴雨
                 case '16': // 暴雨
                 case '17': // 大暴雨
                 case '18': // 特大暴雨
-                    // 暴雨
                     return { type: 'thunder', name }
+                // 雪
                 case '20': // 雨夹雪
                 case '21': // 阵雪
                 case '22': // 小雪
                 case '23': // 中雪
                 case '24': // 大雪
                 case '25': // 暴雪
-                    // 雪
                     return { type: 'snow', name }
+                // 风
                 case '32': // 风
                 case '33': // 大风
                 case '34': // 飓风
                 case '35': // 热带风暴
                 case '36': // 龙卷风
-                    // 风
                     return { type: 'wind', name }
                 default:
-                    return { type: 'sun', name }
+                    return { type: 'cloud', name }
             }
         }
     }
@@ -187,7 +187,7 @@ export default {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 1;
     width: 100%;
     height: 100%;
     background: #eee;
@@ -240,7 +240,6 @@ nav ul {
     display: -ms-flexbox;
     display: flex;
     flex-direction: column;
-    margin: 20px 20px 0 20px;
     padding: 16px 0;
     list-style-type: none;
     background-color: #fff;
@@ -252,7 +251,7 @@ nav li {
 }
 nav li a {
     display: block;
-    width: 50px;
+    width: 40px;
     text-align: center;
     color: #aaa;
     cursor: pointer;
@@ -364,7 +363,7 @@ nav li a.active {
 
 .options-wrap {
     position: absolute;
-    right: 0;
+    right: 8px;
     z-index: 1;
     pointer-events: all;
 }
