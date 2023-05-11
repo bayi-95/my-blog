@@ -12,14 +12,14 @@ sidebar: auto
 
 ∆ chore: 修改项目开发环境启动时，自动在浏览器打开 tab
 
-∆ feat: 上线一款 h5 小游戏——《超级玛丽》，对手残党不是那么友好 ：）
+∆ feat: 上线一款 h5 小游戏——《[超级玛丽 · Simple](https://bayi-95.gitlab.io/my-blog/pages/javascript/super-marie.html)》，对手残党不是那么友好 ：）
 
 
 ### 5/5/23
 
 ∆ update: 修改天气组件，天气数据过接口 api 获取
 
-来源：心知天气-天气实况 https://api.seniverse.com/v3/weather/now.json
+**来源**：心知天气-天气实况 https://api.seniverse.com/v3/weather/now.json
 
 ### 4/28/23
 
@@ -47,7 +47,7 @@ sidebar: auto
 
 ### 3/29/23
 
-∆ blog: [文章列表](https://bayi-95.github.io/pages/list/) -  新增《爱和治愈自己》、《前端 commit 提交规范》
+∆ blog: [文章列表](https://bayi-95.gitlab.io/my-blog/pages/list/) -  新增《[爱和治愈自己](https://bayi-95.gitlab.io/my-blog/pages/idea/%E7%88%B1%E5%92%8C%E6%B2%BB%E6%84%88%E8%87%AA%E5%B7%B1.html)》、《[前端 commit 提交规范](https://bayi-95.gitlab.io/my-blog/pages/javascript/%E5%89%8D%E7%AB%AFcommit%E8%A7%84%E8%8C%83.html)》
 
 ### 3/28/23
 
@@ -64,7 +64,7 @@ brew search pnpm
 brew ls
 ```
 
-参考：[chrome 恐龙小游戏源码研究](https://www.cnblogs.com/undefined000/p/trex_1.html)
+**来源**：[chrome 恐龙小游戏源码研究](https://www.cnblogs.com/undefined000/p/trex_1.html)
 
 ### 3/7/23
 
@@ -78,7 +78,7 @@ brew ls
 
 ∆ 新增：思维模型 - 刻意学习
 
-参考：[CSS 的快乐：画一个可爱的三只小鸟 Button](https://mp.weixin.qq.com/s?__biz=Mzg3OTYzMDkzMg==&mid=2247493043&idx=1&sn=197aca704daa784341a8dd8a5c9d0b73&chksm=cf032a88f874a39e712f7a2f8c29af9c4c371270a50ba49d0628fb07353cd18e6a4e6702c069&scene=178&cur_album_id=2150438405699174401#rd)
+**来源**：[CSS 的快乐：画一个可爱的三只小鸟 Button](https://mp.weixin.qq.com/s?__biz=Mzg3OTYzMDkzMg==&mid=2247493043&idx=1&sn=197aca704daa784341a8dd8a5c9d0b73&chksm=cf032a88f874a39e712f7a2f8c29af9c4c371270a50ba49d0628fb07353cd18e6a4e6702c069&scene=178&cur_album_id=2150438405699174401#rd)
 
 ### 2/20/23
 
@@ -88,17 +88,17 @@ brew ls
 2. 我的存在价值，不会因为对方喜欢或不喜欢我，对我好或对我不好有所增减和改变，相反，它始终都在那里。
 3. 虽然，你是你，我是我，但是你的一举一动会影响到我，我的一举一动也会影响到你。 爱虽然不是控制，但爱也不是放任，爱是全心全意为了所爱之人的福祉考虑，为其做尽可能的事。 所以，我爱你，既是我的事，也与你有关。 当一个人，最终进入到“他人意识阶段”后，Ta 会成为一个非常好的恋爱对象，也会成为一个非常好的结婚伴侣。
 
-参考：[写在情人节：真正成熟的亲密关系是什么样的？](https://mp.weixin.qq.com/s/v0Ird2Pcle6QBnkv_fQCAg)
+**来源**：[写在情人节：真正成熟的亲密关系是什么样的？](https://mp.weixin.qq.com/s/v0Ird2Pcle6QBnkv_fQCAg)
 
 ### 2/8/23
 
 ∆ fix: `algolia` 因为 lang 导致无搜索结果的问题，修改 algolia.json 里关于 lang 的设置
 
-参考：[vuepress2.x 文档和集成 algolia 配置过程](https://zhuanlan.zhihu.com/p/542544442)
+**来源**：[vuepress2.x 文档和集成 algolia 配置过程](https://zhuanlan.zhihu.com/p/542544442)
 
 ∆ 把首页背景图转 webp 减小图片大小
 
-参考：[convertio 转换工具](https://convertio.co/zh/png-webp/)
+**来源**：[convertio 转换工具](https://convertio.co/zh/png-webp/)
 
 ### 2/2/23
 
@@ -156,7 +156,7 @@ git clone https://hub.fastgit.xyz/PaddlePaddle/PaddleOCR.git
 5. 对时间表达成共识（敦促开发人员评估每一项任务，并要求他们注意工作范围）
 6. 及时的沟通、反馈、讨论和解决
 
-参考：[项目经验管理总结](https://mp.weixin.qq.com/s/QbBPLp1votLmAb5nVLCdag)
+**来源**：[项目经验管理总结](https://mp.weixin.qq.com/s/QbBPLp1votLmAb5nVLCdag)
 
 ### 8/17/22
 
@@ -178,7 +178,7 @@ git clone https://hub.fastgit.xyz/PaddlePaddle/PaddleOCR.git
 3. 准：安装过的依赖会准确复用缓存，甚至包版本升级带来的变化都只 diff，绝不浪费一点空间，逻辑上也严丝合缝。
 4. 狠：直接废掉了幻影依赖，在逻辑合理性与含糊的便捷性上，毫不留情的选择了逻辑合理性。
 
-参考：
+**来源**：
 
 1. [pnpm 的 “快、准、狠”](https://mp.weixin.qq.com/s/bZ7AVSjBcZrZ3I387_esmg)
 2. [pnpm 如何实现对 npm、yarn 的降维打击](https://mp.weixin.qq.com/s/sRKiqFNs24NYPxO4P5jq6Q)
@@ -236,7 +236,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 6. 如果构建或测试失败，CI 服务器会向团队发出警报
 7. 该团队解决了这个问题
 
-参考：
+**来源**：
 
 1. [持续集成 CircleCI vs Travis CI vs Jenkins](https://zhuanlan.zhihu.com/p/59686072)
 2. [使用 CircleCI 2.0 进行持续集成/持续部署](https://www.jianshu.com/p/36af6af74dfc)
@@ -250,7 +250,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 3. 也就是说，只有当频繁的更新需要超过 100 毫秒的纯 CPU 时间时，时间切片才变得实际有用。
 4. Vue3 的优化，使占用 CPU 的时间要少得多，在 CPU 空间花费 100+毫秒的可能性大大降低，而且只有在极端情况下才会遇到，在这种情况下，DOM 可能会成为更重要的瓶颈。
 
-参见：[Why remove time slicing from vue3? #89](https://github.com/vuejs/rfcs/issues/89)
+**来源**：[Why remove time slicing from vue3? #89](https://github.com/vuejs/rfcs/issues/89)
 
 ### 3/18/22
 
@@ -267,7 +267,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 
 因为 DNS 服务器储存的映射关系是动态更新的，无法直接控制。直接修改本机 Hosts 文件，锁定域名对应的 IP，更加有效方便。
 
-参考：[关于 webpack 打包/path](test链接地址)
+**来源**：[关于 webpack 打包/path](test链接地址)
 
 ### 2/14/22
 
@@ -308,7 +308,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 1. 下载了 element-plus 源码，结合 [文章：从 Element UI 源码的构建流程来看前端 UI 库设计](https://mp.weixin.qq.com/s?__biz=Mzg3MTU4NTI3OA==&mid=2247488540&idx=1&sn=a201dc3d84c443012b6881b38d9383e9&scene=21#wechat_redirect) 学习
 2. 发现了 pnpm（npm/yarn 升级版）、vitepress（vuepress 升级版：vite + vue3.0）
 3. 学习 UI 库的构造结构、复习 vue3.0 的语法结构（steup、hook）、学习 vitepress 对比 vuepress
-4. 昨晚的暴雨，可真刺激。乌云压的很低，天上是水，地上是水，天地之间被雨幕连接，雨水眯着眼睛看不清，穿着雨衣感觉车像在湖面上骑着，除了雨声听不到其它的声音。
+4. 昨晚的暴雨，可真刺激。乌云压的很低，天上是水，地上是水，天地之间被雨幕连接，雨水眯着眼睛看不清，穿着雨衣感觉车像在湖面上骑着，除了雨声听不到其它的声音了。
 5. 博客：根据 md 文件 title 的参数`gitalkConfig`，判断是否渲染评论组件
 
 ### 9/28/21
@@ -471,7 +471,7 @@ if (condition) {
 
 ∆ 看了`lavas`的文档：关于移动端、vue、pwa 的开发框架，可以在手机桌面上生成图标
 
-[lavas 参考文档](https://lavas.baidu.com/guide/v2/basic/introduction)
+**来源**：[lavas 参考文档](https://lavas.baidu.com/guide/v2/basic/introduction)
 
 ### 3/25/20
 
@@ -512,9 +512,7 @@ git commit -m 'removed xxx from repository'
 
 ∆ 开始写个人博客了
 
-**参考:**
-
--   [1 小时搞定 vuepress 快速制作 vue 文档/博客+免费部署预览](https://juejin.im/post/5dce1e0e5188254eda3936c5)
+**来源**：[1 小时搞定 vuepress 快速制作 vue 文档/博客+免费部署预览](https://juejin.im/post/5dce1e0e5188254eda3936c5)
 
 ### 1/17/20
 
@@ -539,7 +537,7 @@ GitChat 是一款基于微信平台的知识分享产品。通过这款产品我
 yarn
 # 2.链接库
 Cd ios && pod install
-# 3.参考package.json
+# 3.参考 package.json
 yarn ios
 ```
 
@@ -562,7 +560,7 @@ npm list -g --depth=0
 
 ∆ `ReactNative` 再熟悉下 架子搭起来
 
-参考 RN 中文官网 安装 pod - gem - ruby 换源 0.6 版以上的 RN-ios 版跑起来了
+**来源** RN 中文官网 安装 pod - gem - ruby 换源 0.6 版以上的 RN-ios 版跑起来了
 
 ### 1/9/20
 
@@ -578,13 +576,11 @@ npm list -g --depth=0
 
 王斌：未来的展望，个人的规划，工作的态度
 
-超哥：随时间的增长 个人技术的形状‘梯形’ 广度 & 深度；5 年是技术的目标；
-
-又提起了去看源码的念头
+超哥：随时间的增长 个人技术的形状‘梯形’ 广度 & 深度；5 年是技术的目标； 又提起了去看源码的念头
 
 分析自己：
 
-我现在还在基础的层级里，接触 React，RN，小程序，Vue，uni-app，python 之类的技术，涉及不深。
+我现在还在基础的层级里，接触 `React`，`RN`，`小程序`，`Vue`，`uni-app`，`python`之类的技术，涉及不深。
 
 最近 研究新技术的时间不多，我想我应该再去想想，做个规划。尤其，规划好个人的一天怎么过得更充实些，往里面塞些好东西进去。
 
@@ -592,13 +588,13 @@ npm list -g --depth=0
 
 查网页，整理 mac 快捷键，PDF 文档参见：2020-1-7
 
-∆ 链接我的 windows 电脑
+∆ 链接我的 windows 电脑 
 
-使用`TeamViewer` 进行中...
+使用`TeamViewer`，感觉向日葵好用些，`Microsoft Remote Desktop`也还好。
 
 ### 1/4/20
 
-∆ 写了 Vue 触发式组件 根据博客上的 demo 改装，思路如下：
+∆ 写了 Vue 触发式组件，根据博客上的 demo 改装，思路如下：
 
 ```js
 // 1.Components 写页面
@@ -629,14 +625,9 @@ Vue.use(VoicePrompt)
 在原基础上写了个脚本获取 动漫网的 m3u8 地址
 
 难点：
-获取嵌套的`iframe`里的地址前缀
-查资料使用 py 插件`selenium` 模拟打开浏览器 解决
-遇到问题
-运行时，报错须官网下载`driver`对应 chrome 的版本才行，复制到`/usr/local/bin` 解决
-
-最后使用`ffmpeg`下载视频
-
-同时开了 3 个 ffmpeg 结果很慢
+1. 获取嵌套的`iframe`里的地址前缀，查资料使用 py 插件`selenium`模拟打开浏览器解决；
+2. 运行时报错，须官网下载`driver`对应`chrome`的版本才行，复制到`/usr/local/bin` 解决
+3. 最后使用`ffmpeg`下载视频，同时开了 3 个`ffmpeg`但是结果很慢
 
 ### 12/31/19
 
