@@ -76,7 +76,7 @@
 //    top: 0;
 //    left: 0;
 //    z-index: 10000;
-//    background: hsl(220 14% 13%);;
+//    background: var(--vp-c-bg);
 //    margin: 0 auto;
 //    height: 100%;
 //    width: 100%;
@@ -185,7 +185,7 @@
 //    100% {
 //    }
 //    50% {
-//        box-shadow: inset 0 0 0 0.1vw #17e1e6, 0 0 1.5vw 0 #17e1e6;
+//        box-shadow: inset 0 0 0 0.1vw var(--vp-c-brand-light), 0 0 1.5vw 0 var(--vp-c-brand-light);
 //    }
 //}
 //
@@ -204,7 +204,7 @@
 //    100% {
 //    }
 //    50% {
-//        box-shadow: inset 0 0 0 0.1vw #17e1e6, 0 0 1.5vw 0 #17e1e6;
+//        box-shadow: inset 0 0 0 0.1vw var(--vp-c-brand-light), 0 0 1.5vw 0 var(--vp-c-brand-light);
 //    }
 //}
 //
@@ -223,7 +223,7 @@
 //    100% {
 //    }
 //    50% {
-//        box-shadow: inset 0 0 0 0.1vw #17e1e6, 0 0 1.5vw 0 #17e1e6;
+//        box-shadow: inset 0 0 0 0.1vw var(--vp-c-brand-light), 0 0 1.5vw 0 var(--vp-c-brand-light);
 //    }
 //}
 //
@@ -242,7 +242,7 @@
 //    100% {
 //    }
 //    50% {
-//        box-shadow: inset 0 0 0 0.1vw #17e1e6, 0 0 1.5vw 0 #17e1e6;
+//        box-shadow: inset 0 0 0 0.1vw var(--vp-c-brand-light), 0 0 1.5vw 0 var(--vp-c-brand-light);
 //    }
 //}
 //
@@ -261,7 +261,7 @@
 //    100% {
 //    }
 //    50% {
-//        box-shadow: inset 0 0 0 0.1vw #17e1e6, 0 0 1.5vw 0 #17e1e6;
+//        box-shadow: inset 0 0 0 0.1vw var(--vp-c-brand-light), 0 0 1.5vw 0 var(--vp-c-brand-light);
 //    }
 //}
 //
@@ -280,7 +280,7 @@
 //    100% {
 //    }
 //    50% {
-//        box-shadow: inset 0 0 0 0.1vw #17e1e6, 0 0 1.5vw 0 #17e1e6;
+//        box-shadow: inset 0 0 0 0.1vw var(--vp-c-brand-light), 0 0 1.5vw 0 var(--vp-c-brand-light);
 //    }
 //}
 //
@@ -299,7 +299,7 @@
 //    100% {
 //    }
 //    50% {
-//        box-shadow: inset 0 0 0 0.1vw #17e1e6, 0 0 1.5vw 0 #17e1e6;
+//        box-shadow: inset 0 0 0 0.1vw var(--vp-c-brand-light), 0 0 1.5vw 0 var(--vp-c-brand-light);
 //    }
 //}
 //
@@ -318,7 +318,7 @@
 //    100% {
 //    }
 //    50% {
-//        box-shadow: inset 0 0 0 0.1vw #17e1e6, 0 0 1.5vw 0 #17e1e6;
+//        box-shadow: inset 0 0 0 0.1vw var(--vp-c-brand-light), 0 0 1.5vw 0 var(--vp-c-brand-light);
 //    }
 //}
 //
@@ -382,7 +382,7 @@
 //@media screen and (min-width: 960px) {
 //    .loading-container .fade-in {
 //        height: 100vh;
-//        transform: scale(.6);
+//        transform: scale(0.6);
 //    }
 //}
 // 首页 loading · end
