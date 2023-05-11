@@ -144,9 +144,9 @@ const current = ref(1)
         font-weight: 400;
         cursor: pointer;
         &.active {
-            background: var(--vp-c-text-1);
+            background: var(--vp-c-brand);
             color: var(--vp-c-text-inverse-1);
-            border: 1px solid var(--vp-c-text-1) !important;
+            border: 1px solid var(--vp-c-brand) !important;
         }
         &:first-child {
             border-bottom-left-radius: 2px;

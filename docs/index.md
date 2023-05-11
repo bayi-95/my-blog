@@ -4,7 +4,7 @@ title: 首页
 
 hero:
     name: 秋殇の博客
-    text: 探索本身就是一件很有趣的事情。
+    text: 探索本身就是一件很有趣的事情
     tagline: 一点一滴都是积累
     image:
         src: /images/index/autumn.webp
