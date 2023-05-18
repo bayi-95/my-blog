@@ -329,7 +329,7 @@ export default class WeatherCard {
                 strokeWidth: 0,
                 strokeDashoffset: -pathLength,
                 opacity: 1,
-                onComplete: this.onSplashComplete,
+                onComplete: this.onSplashComplete.bind(this),
                 onCompleteParams: [splash],
                 ease: SlowMo.ease.config(0.4, 0.1, false)
             }
@@ -389,7 +389,7 @@ export default class WeatherCard {
             {
                 rotation: Math.random() * 360,
                 bezier: bezier,
-                onComplete: this.onLeafEnd,
+                onComplete: this.onLeafEnd.bind(this),
                 onCompleteParams: [newLeaf],
                 ease: Power0.easeIn
             }
@@ -437,7 +437,7 @@ export default class WeatherCard {
             newSnow.node,
             3 + Math.random() * 5,
             { x: x, y: y },
-            { y: endY, onComplete: this.onSnowEnd, onCompleteParams: [newSnow], ease: Power0.easeIn }
+            { y: endY, onComplete: this.onSnowEnd.bind(this), onCompleteParams: [newSnow], ease: Power0.easeIn }
         )
         TweenMax.fromTo(newSnow.node, 1, { scale: 0 }, { scale: scale, ease: Power1.easeInOut })
         TweenMax.to(newSnow.node, 3, {
@@ -505,7 +505,7 @@ export default class WeatherCard {
     startLightningTimer() {
         if (this.lightningTimeout) clearTimeout(this.lightningTimeout)
         if (this.currentWeather.type === 'thunder') {
-            this.lightningTimeout = setTimeout(this.lightning, Math.random() * 6000)
+            this.lightningTimeout = setTimeout(this.lightning.bind(this), Math.random() * 6000)
         }
     }
 

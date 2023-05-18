@@ -39,7 +39,7 @@
                         <g id="cloud1" class="cloud"></g>
                     </svg>
                     <div class="details">
-                        <div class="temp">{{ weather.now.temperature }}<span>°C</span></div>
+                        <div class="temp">{{ weather.now.temperature || '-' }}<span>°C</span></div>
                         <div class="right">
                             <div id="date">{{ dateStr }}</div>
                             <div id="summary"></div>
@@ -105,7 +105,7 @@ export default {
     computed: {
         dateStr() {
             const time = parseTime(new Date(), ' {m}月{d}日 星期{a}')
-            return `${this.weather.location.name} / ${time}`
+            return `${this.weather.location.name || '-'} / ${time}`
         }
     },
     methods: {
