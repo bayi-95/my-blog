@@ -6,6 +6,36 @@ sidebar: auto
 
 # 我的日志
 
+### 5/18/23
+
+∆ fix: 天气组件再次进入页面时，渲染动画异常的问题
+
+### 5/17/23
+
+∆ `pnpm` 管理 `node` 版本
+
+```shell
+# 1. 安装 n
+brew install n
+# 2. 安装 node16
+sudo n 16
+# 3. 安装 pnpm
+brew install pnpm
+# 4. pnpm 安装 node14、node16
+pnpm env user --global 14
+pnpm env user --global 16
+# 5. node16 降低 pnpm 版本
+corepack enable
+corepack prepare pnpm@7.32.4 --activate
+# 6. 卸载 n/node16
+sudo n rm 16
+brew uninstall n
+# 7. 查看版本
+node -v
+npm -v
+pnpm -v
+```
+
 ### 5/10/23
 
 ∆ refactor: 动态注册全局组件

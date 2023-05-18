@@ -1,5 +1,5 @@
 ---
-title: '使用tailwindcss'
+title: '使用 tailwindcss'
 description: css 预处理工具，提供原子化的样式，灵活的配置，使用方便，tree-shake 减小文件体积。
 date: 2023-3-29
 isPage: true

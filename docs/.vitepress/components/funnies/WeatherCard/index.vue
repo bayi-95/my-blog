@@ -1,5 +1,5 @@
 <template>
-    <div class="comp-weather-card">
+    <div class="comp-weather-card" :key="key">
         <div class="background">
             <div class="container">
                 <!-- 背景 -->
@@ -80,6 +80,11 @@ export default {
     name: 'WeatherCard',
     data() {
         return {
+            // 更新视图
+            key: 0,
+            // 天气插件
+            component: null,
+            // 天气数据
             weather: {
                 now: {},
                 location: {}
@@ -87,11 +92,14 @@ export default {
         }
     },
     async mounted() {
-        const [data] = await this.getWeatherData()
+        const [data] = await this.fetchWeatherData()
         const weather = this.getWeatherType(data)
-        import('./index').then(({ init, startFrame }) => {
-            init(weather)
-            startFrame()
+        // 组件要重新更新渲染
+        this.key += 1
+        // 加载插件
+        import('./index').then(({ default: WeatherCard }) => {
+            this.component = new WeatherCard()
+            this.component.init(weather)
         })
     },
     computed: {
@@ -101,9 +109,9 @@ export default {
         }
     },
     methods: {
-        getWeatherData() {
+        fetchWeatherData() {
             return new Promise((resolve) => {
-                var xhr = new XMLHttpRequest()
+                const xhr = new XMLHttpRequest()
                 xhr.open(
                     'GET',
                     'https://api.seniverse.com/v3/weather/now.json?key=Sj_SMCO68wk7rkJyv&location=wuhan&language=zh-Hans&unit=c'
