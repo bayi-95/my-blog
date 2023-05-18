@@ -642,16 +642,4 @@ export default class WeatherCard {
 
         this.startLightningTimer()
     }
-
-    destroy() {
-        // this.innerSVG = null
-        // this.outerSVG = null
-        // this.backSVG = null
-        // this.weatherContainer1 = null
-        // this.weatherContainer2 = null
-        // this.weatherContainer3 = null
-        // this.leaf = null
-        // this.sun = null
-        // this.sunburst = null
-    }
 }
