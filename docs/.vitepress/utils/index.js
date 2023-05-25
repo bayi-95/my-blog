@@ -13,7 +13,15 @@ export const EXTRA_CONFIG = [
                 s.parentNode.insertBefore(hm, s);
               })();
         `
-    ]
+    ],
+	// 微信图片防盗链处理：是被服务器判断了header中的referer的，这里处理不发送 referer 解决
+	[
+		'meta',
+		{
+			name: 'referrer',
+			content: 'origin',
+		},
+	],
 ]
 
 // 渲染 loading
