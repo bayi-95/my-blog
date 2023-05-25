@@ -1,6 +1,6 @@
 <template>
     <div class="comp-weather-card" :key="key">
-        <div class="background">
+        <div v-if="weather.now.temperature" class="background">
             <div class="container">
                 <!-- 背景 -->
                 <svg id="back">
