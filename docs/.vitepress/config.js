@@ -4,7 +4,7 @@ import { EXTRA_CONFIG }  from './utils';
 export default {
 	base: '/my-blog/',
     title: '秋殇の博客',
-    description: '申光普，博客，学习心得，日志，笔记...',
+    description: '申光普，博客，vitepress，学习心得，日志，笔记...',
     website: 'https://github.com/bayi-95/',
 	outDir: '../public',
     lastUpdated: true,
@@ -52,7 +52,7 @@ export default {
         // 页面底部
         footer: {
             message: '部分文章收录于网络，转载请署名出处 | 联系博主可以发送邮件至 <a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a>',
-            copyright: 'Copyright © 2020-present'
+            copyright: 'Copyright © 2020-present bayi-95.'
         },
         // 获取文章列表
         articles: await getArticles(),

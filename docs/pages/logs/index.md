@@ -6,18 +6,25 @@ sidebar: auto
 
 # 我的日志
 
+### 5/26/23
+
+∆ feat(FourSeasons): 支持夏天组件 -- 太阳、风车、树、云 和 风；等到 6 月份了，会自己切换 : )
+
 ### 5/24/23
+
 ∆ idea: 觉得下一代需要早些接触学习编程技能，随着 互联网、AI 技术的发展，`Coding` 将会成为生活中必备的基本技能之一，可以去[网站](https://studio.code.org/courses)学习。
 
-∆ 人们一旦擅长了某件事情那么就会对此充满激情，"如果你热衷于编程，我强烈推荐你阅读 Steve McConnell编写的《Code Complete》，它将永远改变你的编程思维"。
+∆ 人们一旦擅长了某件事情那么就会对此充满激情，"如果你热衷于编程，我强烈推荐你阅读 Steve McConnell 编写的《Code Complete》，它将永远改变你的编程思维"。
 
 ∆ **阅读专栏：**
-1. [10个诀窍助你成为厉害的远程开发人员](https://x-team.com/blog/10-secrets-to-becoming-a-great-remote-developer/)
-2. [PM的必备技能 —— 如何不被 RD 们嫌弃](https://www.36kr.com/p/1641873735681)
+
+1. [10 个诀窍助你成为厉害的远程开发人员](https://x-team.com/blog/10-secrets-to-becoming-a-great-remote-developer/)
+2. [PM 的必备技能 —— 如何不被 RD 们嫌弃](https://www.36kr.com/p/1641873735681)
 3. [腾讯前员工创业笔记：那些跟钱有关的事儿](https://www.html5tricks.com/sth-about-money.html)
 4. [做挖渠道的人啊 挖呀挖](https://www.html5tricks.com/50-wan-enginer.html)
 
 ∆ **好的程序员：**
+
 1. 好的程序员知道要在解决一个问题之前先做研究；
 2. 渴望深入问题并找出错误的根源；
 3. 研究一下源码；
@@ -27,6 +34,7 @@ sidebar: auto
 7. 激情、感兴趣、好奇被吸引、痴迷于️专注。
 
 ∆ **如何开会议：**
+
 1. 会议绝不该超过一小时；
 2. 每个会议都应该有一个清晰的目标声明；
 3. 在开会之前预先做好功课；
@@ -76,7 +84,6 @@ pnpm -v
 
 ∆ feat: 上线一款 h5 小游戏——《[超级玛丽 · Simple](https://bayi-95.gitlab.io/my-blog/pages/javascript/super-marie.html)》，tips: 对手残党不是那么友好 ：）
 
-
 ### 5/5/23
 
 ∆ update: 修改天气组件，天气数据过接口 api 获取
@@ -109,7 +116,7 @@ pnpm -v
 
 ### 3/29/23
 
-∆ blog: [文章列表](https://bayi-95.gitlab.io/my-blog/pages/list/) -  新增《[爱和治愈自己](https://bayi-95.gitlab.io/my-blog/pages/idea/%E7%88%B1%E5%92%8C%E6%B2%BB%E6%84%88%E8%87%AA%E5%B7%B1.html)》、《[前端 commit 提交规范](https://bayi-95.gitlab.io/my-blog/pages/javascript/%E5%89%8D%E7%AB%AFcommit%E8%A7%84%E8%8C%83.html)》
+∆ blog: [文章列表](https://bayi-95.gitlab.io/my-blog/pages/list/) - 新增《[爱和治愈自己](https://bayi-95.gitlab.io/my-blog/pages/idea/%E7%88%B1%E5%92%8C%E6%B2%BB%E6%84%88%E8%87%AA%E5%B7%B1.html)》、《[前端 commit 提交规范](https://bayi-95.gitlab.io/my-blog/pages/javascript/%E5%89%8D%E7%AB%AFcommit%E8%A7%84%E8%8C%83.html)》
 
 ### 3/28/23
 
@@ -650,7 +657,7 @@ npm list -g --depth=0
 
 查网页，整理 mac 快捷键，PDF 文档参见：2020-1-7
 
-∆ 链接我的 windows 电脑 
+∆ 链接我的 windows 电脑
 
 使用`TeamViewer`，感觉向日葵好用些，`Microsoft Remote Desktop`也还好。
 
@@ -687,6 +694,7 @@ Vue.use(VoicePrompt)
 在原基础上写了个脚本获取 动漫网的 m3u8 地址
 
 难点：
+
 1. 获取嵌套的`iframe`里的地址前缀，查资料使用 py 插件`selenium`模拟打开浏览器解决；
 2. 运行时报错，须官网下载`driver`对应`chrome`的版本才行，复制到`/usr/local/bin` 解决
 3. 最后使用`ffmpeg`下载视频，同时开了 3 个`ffmpeg`但是结果很慢

@@ -52,5 +52,8 @@
             "prettier --write",
             "git add -A"
         ]
+    },
+    "dependencies": {
+        "@vueuse/core": "^10.1.2"
     }
 }

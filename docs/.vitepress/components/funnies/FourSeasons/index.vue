@@ -4,11 +4,12 @@
 
 <script>
 import SakuraFlying from './modules/SakuraFlying.vue'
+import Sunshine from './modules/Sunshine.vue'
 import { markRaw } from 'vue'
 
 const SEASON_MAP = {
     spring: SakuraFlying,
-    summer: 'summer',
+    summer: Sunshine,
     autumn: 'autumn',
     winter: 'winter'
 }
