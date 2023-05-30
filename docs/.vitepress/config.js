@@ -2,7 +2,7 @@ import { getArticles } from './utils/article'
 import { EXTRA_CONFIG }  from './utils';
 
 export default {
-	base: '/my-blog/',
+	// base: '/my-blog/',
     title: '秋殇の博客',
     description: '申光普，博客，vitepress，学习心得，日志，笔记...',
     website: 'https://github.com/bayi-95/',
