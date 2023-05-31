@@ -2,22 +2,22 @@ import { getArticles } from './utils/article'
 import { EXTRA_CONFIG }  from './utils';
 
 export default {
-	// base: '/my-blog/',
+	// base: '/',
     title: '秋殇の博客',
     description: '申光普，博客，vitepress，学习心得，日志，笔记...',
-    website: 'https://github.com/bayi-95/',
+    website: 'https://bayi-95.eu.org/',
 	outDir: '../public',
     lastUpdated: true,
     ignoreDeadLinks: true,
     head: [
-        ['link', { rel: 'icon', href: '/my-blog/images/index/fish.png' }], //浏览器的标签栏的网页图标
-        ['link', { rel: 'manifest', href: '/my-blog/manifest.json' }],
+        ['link', { rel: 'icon', href: '/images/index/fish.png' }], //浏览器的标签栏的网页图标
+        ['link', { rel: 'manifest', href: '/manifest.json' }],
         ['meta', { name: 'theme-color', content: '#235dc8' }],
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-        ['link', { rel: 'apple-touch-icon', href: '/my-blog/images/index/fish.png' }],
-        ['link', { rel: 'mask-icon', href: '/my-blog/images/index/fish.png', color: '#235dc8' }],
-        ['meta', { name: 'msapplication-TileImage', content: '/my-blog/images/index/fish.png' }],
+        ['link', { rel: 'apple-touch-icon', href: '/images/index/fish.png' }],
+        ['link', { rel: 'mask-icon', href: '/images/index/fish.png', color: '#235dc8' }],
+        ['meta', { name: 'msapplication-TileImage', content: '/images/index/fish.png' }],
         ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
         // 额外要插入的 js、style
         ...EXTRA_CONFIG
@@ -46,7 +46,7 @@ export default {
         socialLinks: [{ icon: 'github', link: 'https://github.com/bayi-95/' }],
         // 编辑页面地址
         editLink: {
-            pattern: 'https://github.com/bayi-95/my-blog/tree/master/docs/:path',
+            pattern: 'https://github.com/bayi-95/tree/master/docs/:path',
             text: 'Edit this page'
         },
         // 页面底部

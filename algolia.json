@@ -2,12 +2,7 @@
     "index_name": "prod_bayi95",
     "start_urls": [
         {
-            "url": "https://bayi-95.github.io/my-blog/",
-            "selectors_key": "v2",
-            "tags": ["v2"]
-        },
-        {
-            "url": "https://bayi-95.gitlab.io/my-blog/",
+            "url": "https://bayi-95.eu.org/",
             "selectors_key": "v2",
             "tags": ["v2"]
         }
