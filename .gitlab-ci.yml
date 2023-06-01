@@ -1,5 +1,9 @@
 image: node:16
 pages:
+  stage: build
+  tags:
+    - shell
+    - macos
   cache:
     paths:
       - node_modules/
