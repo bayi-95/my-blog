@@ -265,8 +265,8 @@ import { useDraggable } from '@vueuse/core'
 
 // 字体阴影
 const initialValue = {
-    x: window.innerWidth - 50,
-    y: 50
+    x: 200,
+    y: 80
 }
 
 let shadowTitle, shadowContent
@@ -327,7 +327,7 @@ function drawShadow(target: Target, position: Position) {
     top: 50px;
     right: 10%;
     z-index: 100;
-    animation: rotate 10s linear infinite;
+    animation: rotate 12s linear infinite;
     cursor: move;
     touch-action: none;
 
