@@ -265,7 +265,7 @@ import { useDraggable } from '@vueuse/core'
 
 // 字体阴影
 const initialValue = {
-    x: 200,
+    x: 240,
     y: 80
 }
 
