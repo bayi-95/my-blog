@@ -5,7 +5,7 @@
 <script>
 import SakuraFlying from './modules/SakuraFlying.vue'
 import Sunshine from './modules/Sunshine.vue'
-import { markRaw } from 'vue'
+import { defineComponent, markRaw } from 'vue'
 
 const SEASON_MAP = {
     spring: SakuraFlying,
@@ -14,7 +14,7 @@ const SEASON_MAP = {
     winter: 'winter'
 }
 
-export default {
+export default defineComponent({
     name: 'SeasonsComps',
     data() {
         return {
@@ -54,5 +54,5 @@ export default {
             return result
         }
     }
-}
+})
 </script>

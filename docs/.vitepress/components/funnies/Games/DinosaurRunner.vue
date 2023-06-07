@@ -11,7 +11,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
     name: 'DinosaurRunner',
     computed: {
         canvasWidth() {
@@ -24,7 +26,7 @@ export default {
     },
     methods: {
         startGame() {
-            var canvas = document.createElement('canvas'),
+            const canvas = document.createElement('canvas'),
                 a = document.getElementById('runner-container'),
                 ctx = canvas.getContext('2d')
             canvas.id = 'c'
@@ -33,7 +35,7 @@ export default {
             a.appendChild(canvas)
 
             //坐标
-            var spriteDefinition = {
+            const spriteDefinition = {
                     CACTUS_LARGE: { x: 332, y: 2 }, //大仙人掌
                     CACTUS_SMALL: { x: 228, y: 2 }, //小仙人掌
                     CLOUD: { x: 86, y: 2 }, //云
@@ -207,7 +209,7 @@ export default {
                         this.playingIntro = true
                         this.tRex.playingIntro = true
 
-                        var keyframes =
+                        const keyframes =
                             '@-webkit-keyframes intro { ' +
                             'from { width:' +
                             Trex.config.WIDTH +
@@ -217,7 +219,7 @@ export default {
                             'px }' +
                             '}'
 
-                        var style = document.createElement('style')
+                        const style = document.createElement('style')
                         style.appendChild(document.createTextNode(keyframes))
                         document.getElementsByTagName('head')[0].appendChild(style)
 
@@ -251,8 +253,8 @@ export default {
                 update: function () {
                     this.drawPending = false
 
-                    var now = getTimeStamp()
-                    var deltaTime = now - (this.time || now)
+                    const now = getTimeStamp()
+                    let deltaTime = now - (this.time || now)
                     this.time = now
 
                     if (this.activated) {
@@ -263,7 +265,7 @@ export default {
                         }
 
                         this.runningTime += deltaTime
-                        var hasObstacles = this.runningTime > this.config.CLEAR_TIME
+                        const hasObstacles = this.runningTime > this.config.CLEAR_TIME
                         //如果是第一次跳跃并且没有播放开场动画，则播放开场动画
                         if (this.tRex.jumpCount == 1 && !this.playingIntro) {
                             this.playIntro()
@@ -275,7 +277,7 @@ export default {
                             deltaTime = !this.started ? 0 : deltaTime
                             this.horizon.update(deltaTime, this.currentSpeed, hasObstacles, this.inverted)
                         }
-                        var collision = hasObstacles && checkForCollision(this.horizon.obstacles[0], this.tRex)
+                        const collision = hasObstacles && checkForCollision(this.horizon.obstacles[0], this.tRex)
 
                         if (!collision) {
                             this.distanceRan += (this.currentSpeed * deltaTime) / this.msPerFrame
@@ -287,7 +289,7 @@ export default {
                             this.gameOver()
                         }
 
-                        var playAchievementSound = this.distanceMeter.update(deltaTime, Math.ceil(this.distanceRan))
+                        const playAchievementSound = this.distanceMeter.update(deltaTime, Math.ceil(this.distanceRan))
 
                         if (playAchievementSound) {
                             this.playSound(this.soundFx.SCORE)
@@ -300,7 +302,7 @@ export default {
                         } else if (this.invertTimer) {
                             this.invertTimer += deltaTime
                         } else {
-                            var actualDistance = this.distanceMeter.getActualDistance(Math.ceil(this.distanceRan))
+                            const actualDistance = this.distanceMeter.getActualDistance(Math.ceil(this.distanceRan))
 
                             if (actualDistance > 0) {
                                 this.invertTrigger = !(actualDistance % this.config.INVERT_DISTANCE)
@@ -376,8 +378,8 @@ export default {
                     }
                 },
                 onKeyUp: function (e) {
-                    var keyCode = String(e.keyCode)
-                    var isjumpKey =
+                    const keyCode = String(e.keyCode)
+                    const isjumpKey =
                         Runner.keycodes.JUMP[keyCode] ||
                         e.type == Runner.events.TOUCHEND ||
                         e.type == Runner.events.MOUSEDOWN
@@ -392,7 +394,7 @@ export default {
                     } else if (this.crashed) {
                         e.preventDefault()
                         // Check that enough time has elapsed before allowing jump key to restart.
-                        var deltaTime = getTimeStamp() - this.time
+                        const deltaTime = getTimeStamp() - this.time
 
                         if (
                             Runner.keycodes.RESTART[keyCode] ||
@@ -503,7 +505,7 @@ export default {
                 },
                 playSound: function (soundBuffer) {
                     if (soundBuffer) {
-                        var sourceNode = this.audioContext.createBufferSource()
+                        const sourceNode = this.audioContext.createBufferSource()
                         sourceNode.buffer = soundBuffer
                         sourceNode.connect(this.audioContext.destination)
                         sourceNode.start(0)
@@ -526,12 +528,12 @@ export default {
             window['Runner'] = Runner
 
             function decodeBase64ToArrayBuffer(base64String) {
-                var len = (base64String.length / 4) * 3
-                var str = atob(base64String)
-                var arrayBuffer = new ArrayBuffer(len)
-                var bytes = new Uint8Array(arrayBuffer)
+                const len = (base64String.length / 4) * 3
+                const str = atob(base64String)
+                const arrayBuffer = new ArrayBuffer(len)
+                const bytes = new Uint8Array(arrayBuffer)
 
-                for (var i = 0; i < len; i++) {
+                for (let i = 0; i < len; i++) {
                     bytes[i] = str.charCodeAt(i)
                 }
                 return bytes.buffer
@@ -572,25 +574,25 @@ export default {
                  * Draw the panel.
                  */
                 draw: function () {
-                    var dimensions = GameOverPanel.dimensions
+                    const dimensions = GameOverPanel.dimensions
 
-                    var centerX = this.canvasDimensions.WIDTH / 2
+                    const centerX = this.canvasDimensions.WIDTH / 2
 
                     // Game over text.
-                    var textSourceX = dimensions.TEXT_X
-                    var textSourceY = dimensions.TEXT_Y
-                    var textSourceWidth = dimensions.TEXT_WIDTH
-                    var textSourceHeight = dimensions.TEXT_HEIGHT
+                    let textSourceX = dimensions.TEXT_X
+                    let textSourceY = dimensions.TEXT_Y
+                    const textSourceWidth = dimensions.TEXT_WIDTH
+                    const textSourceHeight = dimensions.TEXT_HEIGHT
 
-                    var textTargetX = Math.round(centerX - dimensions.TEXT_WIDTH / 2)
-                    var textTargetY = Math.round((this.canvasDimensions.HEIGHT - 25) / 3)
-                    var textTargetWidth = dimensions.TEXT_WIDTH
-                    var textTargetHeight = dimensions.TEXT_HEIGHT
+                    const textTargetX = Math.round(centerX - dimensions.TEXT_WIDTH / 2)
+                    const textTargetY = Math.round((this.canvasDimensions.HEIGHT - 25) / 3)
+                    const textTargetWidth = dimensions.TEXT_WIDTH
+                    const textTargetHeight = dimensions.TEXT_HEIGHT
 
-                    var restartSourceWidth = dimensions.RESTART_WIDTH
-                    var restartSourceHeight = dimensions.RESTART_HEIGHT
-                    var restartTargetX = centerX - dimensions.RESTART_WIDTH / 2
-                    var restartTargetY = this.canvasDimensions.HEIGHT / 2
+                    const restartSourceWidth = dimensions.RESTART_WIDTH
+                    const restartSourceHeight = dimensions.RESTART_HEIGHT
+                    const restartTargetX = centerX - dimensions.RESTART_WIDTH / 2
+                    const restartTargetY = this.canvasDimensions.HEIGHT / 2
 
                     textSourceX += this.textImgPos.x
                     textSourceY += this.textImgPos.y
@@ -647,7 +649,7 @@ export default {
 
             HorizonLine.prototype = {
                 setSourceDimesions: function () {
-                    for (var dimension in HorizonLine.dimensions) {
+                    for (const dimension in HorizonLine.dimensions) {
                         this.sourceDimensions[dimension] = HorizonLine.dimensions[dimension]
                         this.dimensions[dimension] = HorizonLine.dimensions[dimension]
                     }
@@ -685,7 +687,7 @@ export default {
                     )
                 },
                 updateXPos: function (pos, increment) {
-                    var line1 = pos,
+                    const line1 = pos,
                         line2 = pos === 0 ? 1 : 0
 
                     this.xPos[line1] -= increment
@@ -698,7 +700,7 @@ export default {
                     }
                 },
                 update: function (deltaTime, speed) {
-                    var increment = Math.floor(speed * (FPS / 1000) * deltaTime)
+                    const increment = Math.floor(speed * (FPS / 1000) * deltaTime)
                     if (this.xPos[0] <= 0) {
                         this.updateXPos(0, increment)
                     } else {
@@ -751,7 +753,7 @@ export default {
                 },
                 draw: function () {
                     this.ctx.save()
-                    var sourceWidth = Cloud.config.WIDTH,
+                    const sourceWidth = Cloud.config.WIDTH,
                         sourceHeight = Cloud.config.HEIGHT
 
                     this.ctx.drawImage(
@@ -835,7 +837,7 @@ export default {
 
                         //移动星星
                         if (this.drawStars) {
-                            for (var i = 0; i < NightMode.config.NUM_STARS; i++) {
+                            for (let i = 0; i < NightMode.config.NUM_STARS; i++) {
                                 this.stars[i].x = this.updateXPos(this.stars[i].x, NightMode.config.STAR_SPEED)
                             }
                         }
@@ -855,18 +857,18 @@ export default {
                     return currentPos
                 },
                 draw: function () {
-                    var moonSourceWidth = this.currentPhase == 3 ? NightMode.config.WIDTH * 2 : NightMode.config.WIDTH
-                    var moonSourceHeight = NightMode.config.HEIGHT
-                    var moonSourceX = this.spritePos.x + NightMode.phases[this.currentPhase]
-                    var moonOutputWidth = moonSourceWidth
-                    var starSize = NightMode.config.STAR_SIZE
-                    var starSourceX = spriteDefinition.STAR.x
+                    const moonSourceWidth = this.currentPhase == 3 ? NightMode.config.WIDTH * 2 : NightMode.config.WIDTH
+                    const moonSourceHeight = NightMode.config.HEIGHT
+                    const moonSourceX = this.spritePos.x + NightMode.phases[this.currentPhase]
+                    const moonOutputWidth = moonSourceWidth
+                    const starSize = NightMode.config.STAR_SIZE
+                    const starSourceX = spriteDefinition.STAR.x
 
                     this.ctx.save()
                     this.ctx.globalAlpha = this.opacity
 
                     if (this.drawStars) {
-                        for (var i = 0; i < NightMode.config.NUM_STARS; i++) {
+                        for (let i = 0; i < NightMode.config.NUM_STARS; i++) {
                             this.ctx.drawImage(
                                 imgSprite,
                                 starSourceX,
@@ -897,8 +899,8 @@ export default {
                     this.ctx.restore()
                 },
                 placeStars: function () {
-                    var segmentSize = Math.round(this.containerWidth / NightMode.config.NUM_STARS)
-                    for (var i = 0; i < NightMode.config.NUM_STARS; i++) {
+                    const segmentSize = Math.round(this.containerWidth / NightMode.config.NUM_STARS)
+                    for (let i = 0; i < NightMode.config.NUM_STARS; i++) {
                         this.stars[i] = {}
                         this.stars[i].x = getRandomNum(segmentSize * i, segmentSize * (i + 1))
                         this.stars[i].y = getRandomNum(0, NightMode.config.STAR_MAX_Y)
@@ -962,14 +964,14 @@ export default {
                     }
                 },
                 updateClouds: function (deltaTime, speed) {
-                    var cloudSpeed = (this.cloudSpeed / 1000) * deltaTime * speed
-                    var numClouds = this.clouds.length
+                    const cloudSpeed = (this.cloudSpeed / 1000) * deltaTime * speed
+                    const numClouds = this.clouds.length
 
                     if (numClouds) {
-                        for (var i = numClouds - 1; i >= 0; i--) {
+                        for (let i = numClouds - 1; i >= 0; i--) {
                             this.clouds[i].update(cloudSpeed)
                         }
-                        var lastCloud = this.clouds[numClouds - 1]
+                        const lastCloud = this.clouds[numClouds - 1]
                         if (
                             numClouds < this.config.MAX_CLOUDS &&
                             this.dimensions.WIDTH - lastCloud.xPos > lastCloud.cloudGap &&
@@ -987,10 +989,10 @@ export default {
                 },
                 updateObstacles: function (deltaTime, currentSpeed) {
                     // Obstacles, move to Horizon layer.
-                    var updatedObstacles = this.obstacles.slice(0)
+                    const updatedObstacles = this.obstacles.slice(0)
 
-                    for (var i = 0; i < this.obstacles.length; i++) {
-                        var obstacle = this.obstacles[i]
+                    for (let i = 0; i < this.obstacles.length; i++) {
+                        const obstacle = this.obstacles[i]
                         obstacle.update(deltaTime, currentSpeed)
 
                         // Clean up existing obstacles.
@@ -1001,7 +1003,7 @@ export default {
                     this.obstacles = updatedObstacles
 
                     if (this.obstacles.length > 0) {
-                        var lastObstacle = this.obstacles[this.obstacles.length - 1]
+                        const lastObstacle = this.obstacles[this.obstacles.length - 1]
 
                         if (
                             lastObstacle &&
@@ -1021,13 +1023,13 @@ export default {
                     this.obstacles.shift()
                 },
                 addNewObstacle: function (currentSpeed) {
-                    var obstacleTypeIndex = getRandomNum(0, Obstacle.types.length - 1)
-                    var obstacleType = Obstacle.types[obstacleTypeIndex]
+                    const obstacleTypeIndex = getRandomNum(0, Obstacle.types.length - 1)
+                    const obstacleType = Obstacle.types[obstacleTypeIndex]
 
                     if (this.duplicateObstacleCheck(obstacleType.type) || currentSpeed < obstacleType.minSpeed) {
                         this.addNewObstacle(currentSpeed)
                     } else {
-                        var obstacleSpritePos = this.spritePos[obstacleType.type]
+                        const obstacleSpritePos = this.spritePos[obstacleType.type]
                         this.obstacles.push(
                             new Obstacle(
                                 this.ctx,
@@ -1048,9 +1050,9 @@ export default {
                     }
                 },
                 duplicateObstacleCheck: function (nextObstacleType) {
-                    var duplicateCount = 0
+                    let duplicateCount = 0
 
-                    for (var i = 0; i < this.obstacleHistory.length; i++) {
+                    for (let i = 0; i < this.obstacleHistory.length; i++) {
                         duplicateCount = this.obstacleHistory[i] == nextObstacleType ? duplicateCount + 1 : 0
                     }
                     return duplicateCount >= Runner.config.MAX_OBSTACLE_DUPLICATION
@@ -1156,7 +1158,7 @@ export default {
                     this.width = this.typeConfig.width * this.size
 
                     if (Array.isArray(this.typeConfig.yPos)) {
-                        var yPosConfig = this.typeConfig.yPos
+                        const yPosConfig = this.typeConfig.yPos
                         this.yPos = yPosConfig[getRandomNum(0, yPosConfig.length - 1)]
                     } else {
                         this.yPos = this.typeConfig.yPos
@@ -1179,9 +1181,9 @@ export default {
                     this.gap = this.getGap(this.gapCoefficient, speed)
                 },
                 draw: function () {
-                    var sourceWidth = this.typeConfig.width
-                    var sourceHeight = this.typeConfig.height
-                    var sourceX = sourceWidth * this.size * (0.5 * (this.size - 1)) + this.spritePos.x
+                    const sourceWidth = this.typeConfig.width
+                    const sourceHeight = this.typeConfig.height
+                    let sourceX = sourceWidth * this.size * (0.5 * (this.size - 1)) + this.spritePos.x
 
                     // Animation frames.
                     if (this.currentFrame > 0) {
@@ -1223,17 +1225,17 @@ export default {
                     }
                 },
                 getGap: function (gapCoefficient, speed) {
-                    var minGap = Math.round(this.width * speed + this.typeConfig.minGap * gapCoefficient)
-                    var maxGap = Math.round(minGap * Obstacle.MAX_GAP_COEFFICIENT)
+                    const minGap = Math.round(this.width * speed + this.typeConfig.minGap * gapCoefficient)
+                    const maxGap = Math.round(minGap * Obstacle.MAX_GAP_COEFFICIENT)
                     return getRandomNum(minGap, maxGap)
                 },
                 isVisible: function () {
                     return this.xPos + this.width > 0
                 },
                 cloneCollisionBoxes: function () {
-                    var collisionBoxes = this.typeConfig.collisionBoxes
+                    const collisionBoxes = this.typeConfig.collisionBoxes
 
-                    for (var i = collisionBoxes.length - 1; i >= 0; i--) {
+                    for (let i = collisionBoxes.length - 1; i >= 0; i--) {
                         this.collisionBoxes[i] = new CollisionBox(
                             collisionBoxes[i].x,
                             collisionBoxes[i].y,
@@ -1294,11 +1296,11 @@ export default {
 
             DistanceMeter.prototype = {
                 init: function (width) {
-                    var maxDistanceStr = ''
+                    let maxDistanceStr = ''
 
                     this.calcXPos(width)
                     this.maxScore = this.maxScoreUnits
-                    for (var i = 0; i < this.maxScoreUnits; i++) {
+                    for (let i = 0; i < this.maxScoreUnits; i++) {
                         this.draw(i, 0)
                         this.defaultString += '0'
                         maxDistanceStr += '9'
@@ -1310,15 +1312,15 @@ export default {
                     this.x = canvasWidth - DistanceMeter.dimensions.DEST_WIDTH * (this.maxScoreUnits + 1)
                 },
                 draw: function (digitPos, value, opt_highScore) {
-                    var sourceWidth = DistanceMeter.dimensions.WIDTH
-                    var sourceHeight = DistanceMeter.dimensions.HEIGHT
-                    var sourceX = DistanceMeter.dimensions.WIDTH * value
-                    var sourceY = 0
+                    const sourceWidth = DistanceMeter.dimensions.WIDTH
+                    const sourceHeight = DistanceMeter.dimensions.HEIGHT
+                    let sourceX = DistanceMeter.dimensions.WIDTH * value
+                    let sourceY = 0
 
-                    var targetX = digitPos * DistanceMeter.dimensions.DEST_WIDTH
-                    var targetY = this.y
-                    var targetWidth = DistanceMeter.dimensions.WIDTH
-                    var targetHeight = DistanceMeter.dimensions.HEIGHT
+                    const targetX = digitPos * DistanceMeter.dimensions.DEST_WIDTH
+                    const targetY = this.y
+                    const targetWidth = DistanceMeter.dimensions.WIDTH
+                    const targetHeight = DistanceMeter.dimensions.HEIGHT
 
                     sourceX += this.spritePos.x
                     sourceY += this.spritePos.y
@@ -1327,7 +1329,7 @@ export default {
 
                     if (opt_highScore) {
                         // Left of the current score.
-                        var highScoreX = this.x - this.maxScoreUnits * 2 * DistanceMeter.dimensions.WIDTH
+                        const highScoreX = this.x - this.maxScoreUnits * 2 * DistanceMeter.dimensions.WIDTH
                         this.ctx.translate(highScoreX, this.y)
                     } else {
                         this.ctx.translate(this.x, this.y)
@@ -1349,8 +1351,8 @@ export default {
                     return distance ? Math.round(distance * this.config.COEFFICIENT) : 0
                 },
                 update: function (deltaTime, distance) {
-                    var paint = true
-                    var playSound = false
+                    let paint = true
+                    let playSound = false
 
                     if (!this.acheivement) {
                         distance = this.getActualDistance(distance)
@@ -1372,7 +1374,7 @@ export default {
                             }
 
                             // Create a string representation of the distance with leading 0.
-                            var distanceStr = (this.defaultString + distance).substr(-this.maxScoreUnits)
+                            const distanceStr = (this.defaultString + distance).substr(-this.maxScoreUnits)
                             this.digits = distanceStr.split('')
                         } else {
                             this.digits = this.defaultString.split('')
@@ -1397,7 +1399,7 @@ export default {
 
                     // Draw the digits if not flashing.
                     if (paint) {
-                        for (var i = this.digits.length - 1; i >= 0; i--) {
+                        for (let i = this.digits.length - 1; i >= 0; i--) {
                             this.draw(i, parseInt(this.digits[i]))
                         }
                     }
@@ -1408,14 +1410,14 @@ export default {
                 drawHighScore: function () {
                     this.ctx.save()
                     this.ctx.globalAlpha = 0.8
-                    for (var i = this.highScore.length - 1; i >= 0; i--) {
+                    for (let i = this.highScore.length - 1; i >= 0; i--) {
                         this.draw(i, parseInt(this.highScore[i], 10), true)
                     }
                     this.ctx.restore()
                 },
                 setHighScore: function (distance) {
                     distance = this.getActualDistance(distance)
-                    var highScoreStr = (this.defaultString + distance).substr(-this.maxScoreUnits)
+                    const highScoreStr = (this.defaultString + distance).substr(-this.maxScoreUnits)
 
                     this.highScore = ['10', '11', ''].concat(highScoreStr.split(''))
                 },
@@ -1440,14 +1442,14 @@ export default {
             }
 
             function checkForCollision(obstacle, tRex, opt_canvasCtx) {
-                var obstacleBoxXPos = Runner.defaultDimensions.WIDTH + obstacle.xPos
-                var tRexBox = new CollisionBox(
+                const obstacleBoxXPos = Runner.defaultDimensions.WIDTH + obstacle.xPos
+                const tRexBox = new CollisionBox(
                     tRex.xPos + 1,
                     tRex.yPos + 1,
                     tRex.config.WIDTH - 2,
                     tRex.config.HEIGHT - 2
                 )
-                var obstacleBox = new CollisionBox(
+                const obstacleBox = new CollisionBox(
                     obstacle.xPos + 1,
                     obstacle.yPos + 1,
                     obstacle.typeConfig.width * obstacle.size - 2,
@@ -1458,15 +1460,15 @@ export default {
                     drawCollisionBoxes(opt_canvasCtx, tRexBox, obstacleBox)
                 }
                 if (boxCompare(tRexBox, obstacleBox)) {
-                    var collisionBoxes = obstacle.collisionBoxes
-                    var tRexCollisionBoxes = tRex.ducking ? Trex.collisionBoxes.DUCKING : Trex.collisionBoxes.RUNNING
+                    const collisionBoxes = obstacle.collisionBoxes
+                    const tRexCollisionBoxes = tRex.ducking ? Trex.collisionBoxes.DUCKING : Trex.collisionBoxes.RUNNING
 
-                    for (var t = 0; t < tRexCollisionBoxes.length; t++) {
-                        for (var i = 0; i < collisionBoxes.length; i++) {
+                    for (let t = 0; t < tRexCollisionBoxes.length; t++) {
+                        for (let i = 0; i < collisionBoxes.length; i++) {
                             // Adjust the box to actual positions.
-                            var adjTrexBox = createAdjustedCollisionBox(tRexCollisionBoxes[t], tRexBox)
-                            var adjObstacleBox = createAdjustedCollisionBox(collisionBoxes[i], obstacleBox)
-                            var crashed = boxCompare(adjTrexBox, adjObstacleBox)
+                            const adjTrexBox = createAdjustedCollisionBox(tRexCollisionBoxes[t], tRexBox)
+                            const adjObstacleBox = createAdjustedCollisionBox(collisionBoxes[i], obstacleBox)
+                            const crashed = boxCompare(adjTrexBox, adjObstacleBox)
 
                             // Draw boxes for debug.
                             if (opt_canvasCtx) {
@@ -1487,12 +1489,12 @@ export default {
             }
 
             function boxCompare(tRexBox, obstacleBox) {
-                var crashed = false
-                var tRexBoxX = tRexBox.x
-                var tRexBoxY = tRexBox.y
+                let crashed = false
+                const tRexBoxX = tRexBox.x
+                const tRexBoxY = tRexBox.y
 
-                var obstacleBoxX = obstacleBox.x
-                var obstacleBoxY = obstacleBox.y
+                const obstacleBoxX = obstacleBox.x
+                const obstacleBoxY = obstacleBox.y
 
                 // Axis-Aligned Bounding Box method.
                 if (
@@ -1660,7 +1662,7 @@ export default {
                     this.blinkDelay = Math.ceil(Math.random() * Trex.BLINK_TIMING)
                 },
                 blink: function (time) {
-                    var deltaTime = time - this.animStartTime
+                    const deltaTime = time - this.animStartTime
 
                     if (deltaTime >= this.blinkDelay) {
                         this.draw(this.currentAnimFrames[this.currentFrame], 0)
@@ -1687,8 +1689,8 @@ export default {
                     }
                 },
                 updateJump: function (deltaTime, speed) {
-                    var msPerFrame = Trex.animFrames[this.status].msPerFrame
-                    var framesElapsed = deltaTime / msPerFrame
+                    const msPerFrame = Trex.animFrames[this.status].msPerFrame
+                    const framesElapsed = deltaTime / msPerFrame
 
                     if (this.speedDrop) {
                         this.yPos += Math.round(this.jumpVelocity * this.config.SPEED_DROP_COEFFICIENT * framesElapsed)
@@ -1726,11 +1728,11 @@ export default {
                     }
                 },
                 draw: function (x, y) {
-                    var sourceX = x
-                    var sourceY = y
-                    var sourceWidth =
+                    let sourceX = x
+                    let sourceY = y
+                    const sourceWidth =
                         this.ducking && this.status != Trex.status.CRASHED ? this.config.WIDTH_DUCK : this.config.WIDTH
-                    var sourceHeight = this.config.HEIGHT
+                    const sourceHeight = this.config.HEIGHT
                     sourceX += this.spritePos.x
                     sourceY += this.spritePos.y
 
@@ -1776,11 +1778,11 @@ export default {
                 }
             }
 
-            // var now = getTimeStamp()
+            // const now = getTimeStamp()
             new Runner('.interstitial-wrapper')
         }
     }
-}
+})
 </script>
 
 <style lang="scss" scoped>

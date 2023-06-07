@@ -74,9 +74,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import { parseTime } from '../../../utils'
 
-export default {
+export default defineComponent({
     name: 'WeatherCard',
     data() {
         return {
@@ -184,7 +185,7 @@ export default {
             }
         }
     }
-}
+})
 </script>
 
 <style scoped>
