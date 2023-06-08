@@ -33,11 +33,11 @@ export default {
                 text: '分类',
                 ariaLabel: '分类',
                 items: [
+                    { text: 'python', link: '/pages/python/index.md' },
                     { text: 'vue', link: '/pages/vue/code.md' },
                     { text: 'javascript', link: '/pages/javascript/前端commit规范.md' },
                     { text: 'react', link: '/pages/react/code.md' },
                     { text: 'react-native', link: '/pages/react-native/code.md' },
-                    { text: 'python', link: '/pages/python/code.md' }
                 ]
             },
             { text: '日志', link: '/pages/logs/' }
@@ -49,6 +49,8 @@ export default {
             pattern: 'https://github.com/bayi-95/tree/master/docs/:path',
             text: 'Edit this page'
         },
+	    // 侧边栏
+	    outlineTitle: '目录',
         // 页面底部
         footer: {
             message: '部分文章收录于网络，转载请署名出处 | 联系博主可以发送邮件至 <a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a>',

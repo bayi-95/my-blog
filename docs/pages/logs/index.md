@@ -6,13 +6,21 @@ sidebar: auto
 
 # 我的日志
 
+### 6/8/23
+
+∆ docs: 新增[《Python 速成手册》](/pages/python/index.html)
+
+∆ feat: 支持数学公式展示
+
+**来源**：[Mathjax 数学公式解析](https://docs.mathjax.org/en/latest/basic/mathjax.html)
+
 ### 6/1/23
 
 ∆ chore: 支持 docker 使用 algolia 爬取网站内容功能
 
 ### 5/26/23
 
-∆ feat(FourSeasons): 支持夏天组件 -- 太阳、风车、树、云 和 风，等到 6 月份了，会自己切换 ：）
+∆ feat(FourSeasons): 四季组件，新增夏天模块 -- 主题是：太阳、风车、树、云 和 风；等到 6 月份了，会自己切换 ：）
 
 ### 5/24/23
 
