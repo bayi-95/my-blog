@@ -10,63 +10,66 @@
         <span></span>
         <span></span>
     </div>
+
     <!-- 风车、树、云 和 风 -->
     <div class="comp-sun-wind">
         <div class="main-wrapper">
-            <div class="mountain-1"></div>
-            <div class="mountain-2"></div>
-            <div class="mountain-3"></div>
-            <div class="mountain-4"></div>
-            <div class="mountain-5"></div>
-            <div class="tree-wrap">
-                <div class="tree">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <div class="mountain-windmill">
+                <div class="mountain-1"></div>
+                <div class="mountain-2"></div>
+                <div class="mountain-3"></div>
+                <div class="mountain-4"></div>
+                <div class="mountain-5"></div>
+                <div class="tree-wrap">
+                    <div class="tree">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-            </div>
-            <div class="windmill-pole-wrap">
-                <div class="windmill-pole"></div>
-            </div>
-            <div class="windmill-pole-ellipses">
-                <div class="windmill-pole-ellipses-wrapper">
-                    <div class="windmill-pole-ellipses-wrap">
-                        <div class="windmill-pole-ellipses-center"></div>
-                        <div class="ellipses">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                <div class="windmill-pole-wrap">
+                    <div class="windmill-pole"></div>
+                </div>
+                <div class="windmill-pole-ellipses">
+                    <div class="windmill-pole-ellipses-wrapper">
+                        <div class="windmill-pole-ellipses-wrap">
+                            <div class="windmill-pole-ellipses-center"></div>
+                            <div class="ellipses">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="windmill-pole-wrap right">
-                <div class="windmill-pole"></div>
-            </div>
-            <div class="windmill-pole-ellipses right">
-                <div class="windmill-pole-ellipses-wrapper">
-                    <div class="windmill-pole-ellipses-wrap">
-                        <div class="windmill-pole-ellipses-center"></div>
-                        <div class="ellipses delayed">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                <div class="windmill-pole-wrap right">
+                    <div class="windmill-pole"></div>
+                </div>
+                <div class="windmill-pole-ellipses right">
+                    <div class="windmill-pole-ellipses-wrapper">
+                        <div class="windmill-pole-ellipses-wrap">
+                            <div class="windmill-pole-ellipses-center"></div>
+                            <div class="ellipses delayed">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="windmill-pole-wrap back-left">
-                <div class="windmill-pole"></div>
-            </div>
-            <div class="windmill-pole-ellipses back-left">
-                <div class="windmill-pole-ellipses-wrapper">
-                    <div class="windmill-pole-ellipses-wrap">
-                        <div class="windmill-pole-ellipses-center"></div>
-                        <div class="ellipses delayed">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                <div class="windmill-pole-wrap back-left">
+                    <div class="windmill-pole"></div>
+                </div>
+                <div class="windmill-pole-ellipses back-left">
+                    <div class="windmill-pole-ellipses-wrapper">
+                        <div class="windmill-pole-ellipses-wrap">
+                            <div class="windmill-pole-ellipses-center"></div>
+                            <div class="ellipses delayed">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -260,17 +263,18 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, reactive, watch } from 'vue'
 import { useDraggable } from '@vueuse/core'
 
 // 字体阴影
-const initialValue = {
-    x: 240,
+const initialValue = reactive({
+    x: 280,
     y: 80
-}
+})
 
 let shadowTitle, shadowContent
 onMounted(() => {
+    initialValue.x = window.innerWidth - 80
     import('../utils/shine').then(({ Shine }) => {
         shadowTitle = new Shine(document.querySelector('.main .clip'))
         shadowContent = new Shine(document.querySelector('.main .text'))
@@ -319,7 +323,7 @@ function drawShadow(target: Target, position: Position) {
 <style lang="scss" scoped>
 // 太阳 和 光线
 #sun {
-    position: fixed;
+    position: absolute;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -1188,6 +1192,17 @@ function drawShadow(target: Target, position: Position) {
         .tree span:nth-child(4) {
             left: -107px;
         }
+    }
+}
+
+// 移动端
+@media screen and (max-width: 678px) {
+    .mountain-windmill {
+        position: absolute;
+        top: 540px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
     }
 }
 </style>
