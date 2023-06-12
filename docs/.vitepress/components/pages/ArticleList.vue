@@ -48,16 +48,19 @@
 
 <script lang="ts" setup>
 import { useData, withBase } from 'vitepress'
-import { computed, ref, UnwrapRef, watch } from 'vue'
+import { computed, onMounted, ref, UnwrapRef, watch } from 'vue'
 import { useUrlSearchParams } from '@vueuse/core'
 
 const { theme } = useData()
 const pageSize = 5
 
 // 标签数据
-const { tag: urlTags = '' } = useUrlSearchParams()
-const tagStr = urlTags || sessionStorage.getItem('tagList') || ''
-const tagList = ref(tagStr ? tagStr.split(',') : [])
+const tagList = ref([])
+onMounted(() => {
+    const { tag: urlTags = '' } = useUrlSearchParams()
+    const tagStr = urlTags || sessionStorage.getItem('tagList') || ''
+    tagList.value = tagStr ? tagStr.split(',') : []
+})
 
 // 文章列表
 const articles = computed(() => {
