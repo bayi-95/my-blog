@@ -28,7 +28,7 @@ export default {
         lastUpdated: '上次更新',
         nav: [
             { text: '首页', link: '/' },
-            { text: '文章', link: '/pages/list/' },
+            { text: '文章', link: '/pages/articles/' },
             {
                 text: '分类',
                 ariaLabel: '分类',

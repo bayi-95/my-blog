@@ -6,9 +6,13 @@ sidebar: auto
 
 # 我的日志
 
+### 6/12/23
+
+∆ feat: 文章列表 新增标签过滤文章功能
+
 ### 6/8/23
 
-∆ docs: 新增[《Python 速成手册》](/pages/python/index.html)
+∆ docs: 新增 [Python 速成手册](/pages/python/index.html)
 
 ∆ feat: 支持数学公式展示
 
@@ -94,7 +98,7 @@ pnpm -v
 
 ∆ chore: 修改项目开发环境启动时，自动在浏览器打开 tab
 
-∆ feat: 上线一款 h5 小游戏——《[超级玛丽 · Simple](https://bayi-95.eu.org/pages/javascript/super-marie.html)》，tips: 对手残党不是那么友好 ：）
+∆ feat: 上线一款 h5 小游戏 —— [超级玛丽 · Simple](/pages/javascript/super-marie.html)，tips: 对手残党不是那么友好 ：）
 
 ### 5/5/23
 
@@ -128,11 +132,11 @@ pnpm -v
 
 ### 3/29/23
 
-∆ blog: [文章列表](https://bayi-95.eu.org/pages/list/) - 新增《[爱和治愈自己](https://bayi-95.eu.org/pages/idea/%E7%88%B1%E5%92%8C%E6%B2%BB%E6%84%88%E8%87%AA%E5%B7%B1.html)》、《[前端 commit 提交规范](https://bayi-95.eu.org/pages/javascript/%E5%89%8D%E7%AB%AFcommit%E8%A7%84%E8%8C%83.html)》
+∆ blog: 文章列表 - 新增 [爱和治愈自己](/pages/idea/爱和治愈自己.html)、[前端 commit 提交规范](/pages/javascript/前端commit规范.html)
 
 ### 3/28/23
 
-∆ blog: 新增 小彩蛋 —— 《恐龙快跑》小游戏
+∆ blog: 新增 小彩蛋 —— 恐龙快跑小游戏
 
 ∆ 查看依赖包
 

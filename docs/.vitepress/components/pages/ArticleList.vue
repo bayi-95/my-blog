@@ -1,5 +1,13 @@
 <template>
     <template v-if="articles[current].length > 0">
+        <!-- 标签过滤 -->
+        <div v-if="tagList.length > 0" class="tag-box">
+            <span class="label">标签 🏷️：</span>
+            <p v-for="item in tagList" class="tag-item">
+                <span class="tag">{{ item }}</span>
+                <img class="tag-close" src="/images/blog/list/close.svg" alt="x" @click="handleRemoveTag(item)" />
+            </p>
+        </div>
         <div v-for="(article, index) in articles[current]" :key="index" class="article-list">
             <div class="article-header">
                 <div class="article-title">
@@ -15,9 +23,7 @@
             <p class="describe" v-html="article.frontMatter.description"></p>
             <div class="article-info">
                 {{ article.frontMatter.date }}
-                <span v-for="item in article.frontMatter.tags"
-                    ><a :href="withBase(`/pages/tags.html?tag=${item}`)"> {{ item }}</a></span
-                >
+                <span v-for="item in article.frontMatter.tags" @click="handleTagChange(item)">{{ item }}</span>
             </div>
         </div>
         <div v-if="pageNum > 1" class="pagination">
@@ -41,21 +47,35 @@
 </template>
 
 <script lang="ts" setup>
-import { withBase, useData } from 'vitepress'
-import { computed, ref } from 'vue'
+import { useData, withBase } from 'vitepress'
+import { computed, ref, UnwrapRef, watch } from 'vue'
+import { useUrlSearchParams } from '@vueuse/core'
 
 const { theme } = useData()
 const pageSize = 5
 
+// 标签数据
+const { tag: urlTags = '' } = useUrlSearchParams()
+const tagStr = urlTags || sessionStorage.getItem('tagList') || ''
+const tagList = ref(tagStr ? tagStr.split(',') : [])
+
 // 文章列表
 const articles = computed(() => {
-    const articles = theme.value?.articles || []
-    if (articles.length > 0) {
+    let _articles = theme.value?.articles || []
+    // 如果有标签
+    const tags: UnwrapRef<string[]> = tagList.value || []
+    if (tags.length > 0) {
+        _articles = _articles.filter((item) => {
+            return tags.every((tag) => item.frontMatter.tags.includes(tag))
+        })
+    }
+    // 如果有文章
+    if (_articles.length > 0) {
         const res = {
             1: []
         }
         let key = 1
-        articles.forEach((item, index) => {
+        _articles.forEach((item, index) => {
             if (index >= pageSize && index % pageSize === 0) {
                 key += 1
                 res[key] = []
@@ -69,17 +89,44 @@ const articles = computed(() => {
     }
 })
 
-// 页数
-const pageNum = computed(() => {
-    const len = theme.value?.articles.length
-    if (len > 0) {
-        return Math.ceil(len / pageSize)
-    }
-    return 0
-})
-
 // 当前页码
 const current = ref(1)
+
+// 页数
+const pageNum = computed(() => {
+    return Object.keys(articles.value).length
+})
+
+// 监听tag重置页码
+watch(
+    tagList,
+    (val) => {
+        if (val) {
+            // 重置页码
+            current.value = 1
+        }
+    },
+    { deep: true }
+)
+
+// 添加 tag
+function handleTagChange(tag: string) {
+    if (tag) {
+        let tags: UnwrapRef<string[]> = tagList.value || []
+        tags.push(tag)
+        const tagStr: string = [...new Set(tags)].join(',')
+        sessionStorage.setItem('tagList', tagStr)
+    }
+}
+
+// 移除 tag
+function handleRemoveTag(tag: string) {
+    const index = tagList.value.findIndex((item) => item === tag)
+    if (index > -1) {
+        tagList.value.splice(index, 1)
+        sessionStorage.setItem('tagList', tagList.value.join(','))
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -156,6 +203,35 @@ const current = ref(1)
             border-bottom-right-radius: 2px;
             border-top-right-radius: 2px;
             border-right: 1px var(--vp-c-divider) solid;
+        }
+    }
+}
+
+.tag-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    .label {
+        line-height: 28px;
+    }
+    .tag-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 8px 0 0;
+        padding: 2px 6px 0 12px;
+        font-size: 12px;
+        border: 1px var(--vp-c-divider) solid;
+        border-radius: 18px;
+        line-height: 24px;
+        .tag-close {
+            margin-left: 2px;
+            width: 16px;
+            color: var(--vp-c-divider);
+            cursor: pointer;
         }
     }
 }
