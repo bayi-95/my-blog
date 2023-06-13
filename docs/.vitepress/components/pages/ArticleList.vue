@@ -167,6 +167,10 @@ function handleRemoveTag(tag: string) {
             transition: 0.4s;
             border-radius: 2px;
             color: var(--vp-c-text-1);
+            cursor: pointer;
+            &:hover {
+                background-color: var(--vp-c-bg-soft-down);
+            }
         }
     }
     .describe {
@@ -225,7 +229,7 @@ function handleRemoveTag(tag: string) {
         display: flex;
         align-items: center;
         margin: 0 8px 0 0;
-        padding: 2px 6px 0 12px;
+        padding: 0 6px 0 12px;
         font-size: 12px;
         border: 1px var(--vp-c-divider) solid;
         border-radius: 18px;
