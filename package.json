@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "dev": "vitepress dev docs --host 0.0.0.0 --open --reuse",
+        "dev": "vitepress dev docs --host 0.0.0.0",
         "build": "vitepress build docs",
         "prepare": "npx husky install",
         "algolia": "docker run -it --env-file=.env -e \"CONFIG=$(cat algolia.json | jq -r tostring)\" algolia/docsearch-scraper",
@@ -43,9 +43,10 @@
         "postcss": "^8.1.0",
         "prettier": "^2.8.1",
         "sass": "^1.57.1",
+        "search-insights": "^2.6.0",
         "snapsvg-cjs": "^0.0.6",
         "typescript": "^4.9.4",
-        "vitepress": "^1.0.0-alpha.65",
+        "vitepress": "^1.0.0-beta.2",
         "vue": "^3.2.45"
     },
     "lint-staged": {
