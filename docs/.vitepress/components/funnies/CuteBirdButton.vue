@@ -26,7 +26,7 @@ export default defineComponent({
     props: {
         href: {
             type: String,
-            default: '/pages/list/'
+            default: '/pages/articles/'
         }
     }
 })
