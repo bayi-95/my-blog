@@ -1,6 +1,6 @@
 ---
 title: 'vue3 技术分析'
-description: 对于学习Vue3的一些技术分享。
+description: 对于学习 Vue 3 的一些技术分享。
 date: 2023-4-9
 isPage: true
 lastUpdated: false

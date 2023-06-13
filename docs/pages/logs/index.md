@@ -78,8 +78,8 @@ sudo n 16
 # 3. 安装 pnpm
 brew install pnpm
 # 4. pnpm 安装 node14、node16
-pnpm env user --global 14
-pnpm env user --global 16
+pnpm env use --global 14
+pnpm env use --global 16
 # 5. node16 降低 pnpm 版本
 corepack enable
 corepack prepare pnpm@7.32.4 --activate
