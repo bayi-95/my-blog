@@ -6,6 +6,26 @@ sidebar: auto
 
 # 我的日志
 
+### 6/14/23
+
+∆ feat: blog 新增 周刊模块 & 评论功能
+
+来源：
+1. [ruanyf-weekly](https://github.com/plantree/ruanyf-weekly)
+2. [giscus 评论系统](https://giscus.app/zh-CN)
+
+∆ Node 调试
+
+```
+Node.js 提供了内置的调试器，可以在命令行中启动脚本时进行调试。具体步骤如下：
+1. 在命令行中使用 node --inspect-brk 命令启动 Node.js 脚本，例如：node --inspect-brk index.js。
+2. 打开 Chrome 浏览器，并在地址栏中输入 chrome://inspect，然后按下 Enter 键。
+3. 在浏览器的页面中，单击 "Open dedicated DevTools for Node" 按钮，打开开发者工具。
+4. 在开发者工具的 Sources 面板中打开脚本文件，可以在代码中设置断点或执行单行代码。
+5. 单击页面中的绿色 "Resume script execution" 按钮，继续运行脚本。
+6. 此外，Node.js 还支持使用第三方调试器，例如 VS Code 和 WebStorm 等，这些调试器提供更友好的界面和更强大的调试功能
+```
+
 ### 6/12/23
 
 ∆ feat: 文章列表 新增标签过滤文章功能
