@@ -231,7 +231,6 @@ export default defineComponent({
                         else if (ch === '=') fieldType = 'lava'
                         else if (ch === 'v') {
                             fieldType = 'lava'
-                            console.log(fieldType)
                         }
                         gridLine.push(fieldType)
                     }
