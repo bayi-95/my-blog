@@ -774,7 +774,7 @@ function drawShadow(target: Target, position: Position) {
             -webkit-transition: all 300ms linear;
             transition: all 300ms linear;
             z-index: 5;
-            animation: moveClouds 8s linear infinite;
+            animation: moveClouds 10s linear infinite;
             -webkit-animation-play-state: running;
             -moz-animation-play-state: running;
             animation-play-state: running;
@@ -786,7 +786,7 @@ function drawShadow(target: Target, position: Position) {
             width: 100%;
             -webkit-transition: all 300ms linear;
             transition: all 300ms linear;
-            animation: moveClouds 32s linear infinite;
+            animation: moveClouds 40s linear infinite;
             -webkit-animation-play-state: paused;
             -moz-animation-play-state: paused;
             animation-play-state: paused;
