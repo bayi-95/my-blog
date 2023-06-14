@@ -10,7 +10,8 @@ export default {
         return h(DefaultTheme.Layout, null, {
             'home-hero-before': () => h(Components['FourSeasons']),
             'home-hero-after': () => h(Components['CuteBirdButton']),
-            'layout-bottom': () => h(Components['Elephant'])
+            'layout-bottom': () => h(Components['Elephant']),
+	        'doc-after': () => h(Components['GiscusComment'])
         })
     },
     async enhanceApp({ app }) {

@@ -57,6 +57,7 @@
         ]
     },
     "dependencies": {
-        "@vueuse/core": "^10.1.2"
+        "@vueuse/core": "^10.1.2",
+        "@giscus/vue": "^2.2.8"
     }
 }
