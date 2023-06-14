@@ -9,6 +9,7 @@
         "build": "vitepress build docs",
         "prepare": "npx husky install",
         "algolia": "docker run -it --env-file=.env -e \"CONFIG=$(cat algolia.json | jq -r tostring)\" algolia/docsearch-scraper",
+        "fetch:docs": "cd scripts && bash weekly-docs.sh",
         "preview": "vitepress preview docs",
         "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, scss, json, md}\""
     },
