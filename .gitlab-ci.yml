@@ -11,6 +11,7 @@ pages:
     - pnpm install
     - pnpm build
   artifacts:
+    expire_in: 2 week
     paths:
       - public
   only:
