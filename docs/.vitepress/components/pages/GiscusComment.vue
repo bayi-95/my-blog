@@ -1,19 +1,21 @@
 <template>
-    <div class="giscus">
+    <div class="comp-giscus">
         <Giscus
+            host="https://giscus.app"
             repo="bayi-95/bayi-95.github.io"
-            repo-id="R_kgDOJr11yQ"
+            repoId="R_kgDOJr11yQ"
             category="Announcements"
-            category-id="DIC_kwDOJr11yc4CXNAr"
+            categoryId="DIC_kwDOJr11yc4CXNAr"
             mapping="pathname"
             strict="0"
-            reactions-enabled="1"
-            emit-metadata="0"
-            input-position="top"
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="top"
             lang="zh-CN"
             loading="lazy"
             crossorigin="anonymous"
             async
+            :key="key"
             :theme="isDark ? 'dark' : 'light'"
         />
     </div>
@@ -21,35 +23,22 @@
 
 <script lang="ts" setup>
 import Giscus from '@giscus/vue'
-import { useData } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
+import { watch, ref } from 'vue'
 
+// 主题
 const { isDark } = useData()
+
+// 监听路由，更新组件
+const key = ref(0)
+const route = useRoute()
+watch(route, () => {
+    key.value += 1
+})
 </script>
 
 <style scoped>
-img.pv {
-    margin-top: 1em;
-}
-
-div.giscus {
+.comp-giscus {
     margin-top: 2em;
-}
-
-.donation {
-    margin-top: 2em;
-}
-
-.donation div {
-    margin: 0 auto;
-    flex: 0 1 auto;
-    flex-direction: row;
-    max-width: max-content;
-    row-gap: 10px;
-}
-
-.donation img {
-    display: inline-block;
-    zoom: 25%;
-    margin: 4em;
 }
 </style>
