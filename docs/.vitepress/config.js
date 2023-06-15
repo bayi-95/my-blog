@@ -43,7 +43,7 @@ export default {
 	        { text: '周刊', link: '/pages/weekly/' },
 	        { text: '日志', link: '/pages/logs/' }
         ],
-	    // 周刊的侧边栏数据
+	    // 周刊的侧边栏目录
 	    sidebar: {
 		    '/pages/weekly/': getSidebarWeekly(),
 	    },
@@ -55,7 +55,7 @@ export default {
         socialLinks: [{ icon: 'github', link: 'https://github.com/bayi-95/' }],
         // 编辑地址
         editLink: {
-            pattern: 'https://github.com/bayi-95/tree/master/docs/:path',
+            pattern: 'https://gitlab.com/bayi-95/my-blog/tree/develop/docs/:path',
             text: 'Edit this page'
         },
 	    lastUpdated: '上次更新',
