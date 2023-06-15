@@ -1,5 +1,5 @@
 <template>
-    <div class="comp-giscus">
+    <div v-if="frontmatter.isComment !== 'N'" class="comp-giscus">
         <Giscus
             host="https://giscus.app"
             repo="bayi-95/bayi-95.github.io"
@@ -26,8 +26,8 @@ import Giscus from '@giscus/vue'
 import { useData, useRoute } from 'vitepress'
 import { watch, ref } from 'vue'
 
-// 主题
-const { isDark } = useData()
+// 主题、前言数据
+const { isDark, frontmatter } = useData()
 
 // 监听路由，更新组件
 const key = ref(0)
