@@ -63,11 +63,11 @@
 作者想教7岁的孩子编程，尝试了各种语言之后，他发现30年前流行的 QBasic 依然是最好的选择。
 
 > 我先教他第一行代码：PRINT "hello world"。
-> 
+>
 > 然后，我又教了几个命令：CLS，COLOR，PLAY，INPUT和IF。没有什么可以解释的：没有复杂性，没有尴尬的操作符，没有抽象的概念，没有需要阅读的文档，没有对象/类/方法的概念，没有框架安装，没有特别的关键字或括号。这是代码最纯粹的形式。
-> 
+>
 > 不到一个小时，我7岁的孩子不仅能写出他的第一个源文件，还能体验创建、编译和执行他自己的小程序带来的乐趣和快感。
-> 
+>
 > 我意识到，30多年来，我们一直未能为我们的孩子提供更好的产品。我们创造了更强大和更复杂的语言/框架/ IDE，但我们从来没有比 QBasic 更简单或更直接地获得编程的快感。
 
 这里还有一篇[《Basic 语言的历史介绍》](http://www.nicolasbize.com/blog/30-years-later-qbasic-is-still-the-best/)。
@@ -101,11 +101,11 @@ Web Components 是浏览器原生的组件解决方案。如果你愿意对新�
 
 [![bm2.png | center | 826x276](https://cdn.yuque.com/yuque/0/2018/png/84141/1528279458174-ac6c630c-6ed6-427d-95f8-0281913653ec.png "")](https://m.bmqb.com/a/activities/group_invest?track_id=ryf_zutuan)
 
-现在，[贝米钱包](https://www.bmqb.com/?track_id=ryf_zutuan)<span data-type="color" style="color:#3E3E3E">推出了[贝米战队](https://m.bmqb.com/a/activities/group_invest?track_id=ryf_zutuan)<span data-type="color" style="color:#3E3E3E">活动。专门针对程序员群体，提供更高的收益。一个战队2~5人，所有队员均可邀请好友入队，成功组队投资，最高可获得2958元现金红包。活动到6月20日就结束了，扫描以下二维码了解更多！
+现在，[贝米钱包](https://www.bmqb.com/?track_id=ryf_zutuan)推出了[贝米战队](https://m.bmqb.com/a/activities/group_invest?track_id=ryf_zutuan)活动。专门针对程序员群体，提供更高的收益。一个战队2~5人，所有队员均可邀请好友入队，成功组队投资，最高可获得2958元现金红包。活动到6月20日就结束了，扫描以下二维码了解更多！
 
 [![bm3.png | center | 206x206](https://www.wangbase.com/blogimg/asset/201806/bg2018060813.png "")](https://m.bmqb.com/a/activities/group_invest?track_id=ryf_zutuan)
 
-另外，[贝米钱包](https://www.bmqb.com/?track_id=ryf_zutuan)承诺会将[本次活动](https://m.bmqb.com/a/activities/group_invest?track_id=ryf_zutuan)利润的 5% 捐赠给开源社区，<span data-type="color" style="color:rgb(34, 34, 34)">包括 vuejs , webpack , element,  vux, babel 等项目。
+另外，[贝米钱包](https://www.bmqb.com/?track_id=ryf_zutuan)承诺会将[本次活动](https://m.bmqb.com/a/activities/group_invest?track_id=ryf_zutuan)利润的 5% 捐赠给开源社区，包括 vuejs , webpack , element,  vux, babel 等项目。
 
 ## 教程
 
@@ -210,29 +210,29 @@ Electron 的挑战者越来越多，这个是 .NET 框架包装的 Chrome 浏览
 作者认为，Stuxnet 蠕虫病毒可能是有史以来最复杂的软件。
 
 > 我们不知道 Stuxnet 的作者是谁，只知道大概是在2005年至2010年间编写的。
-> 
+>
 > 这种病毒藏在 U 盘上。当 U 盘插入 PC，它会自动运行，将自已复制到该 PC。它至少有三种自动运行的方法。如果某种方法行不通，就尝试另一种。其中的两种运行方法是全新的，使用了 Windows 的两个无人知晓的秘密 Bug。
-> 
+>
 > 一旦蠕虫进入 PC ，它会尝试获得该 PC 的管理员权限，使用的也是前面提到的那两个无人知道的秘密 Bug。然后，它把自己留下的痕迹全部清除，不让防病毒软件检测到它的存在，用户不会看到任何东西。这种蠕虫隐藏得很好，出现后一年多，没有任何一家安全公司发现它的存在。
-> 
+>
 > 它会秘密访问 [http://www.mypremierfutbol.com](http://www.mypremierfutbol.com/) 或 [http://www.todaysfutbol.com](http://www.todaysfutbol.com/) 这两个网站，告诉服务器已经成功侵入了一台新的 PC，然后从网站下载最新版本自行更新。
-> 
+>
 > 它会将自身复制到任何插入该 PC 的 U 盘。使用的 U 盘驱动程序由 Realtek 公司进行了数字签名，但是 Realtek 公司并不知道有这个签名。这意味着，蠕虫作者能够获取 Realtek 公司的最高密钥。
-> 
+>
 > 它利用两个 Windows 的 Bug ----一个涉及网络打印机，另一个涉及网络文件----将自己传播到局域网里面的其他计算机上。
-> 
+>
 > 直到这一步，它的真正任务还没有开始。
-> 
+>
 > 它在每一台计算机上寻找一种由西门子设计的用于大型工业机械自动化的控制软件。一旦发现这种软件，它会使用另*一个*以前未知的 Bug，将自身复制到工业控制器的驱动程序。然后，它会检查两家特定公司的工业电机，其中一家公司在伊朗，另一家在芬兰。它要搜索的特定电机称为变频驱动器，主要用于运行工业离心机，提纯多种化学品，比如铀。
-> 
+>
 > 由于蠕虫完全控制了离心机，因此它可以做任何事情，可以将离心机全部关闭，也可以将它们全部摧毁：只需设定以最大速度旋转离心机，直到它们全都像炸弹一样爆炸，杀死任何恰好站在附近的人。
-> 
+>
 > 但它没有这么做，一旦它控制了每台离心机......它就进入潜伏。一旦达到设定的时间，它就会悄悄地唤醒自己，锁住离心机，使得人类无法关闭这些机器。然后悄悄地，蠕虫开始旋转这些离心机，修改了安全参数，增加了一些气体压力......
-> 
+>
 > 此外，它还会在离心机正常运转的时候，偷录一段21秒的数据记录。当它控制离心机运行的时候，会一遍又一遍地播放这段数据记录。管理人员会看到，计算机屏幕上的所有离心机运行数据都很正常，但这其实是蠕虫让他们看的。
-> 
+>
 > 现在让我们想象一下，有一家工厂正在用离心机净化铀。电脑上的所有数字都表明离心机运行正常。但是，离心机正在悄悄地出问题，一个接一个地倒下，这使得铀产量一直下降。铀必须是纯净的。你的铀不够纯净，无法做任何有用的事情。
-> 
+>
 > 工厂的管理者根本找不到原因，离心机的数据是正常的。你永远不会知道，所有这些问题都是由一种计算机蠕虫引起的。这是一种历史上最狡猾和最聪明的计算机蠕虫，它由一些拥有无限资金和无限资源的令人难以置信的秘密团队编写，并且设计时只考虑一个目的：偷偷摧毁某个国家的核弹计划，并且不被发现。
 
 2、[设计系统将取代设计师](https://www.designsystems.com/stories/will-design-systems-replace-designers/)
@@ -240,9 +240,9 @@ Electron 的挑战者越来越多，这个是 .NET 框架包装的 Chrome 浏览
 Facebook 和 Airbnb 设计系统的创造者[@soopa](https://twitter.com/soopa) 认为，随着设计系统越来越成熟，未来对于设计师的需求将会减少。
 
 > 我加入 Facebook 时，有18位设计师。一年之后，设计师超过40人，但产品工程部门已经超过1000人，产品管理接近200人。公司正受到设计部门增长缓慢的影响。我们着手解决这个问题的方法是，就是制定设计系统。
-> 
+>
 > 设计系统将取代今天我们所知的许多设计工作。UI 开发、流程和工具就像可互换的零件和工厂装配线，可以减少人员创建与以前相同的产品。今天的许多设计师必须将预先设计的组件组装在一起 - 这项任务将越来越自动化。
-> 
+>
 > 设计系统可以实现更快速的产品开发，从而使公司能够开发更多产品。设计系统使得每个产品需要更少的设计师。
 
 ## 每周图片
@@ -251,7 +251,7 @@ Facebook 和 Airbnb 设计系统的创造者[@soopa](https://twitter.com/soopa) 
 
 ![](https://www.wangbase.com/blogimg/asset/201806/bg2018060825.jpg)
 
-1941年，<span data-type="color" style="color:rgb(68, 68, 68)">美国《生活》（LIFE）杂志摄影师迈登斯（ Carl Mydans）来到中国，拍摄中国人民的抗战。现在，他拍摄的3332张照片已经可以在互联网免费下载。
+1941年，美国《生活》（LIFE）杂志摄影师迈登斯（ Carl Mydans）来到中国，拍摄中国人民的抗战。现在，他拍摄的3332张照片已经可以在互联网免费下载。
 
 2、[监视器上的燕子](https://www.mobile01.com/topicdetail.php?f=629&t=5445008&p=8#68506804)
 
