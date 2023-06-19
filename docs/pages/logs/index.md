@@ -6,11 +6,16 @@ sidebar: auto
 
 # 我的日志
 
+### 6/19/23
+
+∆ ci: 每周六 8 点，Github Action 定时获取最新周刊
+
 ### 6/14/23
 
 ∆ feat: blog 新增 周刊模块 & 评论功能
 
 来源：
+
 1. [ruanyf-weekly](https://github.com/plantree/ruanyf-weekly)
 2. [giscus 评论系统](https://giscus.app/zh-CN)
 
@@ -40,7 +45,7 @@ Node.js 提供了内置的调试器，可以在命令行中启动脚本时进行
 
 ### 6/1/23
 
-∆ chore: 支持 docker 使用 algolia 爬取网站内容功能
+∆ chore: 支持 docker 使用 algolia 爬取网站内容功能  
 
 ### 5/26/23
 
