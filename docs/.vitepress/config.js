@@ -64,6 +64,7 @@ export default {
             message: '部分文章收录于网络，转载请署名出处 | 联系博主可以发送邮件至 <a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a>',
             copyright: 'Copyright © 2020-present bayi-95.'
         },
+	    returnToTopLabel: '回到顶部',
         // 搜索
         algolia: {
             appId: '5VSYJHYEBM',
