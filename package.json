@@ -1,17 +1,20 @@
 {
     "name": "my-blog",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "我的博客，使用 vitepress 构建",
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "prepare": "npx husky install",
         "dev": "vitepress dev docs --host 0.0.0.0",
         "build": "vitepress build docs",
         "fetch:docs": "cd scripts && bash weekly-docs.sh",
         "algolia": "docker run -it --env-file=.env -e \"CONFIG=$(cat algolia.json | jq -r tostring)\" algolia/docsearch-scraper",
+        "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, scss, json, md}\"",
+        "clean:cache": "rimraf node_modules && rimraf .eslintcache && pnpm install",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "preview": "vitepress preview docs",
-        "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, scss, json, md}\""
+        "prepare": "npx husky install",
+        "release": "standard-version"
     },
     "keywords": [
         "博客",
@@ -46,6 +49,7 @@
         "sass": "^1.57.1",
         "search-insights": "^2.6.0",
         "snapsvg-cjs": "^0.0.6",
+        "standard-version": "^9.5.0",
         "typescript": "^4.9.4",
         "vitepress": "^1.0.0-beta.2",
         "vue": "^3.2.45"
@@ -57,7 +61,7 @@
         ]
     },
     "dependencies": {
-        "@vueuse/core": "^10.1.2",
-        "@giscus/vue": "^2.2.8"
+        "@giscus/vue": "^2.2.8",
+        "@vueuse/core": "^10.1.2"
     }
 }
