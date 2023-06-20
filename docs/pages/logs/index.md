@@ -6,6 +6,12 @@ sidebar: auto
 
 # 我的日志
 
+∆ features:
+
+1. 添加 `conventional-changelog` 生成 `CHANGELOG`
+2. 添加 `standard-version` 版本管理
+3. 添加 `commitlint` 校验
+
 ### 6/19/23
 
 ∆ ci: 每周六 8 点，Github Action 定时获取最新周刊
@@ -45,7 +51,7 @@ Node.js 提供了内置的调试器，可以在命令行中启动脚本时进行
 
 ### 6/1/23
 
-∆ chore: 支持 docker 使用 algolia 爬取网站内容功能  
+∆ chore: 支持 docker 使用 algolia 爬取网站内容功能
 
 ### 5/26/23
 
