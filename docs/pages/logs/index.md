@@ -6,7 +6,13 @@ sidebar: auto
 
 # 我的日志
 
-∆ features:
+### 6/25/23
+
+∆ feat: 添加 `Google Translate` 支持，需科学上网才行，能看到页面右下角的图标，可以切换语言，在线翻译
+
+### 6/20/23
+
+∆ feat:
 
 1. 添加 `conventional-changelog` 生成 `CHANGELOG`
 2. 添加 `standard-version` 版本管理

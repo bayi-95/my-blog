@@ -7,5 +7,6 @@ import Egg from './funnies/Egg.vue'
 import Elephant from './funnies/Elephant.vue'
 import FourSeasons from './funnies/FourSeasons/index.vue'
 import WeatherCard from './funnies/WeatherCard/index.vue'
+import GoogleTranslate from './pages/GoogleTranslate.vue'
 
-export { ArticleList, GiscusComment, CuteBirdButton, DinosaurRunner, SuperMarie, Egg, Elephant, FourSeasons, WeatherCard }
+export { ArticleList, GoogleTranslate, GiscusComment, CuteBirdButton, DinosaurRunner, SuperMarie, Egg, Elephant, FourSeasons, WeatherCard }
