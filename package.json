@@ -13,7 +13,7 @@
         "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, scss, json, md}\"",
         "clean:cache": "rimraf node_modules && rimraf .eslintcache && pnpm install",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-        "svgo": "svgo -f docs/public/images/svg -o docs/public/images/svg",
+        "svgo": "svgo -f docs/.vitepress/assets/svg -o docs/.vitepress/assets/svg",
         "preview": "vitepress preview docs",
         "prepare": "npx husky install",
         "release": "standard-version"
