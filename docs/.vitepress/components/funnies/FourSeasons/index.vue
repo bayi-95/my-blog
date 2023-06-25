@@ -2,7 +2,7 @@
     <component :is="component" />
 </template>
 
-<script>
+<script lang="ts">
 import SakuraFlying from './modules/SakuraFlying.vue'
 import Sunshine from './modules/Sunshine.vue'
 import { defineComponent, markRaw } from 'vue'
@@ -12,13 +12,13 @@ const SEASON_MAP = {
     summer: Sunshine,
     autumn: 'autumn',
     winter: 'winter'
-}
+} as Record<string, any>
 
 export default defineComponent({
     name: 'SeasonsComps',
     data() {
         return {
-            component: null,
+            component: 'SakuraFlying',
             season: ''
         }
     },
@@ -26,7 +26,7 @@ export default defineComponent({
         this.component = markRaw(SEASON_MAP[this.judgeSeason()])
     },
     methods: {
-        judgeSeason() {
+        judgeSeason(): string {
             const month = new Date().getMonth() + 1
             let result = ''
             switch (month) {

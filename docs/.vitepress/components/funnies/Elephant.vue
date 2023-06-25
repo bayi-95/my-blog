@@ -30,7 +30,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -45,9 +45,9 @@ export default defineComponent({
         const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent)
         if (!isMobile) {
             const footerWrap = document.querySelector('.VPFooter')
-            const elephant = document.querySelector('.ele-container')
+            const elephant: HTMLElement | null = document.querySelector('.ele-container')
 
-            if (footerWrap) {
+            if (footerWrap && elephant) {
                 footerWrap.append(elephant)
                 setTimeout(() => {
                     elephant.style.display = 'block'

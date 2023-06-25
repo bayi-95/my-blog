@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import * as Components from '../components'
-import { h } from 'vue'
+import { h, App } from 'vue'
 
 import '../style/index.scss'
 
@@ -11,10 +11,10 @@ export default {
             'home-hero-before': () => h(Components['FourSeasons']),
             'home-hero-after': () => h(Components['CuteBirdButton']),
             'layout-bottom': () => h(Components['Elephant']),
-	        'doc-after': () => h(Components['GiscusComment'])
+            'doc-after': () => h(Components['GoogleTranslate'])
         })
     },
-    async enhanceApp({ app }) {
+    async enhanceApp({ app }: { app: App }) {
         // 插入执行的方法
         if (!import.meta.env.SSR) {
             const { renderLoading } = await import('../utils')
@@ -22,7 +22,8 @@ export default {
         }
         // 注册全局组件
         Object.keys(Components).forEach((key) => {
-            app.component(key, Components[key])
+            const componentKey = key as keyof typeof Components
+            app.component(key, Components[componentKey])
         })
     }
 }

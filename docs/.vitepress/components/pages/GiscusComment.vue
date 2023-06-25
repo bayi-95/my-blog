@@ -27,7 +27,7 @@ import { useData, useRoute } from 'vitepress'
 import { watch, ref } from 'vue'
 
 // 主题、前言数据
-const { isDark, frontmatter } = useData()
+const { isDark, frontmatter }: UseData = useData()
 
 // 监听路由，更新组件
 const key = ref(0)

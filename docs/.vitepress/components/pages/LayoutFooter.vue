@@ -2,7 +2,7 @@
     <div class="layout-footer"><span v-html="content" /> | Copyright © {{ year }}</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     name: 'LayoutFooter',
     props: {

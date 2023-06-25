@@ -22,6 +22,7 @@ export const EXTRA_CONFIG = [
             content: 'origin'
         }
     ],
+    // 数学公式渲染
     [
         'script',
         {
@@ -78,21 +79,28 @@ export function renderLoading() {
     }, 2400)
 }
 
-function createStyleSheet(css) {
+function createStyleSheet(css: string) {
     try {
-        //IE下可行
-        const style = document.createStyleSheet()
-        style.cssText = css
+        const sheet = new CSSStyleSheet()
+        sheet.replaceSync(css)
+        document.adoptedStyleSheets = [sheet]
     } catch (e) {
-        //Firefox,Opera,Safari,Chrome下可行
         const style = document.createElement('style')
         style.type = 'text/css'
         style.textContent = css
-        document.getElementsByTagName('HEAD').item(0).appendChild(style)
+        const head = document.getElementsByTagName('HEAD')[0]
+        if (head != null) {
+            head.appendChild(style)
+        }
     }
 }
 
-export function parseTime(time, cFormat) {
+/**
+ * 格式化日期
+ * @param time
+ * @param cFormat
+ */
+export function parseTime(time: any, cFormat: string) {
     if (arguments.length === 0 || time === '0' || !time) {
         return '无'
     }
@@ -103,7 +111,7 @@ export function parseTime(time, cFormat) {
     } else {
         date = new Date(time * 1000)
     }
-    const formatObj = {
+    const formatObj: FormatObj = {
         y: date.getFullYear(),
         m: date.getMonth() + 1,
         d: date.getDate(),
@@ -112,15 +120,25 @@ export function parseTime(time, cFormat) {
         s: date.getSeconds(),
         a: date.getDay()
     }
-    return format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
-        let value = formatObj[key]
+    return format.replace(/{(y|m|d|h|i|s|a)+}/g, (result: string, key: keyof FormatObj) => {
+        let value: string | number = formatObj[key]
         // Note: getDay() returns 0 on Sunday
         if (key === 'a') {
-            return ['日', '一', '二', '三', '四', '五', '六'][value]
+            return ['日', '一', '二', '三', '四', '五', '六'][value] || ''
         }
         if (result.length > 0 && value < 10) {
             value = '0' + value
         }
-        return value || 0
+        return value.toString() || ''
     })
+}
+
+interface FormatObj {
+    y: number
+    m: number
+    d: number
+    h: number
+    i: number
+    s: number
+    a: number
 }

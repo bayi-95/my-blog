@@ -272,7 +272,7 @@ const initialValue = reactive({
     y: 80
 })
 
-let shadowTitle, shadowContent
+let shadowTitle: Target, shadowContent: Target
 onMounted(() => {
     initialValue.x = window.innerWidth - 80
     import('../utils/shine').then(({ Shine }) => {
@@ -294,16 +294,6 @@ const { style } = useDraggable(sun, {
         drawShadow(shadowContent, data)
     }
 })
-
-type Position = {
-    x: number
-    y: number
-}
-
-type Target = {
-    light?: object
-    draw?: Function
-}
 
 /**
  * 绘制文字阴影

@@ -24,7 +24,7 @@ export default defineComponent({
         }
     },
     computed: {
-        contentStyle() {
+        contentStyle(): string {
             return this.visible ? 'display: block' : 'display: none'
         }
     },

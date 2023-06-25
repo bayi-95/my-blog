@@ -73,7 +73,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import { parseTime } from '../../../utils'
 
@@ -84,16 +84,22 @@ export default defineComponent({
             // 更新视图
             key: 0,
             // 天气插件
-            component: null,
+            component: {
+                init: (key: any) => {}
+            },
             // 天气数据
             weather: {
-                now: {},
-                location: {}
+                now: {
+                    temperature: ''
+                },
+                location: {
+                    name: ''
+                }
             }
         }
     },
     async mounted() {
-        const [data] = await this.fetchWeatherData()
+        const [data] = (await this.fetchWeatherData()) as Weather[]
         const weather = this.getWeatherType(data)
         // 组件要重新更新渲染
         this.key += 1
@@ -130,7 +136,7 @@ export default defineComponent({
                 }
             })
         },
-        getWeatherType(weather) {
+        getWeatherType(weather: Weather) {
             const { now } = weather
             const { text: name, code } = now
 
