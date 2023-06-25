@@ -5,19 +5,14 @@
             <span class="label">标签 🏷️：</span>
             <p v-for="item in tagList" class="tag-item">
                 <span class="tag">{{ item }}</span>
-                <img class="tag-close" src="/images/blog/list/close.svg" alt="x" @click="handleRemoveTag(item)" />
+                <SvgClose class="tag-close" @click="handleRemoveTag(item)"></SvgClose>
             </p>
         </div>
         <div v-for="(article, index) in articles[current]" :key="index" class="article-list">
             <div class="article-header">
                 <div class="article-title">
                     <a :href="withBase(article.regularPath)"> {{ article.frontMatter.title }}</a>
-                    <img
-                        v-if="article.frontMatter.isSticky"
-                        class="tag-sticky"
-                        src="/images/blog/list/sticky.svg"
-                        alt="置顶"
-                    />
+                    <SvgSticky v-if="article.frontMatter.isSticky" class="tag-sticky"></SvgSticky>
                 </div>
             </div>
             <p class="describe" v-html="article.frontMatter.description"></p>
@@ -40,13 +35,18 @@
     </template>
     <template v-else>
         <div class="empty-wrap flex-column item-center">
-            <img src="/images/blog/list/nodata.svg" alt="icon-nodata" />
+            <SvgEmpty></SvgEmpty>
             <p class="no-data">暂无文章</p>
         </div>
     </template>
 </template>
 
 <script lang="ts" setup>
+// import svg
+import SvgSticky from 'assets/svg/sticky.svg?component'
+import SvgClose from 'assets/svg/close.svg?component'
+import SvgEmpty from 'assets/svg/empty.svg?component'
+
 import { useData, withBase } from 'vitepress'
 import { computed, onMounted, ref, UnwrapRef, watch } from 'vue'
 import { useUrlSearchParams } from '@vueuse/core'
@@ -55,30 +55,30 @@ const { theme } = useData()
 const pageSize = 5
 
 // 标签数据
-const tagList = ref([])
+const tagList = ref<string[]>([])
 onMounted(() => {
     const { tag: urlTags = '' } = useUrlSearchParams()
     const tagStr = urlTags || sessionStorage.getItem('tagList') || ''
-    tagList.value = tagStr ? tagStr.split(',') : []
+    tagList.value = tagStr ? (tagStr as string).split(',') : []
 })
 
 // 文章列表
 const articles = computed(() => {
     let _articles = theme.value?.articles || []
     // 如果有标签
-    const tags: UnwrapRef<string[]> = tagList.value || []
+    const tags = tagList.value || []
     if (tags.length > 0) {
-        _articles = _articles.filter((item) => {
+        _articles = _articles.filter((item: ArticleItem) => {
             return tags.every((tag) => item.frontMatter.tags.includes(tag))
         })
     }
     // 如果有文章
     if (_articles.length > 0) {
-        const res = {
+        const res: ArticleResult = {
             1: []
         }
         let key = 1
-        _articles.forEach((item, index) => {
+        _articles.forEach((item: any, index: number) => {
             if (index >= pageSize && index % pageSize === 0) {
                 key += 1
                 res[key] = []

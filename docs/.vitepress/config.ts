@@ -1,14 +1,16 @@
+import path from 'path'
+import SvgLoader from 'vite-svg-loader'
 import { getArticles, getSidebarWeekly } from './utils/article'
-import { EXTRA_CONFIG }  from './utils';
+import { EXTRA_CONFIG } from './utils'
 
 export default {
     title: '秋殇の博客',
     description: '申光普，博客，vitepress，学习心得，日志，笔记...',
     website: 'https://bayi-95.eu.org/',
-	outDir: '../public',
-	cleanUrls: true,
-	lang: 'zh-CN',
-	lastUpdated: true,
+    outDir: '../public',
+    cleanUrls: true,
+    lang: 'zh-CN',
+    lastUpdated: true,
     ignoreDeadLinks: true,
     head: [
         ['link', { rel: 'icon', href: '/images/index/fish.png' }], //浏览器的标签栏的网页图标
@@ -37,20 +39,20 @@ export default {
                     { text: 'vue', link: '/pages/vue/code.md' },
                     { text: 'javascript', link: '/pages/javascript/前端commit规范.md' },
                     { text: 'react', link: '/pages/react/code.md' },
-                    { text: 'react-native', link: '/pages/react-native/code.md' },
+                    { text: 'react-native', link: '/pages/react-native/code.md' }
                 ]
             },
-	        { text: '周刊', link: '/pages/weekly/' },
-	        { text: '日志', link: '/pages/logs/' }
+            { text: '周刊', link: '/pages/weekly/' },
+            { text: '日志', link: '/pages/logs/' }
         ],
-	    // 周刊的侧边栏目录
-	    sidebar: {
-		    '/pages/weekly/': getSidebarWeekly(),
-	    },
-	    // 侧边栏
-	    outlineTitle: '目录',
-	    // 文章列表
-	    articles: await getArticles(),
+        // 周刊的侧边栏目录
+        sidebar: {
+            '/pages/weekly/': getSidebarWeekly()
+        },
+        // 侧边栏
+        outlineTitle: '目录',
+        // 文章列表
+        articles: await getArticles(),
         // github 地址
         socialLinks: [{ icon: 'github', link: 'https://github.com/bayi-95/' }],
         // 编辑地址
@@ -58,25 +60,34 @@ export default {
             pattern: 'https://gitlab.com/bayi-95/my-blog/tree/develop/docs/:path',
             text: 'Edit this page'
         },
-	    lastUpdated: '上次更新',
-	    // Copyright
+        lastUpdated: '上次更新',
+        // Copyright
         footer: {
             message: '部分文章收录于网络，转载请署名出处 | 联系博主可以发送邮件至 <a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a>',
             copyright: 'Copyright © 2020-present bayi-95.'
         },
-	    returnToTopLabel: '回到顶部',
+        returnToTopLabel: '回到顶部',
         // 搜索
         algolia: {
             appId: '5VSYJHYEBM',
             apiKey: '3071496c8c2cbabf56c677eb7093170d',
             indexName: 'prod_bayi95'
-        },
-
+        }
     },
     markdown: {
         lineNumbers: false,
-	    headers: {
-		    level: [0, 1]
-	    }
+        headers: {
+            level: [0, 1]
+        }
     },
+    vite: {
+      // 插件
+      plugins: [SvgLoader()],
+      // 别名
+      resolve: {
+            alias: {
+                assets: path.resolve(__dirname, 'assets')
+            }
+        },
+    }
 }
