@@ -154,7 +154,7 @@ function handleRemoveTag(tag: string) {
             z-index: 1;
             width: 30px;
             height: 30px;
-            transform: rotate(90deg);
+            fill: var(--vp-c-red-dark);
         }
     }
     .article-info {
