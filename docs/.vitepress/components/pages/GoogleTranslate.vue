@@ -1,9 +1,10 @@
 <template>
     <div v-if="isShow" class="comp-google-translate">
         <!-- 翻译容器 -->
-        <div v-show="!isHide" class="wrapper">
+        <div v-show="!isHide" class="translate-wrapper">
             <div id="google-translate"></div>
-            <SvgClose class="btn-close" @click="toggleShow"></SvgClose>
+            <SvgRestore class="icon-btn" @click="restoreLanguage"></SvgRestore>
+            <SvgClose class="icon-btn big" @click="toggleShow"></SvgClose>
         </div>
         <!-- 隐藏的 icon 按钮 -->
         <SvgTranslate v-show="isHide" class="svg-box" @click="toggleShow"></SvgTranslate>
@@ -14,6 +15,7 @@
 // import svg
 import SvgTranslate from 'assets/svg/translate.svg?component'
 import SvgClose from 'assets/svg/close.svg?component'
+import SvgRestore from 'assets/svg/restore.svg?component'
 
 import { ref, Ref } from 'vue'
 import { useScriptTag } from '@vueuse/core'
@@ -38,6 +40,11 @@ const isHide: Ref<boolean> = ref(true)
 function toggleShow() {
     isHide.value = !isHide.value
 }
+
+// 重置语言
+function restoreLanguage() {
+    window.google.translate.TranslateElement.getInstance().bf()
+}
 </script>
 
 <style lang="scss">
@@ -53,39 +60,45 @@ function toggleShow() {
     background-color: var(--vp-c-bg);
     box-shadow: var(--vp-shadow-5);
     border-radius: 8px;
-    .goog-te-gadget,
-    a {
-        display: flex;
-        align-items: center;
-        margin: 0 3px;
-        font-weight: normal;
-    }
-    .goog-te-combo {
-        margin: 0;
-        padding: 0 8px;
-        width: 86px;
-        border-radius: 4px;
-    }
-    img {
-        margin-bottom: -2px;
-    }
     .svg-box {
         width: 18px;
         height: 18px;
         fill: var(--vp-c-brand);
         cursor: pointer;
     }
-    .btn-close {
-        position: absolute;
-        top: -8px;
-        right: -8px;
-        z-index: 1;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        fill: var(--vp-c-text-1);
-        border: 1px solid var(--vp-c-text-2);
-        cursor: pointer;
+
+    .translate-wrapper {
+        display: flex;
+        align-items: center;
+        .goog-te-gadget,
+        a {
+            display: flex;
+            align-items: center;
+            margin: 0 3px;
+            font-weight: normal;
+        }
+        .goog-te-combo {
+            margin: 0;
+            padding: 0 8px;
+            width: 86px;
+            border-radius: 4px;
+        }
+        img {
+            margin-bottom: -2px;
+        }
+        .icon-btn {
+            margin: 0 1px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            &.big {
+                width: 20px;
+                height: 20px;
+            }
+            &:hover {
+                opacity: 0.64;
+            }
+        }
     }
 }
 </style>
