@@ -1,4 +1,6 @@
 .Layout {
+    transition: all ease 1.25s;
+    filter: unset; // 会影响 fixed 定位，所以这里设置 unset
     .VPNavBar {
         position: relative;
         border-bottom: 1px solid transparent;
@@ -88,6 +90,17 @@
 // google translate 修改样式导致问题，所以覆盖样式
 body {
     position: unset !important;
+}
+
+.loading .Layout {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    transform: scale(1.1);
+    transition: all ease 1.25s;
+    opacity: 0;
+    filter: blur(10px)
 }
 
 .flex {
