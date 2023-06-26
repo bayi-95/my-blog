@@ -115,10 +115,12 @@ watch(
 // 添加 tag
 function handleTagChange(tag: string) {
     if (tag) {
-        let tags: UnwrapRef<string[]> = tagList.value || []
-        tags.push(tag)
-        const tagStr: string = [...new Set(tags)].join(',')
-        sessionStorage.setItem('tagList', tagStr)
+        const tags: UnwrapRef<string[]> = tagList.value || []
+        if (!tags.includes(tag)) {
+            const tagStr: string = [...new Set(tags)].join(',')
+            tags.push(tag)
+            sessionStorage.setItem('tagList', tagStr)
+        }
     }
 }
 
@@ -169,7 +171,7 @@ function handleRemoveTag(tag: string) {
             color: var(--vp-c-text-1);
             cursor: pointer;
             &:hover {
-                background-color: var(--vp-c-bg-soft-down);
+                background-color: var(--vp-input-hover-border-color);
             }
         }
     }
