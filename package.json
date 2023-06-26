@@ -10,7 +10,7 @@
         "fetch:docs": "cd scripts && bash weekly-docs.sh",
         "algolia": "docker run -it --env-file=.env -e \"CONFIG=$(cat algolia.json | jq -r tostring)\" algolia/docsearch-scraper",
         "typecheck": "tsc --noEmit && vue-tsc --noEmit --skipLibCheck",
-        "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, scss, json, md}\"",
+        "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, ts, scss, json, md}\"",
         "clean:cache": "rimraf node_modules && rimraf .eslintcache && pnpm install",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "svgo": "svgo -f docs/.vitepress/assets/svg -o docs/.vitepress/assets/svg",
@@ -65,7 +65,7 @@
         "vue-tsc": "^1.6.4"
     },
     "lint-staged": {
-        "{docs, daily}/**/*.{vue, js, scss, json, md}": [
+        "{docs, daily}/**/*.{vue, js, ts, scss, json, md}": [
             "prettier --write",
             "git add -A"
         ]
