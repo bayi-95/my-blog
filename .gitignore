@@ -5,6 +5,7 @@
 
 # production
 /docs/.vitepress/cache
+/docs/.vitepress/.temp
 dist
 *.local
 
