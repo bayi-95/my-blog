@@ -53,6 +53,7 @@
         "markdown-it-mathjax3": "^4.3.2",
         "postcss": "^8.1.0",
         "prettier": "^2.8.1",
+        "rollup-plugin-visualizer": "^5.9.2",
         "sass": "^1.57.1",
         "search-insights": "^2.6.0",
         "snapsvg-cjs": "^0.0.6",

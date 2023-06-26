@@ -2,6 +2,7 @@ import path from 'path'
 import SvgLoader from 'vite-svg-loader'
 import mathjax3 from 'markdown-it-mathjax3'
 import type MarkdownIt from 'markdown-it'
+import { visualizer } from 'rollup-plugin-visualizer'
 import { getArticles, getSidebarWeekly } from './utils/article'
 import { EXTRA_CONFIG, CUSTOM_ELEMENTS } from './utils'
 
@@ -86,8 +87,15 @@ export default {
         }
     },
     vite: {
-        // 插件
-        plugins: [SvgLoader()],
+        plugins: [
+            // 处理 svg
+            SvgLoader(),
+            // 打包分析
+            visualizer({
+                filename: 'rollup-visualizer.html',
+                open: true
+            })
+        ],
         // 别名
         resolve: {
             alias: {
