@@ -757,25 +757,25 @@ def fib(n):
 
 | 库名                                                                | 用途                         |
 | ------------------------------------------------------------------- | ---------------------------- |
-| [`array`](https://docs.python.org/3/library/array.html)             | 定长数组                     |
-| [`argparse`](https://docs.python.org/3/library/argparse.html)       | 命令行参数处理               |
-| [`bisect`](https://docs.python.org/3/library/bisect.html)           | 二分查找                     |
-| [`collections`](https://docs.python.org/3/library/collections.html) | 有序字典、双端队列等数据结构 |
-| [`fractions`](https://docs.python.org/3/library/fractions.html)     | 有理数                       |
-| [`heapq`](https://docs.python.org/3/library/heapq.html)             | 基于堆的优先级队列           |
-| [`io`](https://docs.python.org/3/library/io.html)                   | 文件流、内存流               |
-| [`itertools`](https://docs.python.org/3/library/itertools.html)     | 迭代器                       |
-| [`math`](https://docs.python.org/3/library/math.html)               | 数学函数                     |
-| [`os.path`](https://docs.python.org/3/library/os.html)              | 系统路径等                   |
-| [`random`](https://docs.python.org/3/library/random.html)           | 随机数                       |
-| [`re`](https://docs.python.org/3/library/re.html)                   | 正则表达式                   |
-| [`struct`](https://docs.python.org/3/library/struct.html)           | 转换结构体和二进制数据       |
-| [`sys`](https://docs.python.org/3/library/sys.html)                 | 系统信息                     |
+| [array](https://docs.python.org/3/library/array.html)             | 定长数组                     |
+| [argparse](https://docs.python.org/3/library/argparse.html)       | 命令行参数处理               |
+| [bisect](https://docs.python.org/3/library/bisect.html)           | 二分查找                     |
+| [collections](https://docs.python.org/3/library/collections.html) | 有序字典、双端队列等数据结构 |
+| [fractions](https://docs.python.org/3/library/fractions.html)     | 有理数                       |
+| [heapq](https://docs.python.org/3/library/heapq.html)             | 基于堆的优先级队列           |
+| [io](https://docs.python.org/3/library/io.html)                   | 文件流、内存流               |
+| [itertools](https://docs.python.org/3/library/itertools.html)     | 迭代器                       |
+| [math](https://docs.python.org/3/library/math.html)               | 数学函数                     |
+| [os.path`](https://docs.python.org/3/library/os.html)              | 系统路径等                   |
+| [random](https://docs.python.org/3/library/random.html)           | 随机数                       |
+| [re](https://docs.python.org/3/library/re.html)                   | 正则表达式                   |
+| [struct](https://docs.python.org/3/library/struct.html)           | 转换结构体和二进制数据       |
+| [sys](https://docs.python.org/3/library/sys.html)                 | 系统信息                     |
 
 ## 从例题对比 C++ 与 Python
 
 ::: info "[例题 洛谷 P4779【模板】单源最短路径（标准版）](https://www.luogu.com.cn/problem/P4779)"
-给定一个 $$n(1 \leq n \leq 10^5)$$ 个点、$$m(1 \leq m \leq 2\times 10^5)$$ 条有向边的带非负权图，请你计算从 $$s$$ 出发，到每个点的距离。数据保证能从 $$s$$ 出发到任意点。
+给定一个 $n(1 \leq n \leq 10^5)$ 个点、$m(1 \leq m \leq 2\times 10^5)$ 条有向边的带非负权图，请你计算从 $s$ 出发，到每个点的距离。数据保证能从 $s$ 出发到任意点。
 :::
 
 ### 声明常量
