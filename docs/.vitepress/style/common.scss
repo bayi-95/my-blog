@@ -33,16 +33,9 @@
     }
 
     // 数学公式
-    mjx-container[jax="SVG"]{
-        &[display="true"] {
-            margin: 0;
-            display: inline-block;
-            min-height: 8px;
-            text-align: center;
-            font-size: inherit;
-        }
+    .MathJax[jax="SVG"]{
         > svg {
-            margin-bottom: -2px;
+            display: inline-block;
             font-size: 12px;
         }
     }
@@ -92,6 +85,7 @@
     }
 }
 
+// google translate 修改样式导致问题，所以覆盖样式
 body {
     position: unset !important;
 }

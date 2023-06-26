@@ -1,7 +1,9 @@
 import path from 'path'
 import SvgLoader from 'vite-svg-loader'
+import mathjax3 from 'markdown-it-mathjax3'
+import type MarkdownIt from 'markdown-it'
 import { getArticles, getSidebarWeekly } from './utils/article'
-import { EXTRA_CONFIG } from './utils'
+import { EXTRA_CONFIG, CUSTOM_ELEMENTS } from './utils'
 
 export default {
     title: '秋殇の博客',
@@ -78,16 +80,27 @@ export default {
         lineNumbers: false,
         headers: {
             level: [0, 1]
+        },
+        config: (md: MarkdownIt) => {
+            md.use(mathjax3)
         }
     },
     vite: {
-      // 插件
-      plugins: [SvgLoader()],
-      // 别名
-      resolve: {
+        // 插件
+        plugins: [SvgLoader()],
+        // 别名
+        resolve: {
             alias: {
                 assets: path.resolve(__dirname, 'assets')
             }
-        },
+        }
+    },
+    // 注册自定义标签，防止编译报错
+    vue: {
+        template: {
+            compilerOptions: {
+                isCustomElement: (tag: string) => CUSTOM_ELEMENTS.includes(tag)
+            }
+        }
     }
 }

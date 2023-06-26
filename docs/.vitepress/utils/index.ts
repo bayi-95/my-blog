@@ -21,26 +21,6 @@ export const EXTRA_CONFIG = [
             name: 'referrer',
             content: 'origin'
         }
-    ],
-    // 数学公式渲染
-    [
-        'script',
-        {
-            async: true,
-            id: 'MathJax-script',
-            src: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js'
-        },
-        `
-			window.MathJax = {
-			  tex: {
-			    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-			    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
-			  },
-			  svg: {
-			    fontCache: 'global',
-			  },
-			};
-		`
     ]
 ]
 
@@ -142,3 +122,94 @@ interface FormatObj {
     s: number
     a: number
 }
+
+// 由于markdown-it-mathjax3使用svg渲染，增加了一些自定义标签，配置时同样需要将这些标签标记为自定义标签，防止编译出错
+export const CUSTOM_ELEMENTS = [
+    'math',
+    'maction',
+    'maligngroup',
+    'malignmark',
+    'menclose',
+    'merror',
+    'mfenced',
+    'mfrac',
+    'mi',
+    'mlongdiv',
+    'mmultiscripts',
+    'mn',
+    'mo',
+    'mover',
+    'mpadded',
+    'mphantom',
+    'mroot',
+    'mrow',
+    'ms',
+    'mscarries',
+    'mscarry',
+    'mscarries',
+    'msgroup',
+    'mstack',
+    'mlongdiv',
+    'msline',
+    'mstack',
+    'mspace',
+    'msqrt',
+    'msrow',
+    'mstack',
+    'mstack',
+    'mstyle',
+    'msub',
+    'msup',
+    'msubsup',
+    'mtable',
+    'mtd',
+    'mtext',
+    'mtr',
+    'munder',
+    'munderover',
+    'semantics',
+    'math',
+    'mi',
+    'mn',
+    'mo',
+    'ms',
+    'mspace',
+    'mtext',
+    'menclose',
+    'merror',
+    'mfenced',
+    'mfrac',
+    'mpadded',
+    'mphantom',
+    'mroot',
+    'mrow',
+    'msqrt',
+    'mstyle',
+    'mmultiscripts',
+    'mover',
+    'mprescripts',
+    'msub',
+    'msubsup',
+    'msup',
+    'munder',
+    'munderover',
+    'none',
+    'maligngroup',
+    'malignmark',
+    'mtable',
+    'mtd',
+    'mtr',
+    'mlongdiv',
+    'mscarries',
+    'mscarry',
+    'msgroup',
+    'msline',
+    'msrow',
+    'mstack',
+    'maction',
+    'semantics',
+    'annotation',
+    'annotation-xml',
+    'mjx-container',
+    'mjx-assistive-mml'
+]
