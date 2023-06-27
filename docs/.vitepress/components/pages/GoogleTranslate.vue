@@ -21,10 +21,11 @@ import { ref, Ref } from 'vue'
 import { useScriptTag } from '@vueuse/core'
 
 const isShow: Ref<boolean> = ref(false)
-useScriptTag('https://translate.google.com/translate_a/element.js', () => {
+useScriptTag('https://translate.google.com/translate_a/element.js?cb=handleGoogleTranslateInit', () => {
+    // 如果能加载js，代表网络环境 ok
     isShow.value = true
-    // 加载插件后，还需要等插件调用其他方法后才行，所以要加延迟
-    setTimeout(function () {
+    // 暴露在window上，供回调函数调用
+    window.handleGoogleTranslateInit = function () {
         new window.google.translate.TranslateElement(
             {
                 layout: window.google.translate.TranslateElement.InlineLayout.HORIZONTAL,
@@ -32,7 +33,7 @@ useScriptTag('https://translate.google.com/translate_a/element.js', () => {
             },
             'google-translate'
         )
-    }, 1000)
+    }
 })
 
 // 是否显示翻译
@@ -43,7 +44,20 @@ function toggleShow() {
 
 // 重置语言
 function restoreLanguage() {
-    window.google.translate.TranslateElement.getInstance().bf()
+    const iframe = document.getElementById(':1.container') as HTMLIFrameElement
+    if (iframe) {
+        // 在获取到的 iframe 中搜索所有的按钮
+        const innerDoc = iframe.contentDocument || iframe.contentWindow?.document
+        const restoreElement = innerDoc?.getElementsByTagName('button')
+        if (restoreElement) {
+            for (let i = 0; i < restoreElement.length; i++) {
+                if (restoreElement[i].id.indexOf('restore') >= 0) {
+                    restoreElement[i].click()
+                    return
+                }
+            }
+        }
+    }
 }
 </script>
 
