@@ -27,7 +27,7 @@
                 class="link t"
                 :class="{ active: current === i }"
                 :key="i"
-                @click="current = i"
+                @click="handleCurrentChange(i)"
                 >{{ i }}</span
             >
         </div>
@@ -48,8 +48,9 @@ import SvgClose from 'assets/svg/close.svg?component'
 import SvgEmpty from 'assets/svg/empty.svg?component'
 
 import { useData, withBase } from 'vitepress'
-import { computed, onMounted, ref, UnwrapRef, watch } from 'vue'
 import { useUrlSearchParams } from '@vueuse/core'
+import { computed, onMounted, ref, unref, watch } from 'vue'
+import type { Ref, UnwrapRef } from 'vue'
 
 const { theme } = useData()
 const pageSize = 5
@@ -93,9 +94,9 @@ const articles = computed(() => {
 })
 
 // 当前页码
-const current = ref(1)
+const current: Ref<number> = ref(Number(sessionStorage.getItem('currentPageNum')) || 1)
 
-// 页数
+// 总页数
 const pageNum = computed(() => {
     return Object.keys(articles.value).length
 })
@@ -106,7 +107,7 @@ watch(
     (val) => {
         if (val) {
             // 重置页码
-            current.value = 1
+            handleCurrentChange(1)
         }
     },
     { deep: true }
@@ -115,10 +116,10 @@ watch(
 // 添加 tag
 function handleTagChange(tag: string) {
     if (tag) {
-        const tags: UnwrapRef<string[]> = tagList.value || []
+        const tags: UnwrapRef<string[]> = unref(tagList) || []
         if (!tags.includes(tag)) {
-            const tagStr: string = [...new Set(tags)].join(',')
             tags.push(tag)
+            const tagStr: string = [...new Set(tags)].join(',')
             sessionStorage.setItem('tagList', tagStr)
         }
     }
@@ -131,6 +132,13 @@ function handleRemoveTag(tag: string) {
         tagList.value.splice(index, 1)
         sessionStorage.setItem('tagList', tagList.value.join(','))
     }
+}
+
+// 页码改变
+function handleCurrentChange(num: number) {
+    current.value = num
+    sessionStorage.setItem('currentPageNum', String(num))
+    document.body.scrollIntoView()
 }
 </script>
 
