@@ -10,7 +10,7 @@ import { defineComponent, markRaw } from 'vue'
 const SEASON_MAP = {
     spring: SakuraFlying,
     summer: Sunshine,
-    autumn: 'autumn',
+    autumn: Sunshine,
     winter: 'winter'
 } as Record<string, any>
 
