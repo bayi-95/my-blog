@@ -3,7 +3,7 @@ pages:
   stage: build
   tags:
     - shell
-    - macos
+    - window
   cache:
     paths:
       - node_modules/
