@@ -78,7 +78,10 @@ export default {
         }
     },
     markdown: {
-        lineNumbers: false,
+        math: true,
+        image: {
+            lazyLoading: true
+        },
         headers: {
             level: [0, 1]
         },

@@ -1,34 +1,34 @@
 {
-    "index_name": "prod_bayi95",
-    "start_urls": [
-        {
-            "url": "https://bayi-95.eu.org/",
-            "selectors_key": "v2",
-            "tags": ["v2"]
-        }
-    ],
-    "rateLimit": 8,
-    "maxDepth": 10,
-    "selectors": {
-        "v2": {
-            "lvl0": {
-                "selector": "",
-                "defaultValue": "Documentation"
-            },
-            "lvl1": ".content h1",
-            "lvl2": ".content h2",
-            "lvl3": ".content h3",
-            "lang": {
-                "selector": "/html/@lang",
-                "type": "xpath",
-                "global": true
-            }
-        }
-    },
-    "scrape_start_urls": false,
-    "strip_chars": " .,;:#",
-    "custom_settings": {
-        "attributesForFaceting": ["lang", "tags"]
-    },
-    "selectors_exclude": [".pager-link", ".header-anchor", "outline-link", ".aside", ".visually-hidden", ".VPFooter" ]
+  "index_name": "prod_bayi95",
+  "start_urls": [
+    {
+      "url": "https://bayi-95.eu.org/",
+      "selectors_key": "v2",
+      "tags": ["v2"]
+    }
+  ],
+  "rateLimit": 8,
+  "maxDepth": 10,
+  "selectors": {
+    "v2": {
+      "lvl0": {
+        "selector": "",
+        "defaultValue": "Documentation"
+      },
+      "lvl1": ".content h1",
+      "lvl2": ".content h2",
+      "lvl3": ".content h3",
+      "lang": {
+        "selector": "/html/@lang",
+        "type": "xpath",
+        "global": true
+      }
+    }
+  },
+  "scrape_start_urls": false,
+  "strip_chars": " .,;:#",
+  "custom_settings": {
+    "attributesForFaceting": ["lang", "tags"]
+  },
+  "selectors_exclude": [".pager-link", ".header-anchor", "outline-link", ".aside", ".visually-hidden", ".VPFooter"]
 }

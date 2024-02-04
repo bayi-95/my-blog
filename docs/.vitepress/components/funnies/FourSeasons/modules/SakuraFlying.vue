@@ -4,11 +4,11 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    name: 'SakuraFlying',
-    mounted() {
-        import('../utils/sakura-flying').then(({ startSakura }) => {
-            startSakura()
-        })
-    }
+  name: 'SakuraFlying',
+  mounted() {
+    import('../utils/sakura-flying').then(({ startSakura }) => {
+      startSakura()
+    })
+  }
 })
 </script>
