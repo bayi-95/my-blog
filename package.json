@@ -1,78 +1,82 @@
 {
-    "name": "my-blog",
-    "version": "1.1.0",
-    "description": "我的博客，使用 vitepress 构建",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-        "dev": "vitepress dev docs --host 0.0.0.0",
-        "build": "vitepress build docs",
-        "fetch:docs": "cd scripts && bash weekly-docs.sh",
-        "algolia": "docker run -it --env-file=.env -e \"CONFIG=$(cat algolia.json | jq -r tostring)\" algolia/docsearch-scraper",
-        "typecheck": "tsc --noEmit && vue-tsc --noEmit --skipLibCheck",
-        "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, ts, scss, json, md}\"",
-        "clean:cache": "rimraf node_modules && rimraf .eslintcache && pnpm install",
-        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-        "svgo": "svgo -f docs/.vitepress/assets/svg -o docs/.vitepress/assets/svg",
-        "preview": "vitepress preview docs",
-        "prepare": "npx husky install",
-        "release": "standard-version"
-    },
-    "keywords": [
-        "博客",
-        "申光普",
-        "vitepress"
-    ],
-    "author": "申光普",
-    "license": "MIT",
-    "pnpm": {
-        "peerDependencyRules": {
-            "ignoreMissing": [
-                "@algolia/client-search"
-            ]
-        }
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^17.6.5",
-        "@commitlint/config-conventional": "^17.6.5",
-        "@types/fs-extra": "^11.0.1",
-        "@types/markdown-it": "^12.2.3",
-        "@types/node": "^18.11.18",
-        "@typescript-eslint/eslint-plugin": "^5.47.1",
-        "@typescript-eslint/parser": "^5.47.1",
-        "@typescript-eslint/types": "^5.47.1",
-        "autoprefixer": "^10.4.13",
-        "eslint": "^8.38.0",
-        "eve": "~0.5.1",
-        "fs-extra": "^11.1.0",
-        "globby": "^13.1.3",
-        "gray-matter": "^4.0.3",
-        "gsap": "^2.0.2",
-        "husky": "^8.0.3",
-        "lint-staged": "^13.2.1",
-        "markdown-it-mathjax3": "^4.3.2",
-        "postcss": "^8.1.0",
-        "prettier": "^2.8.1",
-        "rollup-plugin-visualizer": "^5.9.2",
-        "sass": "^1.57.1",
-        "search-insights": "^2.6.0",
-        "snapsvg-cjs": "^0.0.6",
-        "standard-version": "^9.5.0",
-        "svgo": "^3.0.2",
-        "typescript": "^4.9.4",
-        "vite-svg-loader": "^4.0.0",
-        "vitepress": "^1.0.0-beta.2",
-        "vue": "^3.2.45",
-        "vue-tsc": "^1.6.4"
-    },
-    "lint-staged": {
-        "{docs, daily}/**/*.{vue, js, ts, scss, json, md}": [
-            "prettier --write",
-            "git add -A"
-        ]
-    },
-    "dependencies": {
-        "@giscus/vue": "^2.2.8",
-        "@vueuse/core": "^10.1.2"
+  "name": "my-blog",
+  "version": "1.1.0",
+  "description": "我的博客，使用 vitepress 构建",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs --host 0.0.0.0",
+    "build": "vitepress build docs",
+    "fetch:docs": "cd scripts && bash weekly-docs.sh",
+    "algolia": "docker run -it --env-file=.env -e \"CONFIG=$(cat algolia.json | jq -r tostring)\" algolia/docsearch-scraper",
+    "typecheck": "tsc --noEmit && vue-tsc --noEmit --skipLibCheck",
+    "lint:fix": "prettier --write  \"{docs, daily}/**/*.{vue, js, ts, scss, json, md}\"",
+    "cleanup": "sa cleanup",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "svgo": "svgo -f docs/.vitepress/assets/svg -o docs/.vitepress/assets/svg",
+    "preview": "vitepress preview docs",
+    "prepare": "npx husky install",
+    "release": "standard-version",
+    "update-pkg": "sa update-pkg"
+  },
+  "keywords": [
+    "博客",
+    "申光普",
+    "vitepress"
+  ],
+  "author": "申光普",
+  "license": "MIT",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
     }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@sa/scripts": "workspace:*",
+    "@types/fs-extra": "^11.0.4",
+    "@types/markdown-it": "^13.0.7",
+    "@types/node": "^20.11.16",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "@typescript-eslint/types": "^6.20.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eve": "~0.5.4",
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.0",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.12.5",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.1",
+    "markdown-it-mathjax3": "^4.3.2",
+    "postcss": "^8.4.33",
+    "prettier": "^3.2.4",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "sass": "^1.70.0",
+    "search-insights": "^2.13.0",
+    "snapsvg-cjs": "^0.0.6",
+    "standard-version": "^9.5.0",
+    "svgo": "^3.2.0",
+    "tsx": "4.7.0",
+    "typescript": "^5.3.3",
+    "vite-svg-loader": "^5.1.0",
+    "vitepress": "^1.0.0-rc.41",
+    "vue": "^3.4.15",
+    "vue-tsc": "^1.8.27"
+  },
+  "lint-staged": {
+    "{docs, daily}/**/*.{vue, js, ts, scss, json, md}": [
+      "prettier --write",
+      "git add -A"
+    ]
+  },
+  "dependencies": {
+    "@giscus/vue": "^2.4.0",
+    "@vueuse/core": "^10.7.2"
+  }
 }
