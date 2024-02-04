@@ -3,10 +3,8 @@
 </template>
 
 <script lang="ts">
-import SakuraFlying from './modules/SakuraFlying.vue'
-import Sunshine from './modules/Sunshine.vue'
-import SnowFlying from './modules/SnowFlying.vue'
 import { defineComponent, markRaw } from 'vue'
+import { SakuraFlying, Sunshine, SnowFlying } from './modules'
 
 const SEASON_MAP = {
   spring: SakuraFlying,
