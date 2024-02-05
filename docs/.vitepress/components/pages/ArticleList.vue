@@ -53,6 +53,9 @@ import { computed, onMounted, ref, unref, watch } from 'vue'
 import type { Ref, UnwrapRef } from 'vue'
 
 const { theme } = useData()
+
+// 当前页码
+const current: Ref<number> = ref(1)
 const pageSize = 5
 
 // 标签数据
@@ -61,6 +64,7 @@ onMounted(() => {
   const { tag: urlTags = '' } = useUrlSearchParams()
   const tagStr = urlTags || sessionStorage.getItem('tagList') || ''
   tagList.value = tagStr ? (tagStr as string).split(',') : []
+  current.value = Number(sessionStorage?.getItem('currentPageNum') || 1)
 })
 
 // 文章列表
@@ -92,9 +96,6 @@ const articles = computed(() => {
     1: []
   }
 })
-
-// 当前页码
-const current: Ref<number> = ref(Number(sessionStorage.getItem('currentPageNum')) || 1)
 
 // 总页数
 const pageNum = computed(() => {
