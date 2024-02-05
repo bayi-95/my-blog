@@ -1,13 +1,13 @@
-image: node:18
+image: node:20
 pages:
   stage: build
   tags:
-    - shell
-    - window
+    - gitlab-org
   cache:
     paths:
       - node_modules/
   script:
+    - npm install -g pnpm
     - pnpm install
     - pnpm build
   artifacts:
