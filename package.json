@@ -78,6 +78,7 @@
   },
   "dependencies": {
     "@giscus/vue": "^2.4.0",
-    "@vueuse/core": "^10.7.2"
+    "@vueuse/core": "^10.7.2",
+    "magic-snowflakes": "^6.3.0"
   }
 }

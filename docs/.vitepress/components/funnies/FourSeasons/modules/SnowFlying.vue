@@ -2,14 +2,13 @@
 
 <script>
 import { defineComponent } from 'vue'
+import Snowflakes from 'magic-snowflakes'
 
 export default defineComponent({
   name: 'SnowFlying',
   mounted() {
-    import('../utils/snow-flying').then(() => {
-      new Snowflakes({
-        color: '#efefef'
-      })
+    new Snowflakes({
+      color: '#efefef'
     })
   }
 })
