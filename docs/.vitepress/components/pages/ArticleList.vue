@@ -165,7 +165,7 @@ function handleCurrentChange(num: number) {
       z-index: 1;
       width: 30px;
       height: 30px;
-      fill: var(--vp-c-red-dark);
+      fill: var(--vp-c-red-1);
     }
   }
   .article-info {
@@ -204,13 +204,14 @@ function handleCurrentChange(num: number) {
     display: inline-block;
     width: 24px;
     text-align: center;
-    border: 1px var(--vp-c-divider) solid;
+    background-color: var(--vp-c-bg-soft);
+    border: 1px var(--vp-c-border) solid;
     border-right: none;
     font-weight: 400;
     cursor: pointer;
     &.active {
       background: var(--vp-c-brand);
-      color: var(--vp-c-text-inverse-1);
+      color: var(--vp-c-white);
       border: 1px solid var(--vp-c-brand) !important;
     }
     &:first-child {
@@ -220,7 +221,7 @@ function handleCurrentChange(num: number) {
     &:last-child {
       border-bottom-right-radius: 2px;
       border-top-right-radius: 2px;
-      border-right: 1px var(--vp-c-divider) solid;
+      border-right: 1px var(--vp-c-border) solid;
     }
   }
 }
