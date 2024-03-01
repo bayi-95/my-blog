@@ -1,6 +1,7 @@
 .Layout {
   transition: all ease 1.25s;
   filter: unset; // 会影响 fixed 定位，所以这里设置 unset
+
   .VPNavBar {
     position: relative;
     padding: 0 8px 0 24px;
@@ -15,6 +16,18 @@
   }
 
   .VPHome {
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      min-height: 100%;
+      opacity: 0.24;
+      background-image: url('/images/index/background.png');
+      background-repeat: repeat;
+    }
     .VPHero.has-image .text {
       margin-top: 14px;
       margin-bottom: 14px;

@@ -22,14 +22,7 @@
       </div>
     </div>
     <div v-if="pageNum > 1" class="pagination">
-      <span
-        v-for="i in pageNum"
-        class="link t"
-        :class="{ active: current === i }"
-        :key="i"
-        @click="handleCurrentChange(i)"
-        >{{ i }}</span
-      >
+      <span v-for="i in pageNum" class="link t" :class="{ active: current === i }" :key="i" @click="handleCurrentChange(i)">{{ i }}</span>
     </div>
     <div v-if="articles[current].length < pageSize" class="no-more">没有更多了～</div>
   </template>
@@ -180,7 +173,7 @@ function handleCurrentChange(num: number) {
       color: var(--vp-c-text-1);
       cursor: pointer;
       &:hover {
-        background-color: var(--vp-input-hover-border-color);
+        opacity: 0.7;
       }
     }
   }
