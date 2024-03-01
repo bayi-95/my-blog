@@ -14,7 +14,7 @@ const RSS: RSSOptions = {
 }
 
 export default {
-  title: '秋殇の博客',
+  title: RSS.title,
   description: '申光普，博客，vitepress，学习心得，日志，笔记...',
   outDir: '../public',
   cleanUrls: true,
@@ -73,7 +73,7 @@ export default {
     // Copyright
     footer: {
       message: '部分文章收录于网络，转载请署名出处 | 联系博主可以发送邮件至 <a href="mailto:necro.vice@yahoo.com">necro.vice@yahoo.com</a>',
-      copyright: 'Copyright © 2020-present bayi-95.'
+      copyright: RSS.copyright
     },
     returnToTopLabel: '回到顶部',
     // 搜索

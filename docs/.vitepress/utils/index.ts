@@ -1,5 +1,7 @@
+import type { HeadConfig } from 'vitepress'
+
 // 插入页面的额外脚本或者style
-export const EXTRA_CONFIG = [
+export const EXTRA_CONFIG: HeadConfig[] = [
   // 百度统计
   [
     'script',
