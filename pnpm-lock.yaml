@@ -114,6 +114,9 @@ importers:
       vitepress:
         specifier: ^1.0.0-rc.41
         version: 1.0.0-rc.41(@types/node@20.11.16)(markdown-it-mathjax3@4.3.2)(postcss@8.4.33)(sass@1.70.0)(search-insights@2.13.0)(typescript@5.3.3)
+      vitepress-plugin-rss:
+        specifier: ^0.2.2
+        version: 0.2.2
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -3271,6 +3274,13 @@ packages:
       reusify: 1.0.4
     dev: true
 
+  /feed@4.2.2:
+    resolution: {integrity: sha512-u5/sxGfiMfZNtJ3OvQpXcvotFpYkL0n9u9mM2vkui2nGo8b4wvDkJ8gAkYqbA8QpGyFCv3RK0Z+Iv+9veCS9bQ==}
+    engines: {node: '>=0.4.0'}
+    dependencies:
+      xml-js: 1.6.11
+    dev: true
+
   /figures@3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
     engines: {node: '>=8'}
@@ -5923,6 +5933,10 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
+  /sax@1.3.0:
+    resolution: {integrity: sha512-0s+oAmw9zLl1V1cS9BtZN7JAd0cW5e0QH4W3LWEK6a4LaLEA2OTpGYWDY+6XasBLtz6wkm3u1xRw95mRuJ59WA==}
+    dev: true
+
   /search-insights@2.13.0:
     resolution: {integrity: sha512-Orrsjf9trHHxFRuo9/rzm0KIWmgzE8RMlZMzuhZOJ01Rnz3D0YBAe+V6473t6/H6c7irs6Lt48brULAiRWb3Vw==}
     dev: true
@@ -6785,6 +6799,14 @@ packages:
       fsevents: 2.3.3
     dev: true
 
+  /vitepress-plugin-rss@0.2.2:
+    resolution: {integrity: sha512-d/IkQffeNe3HO9gFmJS6hk/dfX085tmOcezYM4EAPraaN+zz1UdZiYTpvQsxRQTYLpQZt/OsmL7Ker4bVRQ0Cw==}
+    dependencies:
+      fast-glob: 3.3.2
+      feed: 4.2.2
+      gray-matter: 4.0.3
+    dev: true
+
   /vitepress@1.0.0-rc.41(@types/node@20.11.16)(markdown-it-mathjax3@4.3.2)(postcss@8.4.33)(sass@1.70.0)(search-insights@2.13.0)(typescript@5.3.3):
     resolution: {integrity: sha512-PAEoIIc9J//k/Wg39C6k86hZpXPmLZjRiTBwieDNeYGdevD7xr5Ve8o1W/w+e9dtyQMkuvzgianEamXDX3aj7g==}
     hasBin: true
@@ -7016,6 +7038,13 @@ packages:
   /xdg-basedir@5.1.0:
     resolution: {integrity: sha512-GCPAHLvrIH13+c0SuacwvRYj2SxJXQ4kaVTT5xgL3kPrz56XxkF21IGhjSE1+W0aw7gpBWRGXLCPnPby6lSpmQ==}
     engines: {node: '>=12'}
+    dev: true
+
+  /xml-js@1.6.11:
+    resolution: {integrity: sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==}
+    hasBin: true
+    dependencies:
+      sax: 1.3.0
     dev: true
 
   /xmldom-sre@0.1.31:
