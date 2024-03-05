@@ -10,7 +10,7 @@ export async function getArticles() {
     paths.map(async (item) => {
       const content = await fs.readFile(item, 'utf-8')
       const { data } = matter(content)
-      data.date = rTime(data.date || '2022-2-3')
+      data.date = rTime(data.date || '2022-02-03')
       const frontMatter: ArticleItem['frontMatter'] = {
         tags: '',
         title: '',

@@ -1,12 +1,12 @@
 ---
 title: '基于 Google translate 的网站多语言方案'
 description: 这篇文章讨论了网站国际化的需求和多语言方案。传统的基于 i18n 的方案需要维护多套语言文件，工作量大，不便于维护。这里提出了基于 Google 翻译的方案，需要科学上网，但是在国外访问还行。建议具体情况具体考虑。
-date: 2023-6-25
+date: 2023-06-25
 isPage: true
 tags:
-    - 多语言
-    - i18n
-    - google translate
+  - 多语言
+  - i18n
+  - google translate
 ---
 
 # 基于 Google translate 的网站多语言方案
@@ -31,21 +31,19 @@ tags:
 ```js
 // 下面的插件加载好了，会执行此方法
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'en',
-            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-        },
-        'google_translate_element'
-    )
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    },
+    'google_translate_element'
+  )
 }
 ```
 
 ```js
 // 引入插件支持，cb 传入执行的回调方法名称
-<script
-    type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 ```
 
 ### 缺点

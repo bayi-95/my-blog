@@ -1,12 +1,12 @@
 ---
 title: 'vue3 技术分析'
 description: 对于学习 Vue 3 的一些技术分享。
-date: 2023-4-9
+date: 2023-04-09
 isPage: true
 lastUpdated: false
 tags:
-    - vue3
-    - javascript
+  - vue3
+  - javascript
 ---
 
 # Vue 3 技术分享
@@ -298,19 +298,19 @@ Vue3 中引入了新的 ref、reactive 等响应式 API，可以在 setup 函数
 import { ref } from 'vue'
 
 export default {
-    setup() {
-        const count = ref(0)
-        return {
-            count
-        }
+  setup() {
+    const count = ref(0)
+    return {
+      count
     }
+  }
 }
 </script>
 
 // 在模板中使用count变量
 
 <template>
-    <div>{{ count }}</div>
+  <div>{{ count }}</div>
 </template>
 ```
 
@@ -330,23 +330,23 @@ setup 函数推荐使用对象作为返回值，这样可以更加清晰地暴�
 import { reactive, computed, watch } from 'vue'
 
 export default {
-    setup(props) {
-        const state = reactive({
-            count: 0,
-            doubleCount: computed(() => state.count * 2)
-        })
+  setup(props) {
+    const state = reactive({
+      count: 0,
+      doubleCount: computed(() => state.count * 2)
+    })
 
-        watch(
-            () => props.userId,
-            (userId) => {
-                // 处理 userId 发生变化的情况
-            }
-        )
+    watch(
+      () => props.userId,
+      (userId) => {
+        // 处理 userId 发生变化的情况
+      }
+    )
 
-        return {
-            ...toRefs(state)
-        }
+    return {
+      ...toRefs(state)
     }
+  }
 }
 ```
 
@@ -374,8 +374,8 @@ reactive 用于包装一个普通对象，将其变成响应式数据。使用 r
 import { reactive } from 'vue'
 
 const state = reactive({
-    name: '张三',
-    age: 18
+  name: '张三',
+  age: 18
 })
 
 console.log(state.name) // 输出 "张三"
@@ -399,21 +399,21 @@ console.log(state.age) // 输出 19
 import { reactive, computed } from 'vue'
 
 export default function useCount() {
-    const state = reactive({
-        count: 0
-    })
+  const state = reactive({
+    count: 0
+  })
 
-    const doubleCount = computed(() => state.count * 2)
+  const doubleCount = computed(() => state.count * 2)
 
-    const increment = () => {
-        state.count++
-    }
+  const increment = () => {
+    state.count++
+  }
 
-    return {
-        state,
-        doubleCount,
-        increment
-    }
+  return {
+    state,
+    doubleCount,
+    increment
+  }
 }
 ```
 
@@ -421,10 +421,10 @@ export default function useCount() {
 
 ```vue
 <template>
-    <div>
-        <p>计数器：{{ count }} (双倍：{{ doubleCount }})</p>
-        <button @click="increment">加一</button>
-    </div>
+  <div>
+    <p>计数器：{{ count }} (双倍：{{ doubleCount }})</p>
+    <button @click="increment">加一</button>
+  </div>
 </template>
 
 <script>
@@ -432,14 +432,14 @@ import { defineComponent } from 'vue'
 import useCount from './useCount'
 
 export default defineComponent({
-    setup() {
-        const { state, doubleCount, increment } = useCount()
-        return {
-            count: state.count,
-            doubleCount,
-            increment
-        }
+  setup() {
+    const { state, doubleCount, increment } = useCount()
+    return {
+      count: state.count,
+      doubleCount,
+      increment
     }
+  }
 })
 </script>
 ```
@@ -500,24 +500,24 @@ Teleport 组件可以帮助我们轻松实现将组件渲染到 DOM 结构的其
 
 ```vue
 <template>
-    <div class="modal">
-        <h2>{{ title }}</h2>
-        <p>{{ content }}</p>
-        <button @click="closeModal">Close</button>
-    </div>
+  <div class="modal">
+    <h2>{{ title }}</h2>
+    <p>{{ content }}</p>
+    <button @click="closeModal">Close</button>
+  </div>
 </template>
 
 <script>
 export default {
-    props: {
-        title: String,
-        content: String
-    },
-    methods: {
-        closeModal() {
-            this.$emit('close')
-        }
+  props: {
+    title: String,
+    content: String
+  },
+  methods: {
+    closeModal() {
+      this.$emit('close')
     }
+  }
 }
 </script>
 ```
@@ -526,13 +526,13 @@ export default {
 
 ```vue
 <template>
-    <div>
-        <button @click="showModal()">Show Modal</button>
+  <div>
+    <button @click="showModal()">Show Modal</button>
 
-        <teleport to="body">
-            <Modal v-if="isModalVisible" :title="modalTitle" :content="modalContent" @close="hideModal" />
-        </teleport>
-    </div>
+    <teleport to="body">
+      <Modal v-if="isModalVisible" :title="modalTitle" :content="modalContent" @close="hideModal" />
+    </teleport>
+  </div>
 </template>
 
 <script>
@@ -540,24 +540,24 @@ import { ref } from 'vue'
 import Modal from './Modal.vue'
 
 export default {
-    components: { Modal },
-    setup() {
-        const isModalVisible = ref(false)
-        const modalTitle = ref('')
-        const modalContent = ref('')
+  components: { Modal },
+  setup() {
+    const isModalVisible = ref(false)
+    const modalTitle = ref('')
+    const modalContent = ref('')
 
-        function showModal() {
-            modalTitle.value = 'Modal Title'
-            modalContent.value = 'Modal Content'
-            isModalVisible.value = true
-        }
-
-        function hideModal() {
-            isModalVisible.value = false
-        }
-
-        return { isModalVisible, modalTitle, modalContent, showModal, hideModal }
+    function showModal() {
+      modalTitle.value = 'Modal Title'
+      modalContent.value = 'Modal Content'
+      isModalVisible.value = true
     }
+
+    function hideModal() {
+      isModalVisible.value = false
+    }
+
+    return { isModalVisible, modalTitle, modalContent, showModal, hideModal }
+  }
 }
 </script>
 ```
@@ -574,21 +574,21 @@ Suspense 组件可以帮助我们在异步加载组件时展示一些备选内�
 
 ```vue
 <template>
-    <div>
-        <h1>Async Component Demo</h1>
+  <div>
+    <h1>Async Component Demo</h1>
 
-        <Suspense>
-            <!-- 显示异步组件 -->
-            <template #default>
-                <AsyncComponent />
-            </template>
+    <Suspense>
+      <!-- 显示异步组件 -->
+      <template #default>
+        <AsyncComponent />
+      </template>
 
-            <!-- 显示备选内容 -->
-            <template #fallback>
-                <div>Loading...</div>
-            </template>
-        </Suspense>
-    </div>
+      <!-- 显示备选内容 -->
+      <template #fallback>
+        <div>Loading...</div>
+      </template>
+    </Suspense>
+  </div>
 </template>
 
 <script>
@@ -597,9 +597,9 @@ import { defineAsyncComponent } from 'vue'
 const AsyncComponent = defineAsyncComponent(() => import('./components/AsyncComponent.vue'))
 
 export default {
-    components: {
-        AsyncComponent
-    }
+  components: {
+    AsyncComponent
+  }
 }
 </script>
 ```
