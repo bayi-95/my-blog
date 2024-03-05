@@ -2,7 +2,7 @@ name: algolia
 on:
   push:
     branches:
-      - algolia
+      - master
 jobs:
   algolia:
     runs-on: ubuntu-latest
