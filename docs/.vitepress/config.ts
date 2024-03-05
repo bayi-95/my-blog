@@ -35,7 +35,7 @@ export default {
     ...EXTRA_CONFIG
   ],
   themeConfig: {
-    siteTitle: '秋殇の博客',
+    siteTitle: RSS.title,
     logo: '/images/index/fish.png',
     nav: [
       { text: '首页', link: '/' },
@@ -46,9 +46,7 @@ export default {
         items: [
           { text: 'python', link: '/pages/python/index.md' },
           { text: 'vue', link: '/pages/vue/code.md' },
-          { text: 'javascript', link: '/pages/javascript/前端commit规范.md' },
-          { text: 'react', link: '/pages/react/code.md' },
-          { text: 'react-native', link: '/pages/react-native/code.md' }
+          { text: 'javascript', link: '/pages/javascript/前端commit规范.md' }
         ]
       },
       { text: '周刊', link: '/pages/weekly/' },
@@ -59,7 +57,7 @@ export default {
       '/pages/weekly/': getSidebarWeekly()
     },
     // 侧边栏
-    outlineTitle: '目录',
+    outlineTitle: '页面导航',
     // 文章列表
     articles: await getArticles(),
     // github 地址
