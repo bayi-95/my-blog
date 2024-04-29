@@ -6,6 +6,10 @@ sidebar: auto
 
 # 我的日志
 
+### 3/6/24
+
+∆ docs: `情感` 模块，新增两篇文章 [亲密关系](/pages/idea/亲密关系.html)，[情绪价值](/pages/idea/情绪价值.html)。
+
 ### 6/25/23
 
 ∆ feat: 添加 `Google Translate` 支持，需科学上网才行，能看到页面右下角的图标，可以切换语言，在线翻译
@@ -33,7 +37,7 @@ sidebar: auto
 
 ∆ Node 调试
 
-```
+``` shell
 Node.js 提供了内置的调试器，可以在命令行中启动脚本时进行调试。具体步骤如下：
 1. 在命令行中使用 node --inspect-brk 命令启动 Node.js 脚本，例如：node --inspect-brk index.js。
 2. 打开 Chrome 浏览器，并在地址栏中输入 chrome://inspect，然后按下 Enter 键。
@@ -141,7 +145,7 @@ pnpm -v
 
 ∆ update: 修改天气组件，天气数据过接口 api 获取
 
-**来源**：心知天气-天气实况 https://api.seniverse.com/v3/weather/now.json
+**来源**：[心知天气-天气实况](https://api.seniverse.com/v3/weather/now.json)
 
 ### 4/28/23
 
@@ -284,14 +288,14 @@ git clone https://hub.fastgit.xyz/PaddlePaddle/PaddleOCR.git
 
 `Git` 在提交时，写上分类前缀：
 
--   feat：新功能
--   update：更新某功能
--   fix：修补某功能的 bug
--   refactor：重构某个功能
--   optimize: 优化构建工具或运行时性能
--   style：仅样式改动
--   docs：仅文档新增/改动
--   chore：构建过程或辅助工具的变动
+- feat：新功能
+- update：更新某功能
+- fix：修补某功能的 bug
+- refactor：重构某个功能
+- optimize: 优化构建工具或运行时性能
+- style：仅样式改动
+- docs：仅文档新增/改动
+- chore：构建过程或辅助工具的变动
 
 ### 8/16/22
 
@@ -416,7 +420,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 2. 还有每个晚上的，大致安排。
 3. 有目标，过得清楚，有意义。
 4. 整理了我的滴答清单，过了一遍。
-5. <Egg name="-彩蛋 🌈 - 被你发现了 点它 : )" tips="点击空格，游戏开始！"><DinosaurRunner></DinosaurRunner></Egg>
+5. <Egg name="-彩蛋 🌈 - 被你发现了 点它 : )" tips="点击空格，开始游戏！"><DinosaurRunner></DinosaurRunner></Egg>
 
 ### 9/30/21
 
@@ -429,7 +433,7 @@ sudo chown -R `whoami` /usr/local/Frameworks/
 
 1. 下载了 element-plus 源码，结合 [文章：从 Element UI 源码的构建流程来看前端 UI 库设计](https://mp.weixin.qq.com/s?__biz=Mzg3MTU4NTI3OA==&mid=2247488540&idx=1&sn=a201dc3d84c443012b6881b38d9383e9&scene=21#wechat_redirect) 学习
 2. 发现了 pnpm（npm/yarn 升级版）、vitepress（vuepress 升级版：vite + vue3.0）
-3. 学习 UI 库的构造结构、复习 vue3.0 的语法结构（steup、hook）、学习 vitepress 对比 vuepress
+3. 学习 UI 库的构造结构、复习 vue3.0 的语法结构（setup、hook）、学习 vitepress 对比 vuepress
 4. 昨晚的暴雨，可真刺激。乌云压的很低，天上是水，地上是水，天地之间被雨幕连接，雨水眯着眼睛看不清，穿着雨衣感觉车像在湖面上骑着，除了雨声听不到其它的声音了。
 5. 博客：根据 md 文件 title 的参数`gitalkConfig`，判断是否渲染评论组件
 

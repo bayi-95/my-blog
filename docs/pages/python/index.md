@@ -6,19 +6,19 @@ Python 是一门已在世界上广泛使用的解释型语言。它提供了高�
 
 ### Python 的优点
 
--   是一门 **解释型** 语言：Python 不需要编译和链接，可以在一定程度上减少操作步骤。
--   是一门 **交互式** 语言：Python 解释器实现了交互式操作，可以直接在终端输入并执行指令。
--   **易学易用**：Python 提供了大量的数据结构，也支持开发大型程序。
--   **兼容性强**：Python 同时支持 Windows、macOS 和 Unix 操作系统。
--   **实用性强**：从简单的输入输出到科学计算甚至于大型 WEB 应用，都可以写出适合的 Python 程序。
--   **程序简洁、易读**：Python 代码通常比实现同种功能的其他语言的代码短。
--   **支持拓展**：Python 会开发 C 语言程序（即 CPython），支持把 Python 解释器和用 C 语言开发的应用链接，用 Python 扩展和控制该应用。
+- 是一门 **解释型** 语言：Python 不需要编译和链接，可以在一定程度上减少操作步骤。
+- 是一门 **交互式** 语言：Python 解释器实现了交互式操作，可以直接在终端输入并执行指令。
+- **易学易用**：Python 提供了大量的数据结构，也支持开发大型程序。
+- **兼容性强**：Python 同时支持 Windows、macOS 和 Unix 操作系统。
+- **实用性强**：从简单的输入输出到科学计算甚至于大型 WEB 应用，都可以写出适合的 Python 程序。
+- **程序简洁、易读**：Python 代码通常比实现同种功能的其他语言的代码短。
+- **支持拓展**：Python 会开发 C 语言程序（即 CPython），支持把 Python 解释器和用 C 语言开发的应用链接，用 Python 扩展和控制该应用。
 
 ### 学习 Python 的注意事项
 
--   目前主要使用的 Python 版本是 Python 3.7 及以上的版本，Python 2 和 Python 3.6 及以前的 Python 3 已经 [不被支持](https://devguide.python.org/versions/#unsupported-versions)，但仍被一些老旧系统与代码所使用。本文将 **介绍较新版本的 Python**。如果遇到 Python 2 代码，可以尝试 [`2to3`](https://docs.python.org/zh-cn/3/library/2to3.html) 程序将 Python 2 代码转换为 Python 3 代码。
--   Python 的设计理念和语法结构 **与一些其他语言的差异较大**，隐藏了许多底层细节，所以呈现出实用而优雅的风格。
--   Python 是高度动态的解释型语言，因此其 **程序运行速度相对较慢**，尤其在使用其内置的 `for` 循环语句时。在使用 Python 时，应尽量使用 `filter`、`map` 等内置函数，或使用 [列表生成](https://www.pythonforbeginners.com/basics/list-comprehensions-in-python) 语法的手段来提高程序性能。
+- 目前主要使用的 Python 版本是 Python 3.7 及以上的版本，Python 2 和 Python 3.6 及以前的 Python 3 已经 [不被支持](https://devguide.python.org/versions/#unsupported-versions)，但仍被一些老旧系统与代码所使用。本文将 **介绍较新版本的 Python**。如果遇到 Python 2 代码，可以尝试 [`2to3`](https://docs.python.org/zh-cn/3/library/2to3.html) 程序将 Python 2 代码转换为 Python 3 代码。
+- Python 的设计理念和语法结构 **与一些其他语言的差异较大**，隐藏了许多底层细节，所以呈现出实用而优雅的风格。
+- Python 是高度动态的解释型语言，因此其 **程序运行速度相对较慢**，尤其在使用其内置的 `for` 循环语句时。在使用 Python 时，应尽量使用 `filter`、`map` 等内置函数，或使用 [列表生成](https://www.pythonforbeginners.com/basics/list-comprehensions-in-python) 语法的手段来提高程序性能。
 
 ## 环境搭建
 
@@ -737,9 +737,9 @@ NameError: name 'nothing' is not defined
 
 `@lru_cache(maxsize=128,typed=False)`
 
--   传入的参数有 2 个：`maxsize` 和 `typed`，如果不传则 `maxsize` 的默认值为 128，`typed` 的默认值为 `False`。
--   其中 `maxsize` 参数表示的是 LRU 缓存的容量，即被装饰的方法的最大可缓存结果的数量。如果该参数值为 128，则表示被装饰方法最多可缓存 128 个返回结果；如果 `maxsize` 传入为 `None` 则表示可以缓存无限个结果。
--   如果 `typed` 设置为 `True`，不同类型的函数参数将被分别缓存，例如，`f(3)` 和 `f(3.0)` 会缓存两次。
+- 传入的参数有 2 个：`maxsize` 和 `typed`，如果不传则 `maxsize` 的默认值为 128，`typed` 的默认值为 `False`。
+- 其中 `maxsize` 参数表示的是 LRU 缓存的容量，即被装饰的方法的最大可缓存结果的数量。如果该参数值为 128，则表示被装饰方法最多可缓存 128 个返回结果；如果 `maxsize` 传入为 `None` 则表示可以缓存无限个结果。
+- 如果 `typed` 设置为 `True`，不同类型的函数参数将被分别缓存，例如，`f(3)` 和 `f(3.0)` 会缓存两次。
 
 以下是使用 `lru_cache` 优化计算斐波那契数列的例子：
 
@@ -1065,12 +1065,12 @@ if __name__ == '__main__':
 
 ## 参考文档
 
-1.  Python Documentation，<https://www.python.org/doc/>
-2.  Python 官方中文教程，<https://docs.python.org/zh-cn/3/tutorial/>
-3.  Learn Python3 In Y Minutes，<https://learnxinyminutes.com/docs/python3/>
-4.  Real Python Tutorials，<https://realpython.com/>
-5.  廖雪峰的 Python 教程，<https://www.liaoxuefeng.com/wiki/1016959663602400/>
-6.  GeeksforGeeks: Python Tutorials,<https://www.geeksforgeeks.org/python-programming-language/>
+1. Python Documentation，<https://www.python.org/doc/>
+2. Python 官方中文教程，<https://docs.python.org/zh-cn/3/tutorial/>
+3. Learn Python3 In Y Minutes，<https://learnxinyminutes.com/docs/python3/>
+4. Real Python Tutorials，<https://realpython.com/>
+5. 廖雪峰的 Python 教程，<https://www.liaoxuefeng.com/wiki/1016959663602400/>
+6. GeeksforGeeks: Python Tutorials,<https://www.geeksforgeeks.org/python-programming-language/>
 
 ## 参考资料和注释
 

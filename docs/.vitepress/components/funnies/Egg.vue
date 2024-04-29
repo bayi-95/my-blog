@@ -41,5 +41,8 @@ export default defineComponent({
   .tips {
     margin-left: 20px;
   }
+  .content-box {
+    margin-top: 10px;
+  }
 }
 </style>
