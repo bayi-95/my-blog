@@ -2,7 +2,7 @@ image: node:18
 pages:
   stage: build
   tags:
-    - docker
+    - gitlab-org
   cache:
     paths:
       - node_modules/
