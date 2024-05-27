@@ -6,6 +6,25 @@ sidebar: auto
 
 # 我的日志
 
+### 5/27/24
+
+∆ `WebDAV` 是一种互联网方法，应用此方法可以在服务器上划出一块存储空间，可以使用用户名和密码来控制访问，让用户可以直接存储、下载、编辑文件。
+
+比如：你在用一个笔记软件，想给这个笔记做个云备份，或者是想在其他设备上实时同步笔记。但是这个笔记软件本身不提供云同步空间，这时不就没辙了？
+
+没关系，如果这个软件可以让你设置 WebDAV，那么你就可以通过 WebDAV 把数据传输到坚果云，由坚果云帮助你实现同步、共享、备份。
+
+而平时你可以正常从笔记软件打开同步的内容，无需每次都打开坚果云。
+
+### 5/26/24
+
+∆ `Fluent Reader` 是一款支持 RSS 订阅查看的阅读器，感觉挺好用的。
+
+目前 RSS 订阅了自己的[博客](https://bayi-95.eu.org/feed.rss)和 [HackerNews](https://www.supertechfans.com/cn/index.xml)，每天有内容的更新推送。
+
+打算手机客户端也装上，方便查看。
+
+
 ### 3/6/24
 
 ∆ docs: `情感` 模块，新增两篇文章 [亲密关系](/pages/idea/亲密关系.html)，[情绪价值](/pages/idea/情绪价值.html)。
@@ -73,14 +92,18 @@ Node.js 提供了内置的调试器，可以在命令行中启动脚本时进行
 
 ∆ 人们一旦擅长了某件事情那么就会对此充满激情，"如果你热衷于编程，我强烈推荐你阅读 Steve McConnell 编写的《Code Complete》，它将永远改变你的编程思维"。
 
-∆ **阅读专栏：**
+∆ 看新闻报道，要看到新闻背后辛酸苦辣的故事，因为新闻报导总是很喜欢忽略很多真实的细节
+
+::: details 阅读专栏
 
 1. [10 个诀窍助你成为厉害的远程开发人员](https://x-team.com/blog/10-secrets-to-becoming-a-great-remote-developer/)
 2. [PM 的必备技能 —— 如何不被 RD 们嫌弃](https://www.36kr.com/p/1641873735681)
 3. [腾讯前员工创业笔记：那些跟钱有关的事儿](https://www.html5tricks.com/sth-about-money.html)
 4. [做挖渠道的人啊 挖呀挖](https://www.html5tricks.com/50-wan-enginer.html)
 
-∆ **好的程序员：**
+:::
+
+::: details 成为好的程序员
 
 1. 好的程序员知道要在解决一个问题之前先做研究；
 2. 渴望深入问题并找出错误的根源；
@@ -88,9 +111,12 @@ Node.js 提供了内置的调试器，可以在命令行中启动脚本时进行
 4. 采取行动，立即着手解决，兴奋地发现并处理问题；
 5. 防范未然，并精确的解决大部分问题；
 6. 善于交流，简洁明了地表达观点；精炼的电子邮件、优雅的报告或者仅仅是高效的备忘录；会把时间花在如何将他们的观点更好地表达出来上面。如果没有人能够理解你写的代码，又有什么意义呢？无论使用什么媒介；
-7. 激情、感兴趣、好奇被吸引、痴迷于️专注。
+7. 激情、感兴趣、好奇被吸引、痴迷于️专注；
+8. 具有良好的沟通反馈习惯，熟悉业务需求，喜欢高效地完成自己的工作、编写清晰优质的代码，可以主动提供帮助、分担一定的任务，具有一定的项目管理经验。
 
-∆ **如何开会议：**
+:::
+
+::: details 如何开会议更高效
 
 1. 会议绝不该超过一小时；
 2. 每个会议都应该有一个清晰的目标声明；
@@ -99,9 +125,7 @@ Node.js 提供了内置的调试器，可以在命令行中启动脚本时进行
 5. 在会议结束时概括一下待办事项；
 6. 快速干活，少说废话，抓住工作的重点。
 
-∆ 具有良好的沟通反馈习惯，熟悉业务需求，喜欢高效地完成自己的工作、编写清晰优质的代码，可以主动提供帮助、分担一定的任务，具有一定的项目管理经验
-
-∆ 看新闻报道，要看到新闻背后辛酸苦辣的故事，因为新闻报导总是很喜欢忽略很多真实的细节
+:::
 
 ### 5/18/23
 
@@ -111,27 +135,48 @@ Node.js 提供了内置的调试器，可以在命令行中启动脚本时进行
 
 ∆ `pnpm` 管理 `node` 版本
 
-```shell
-# 1. 安装 n
-brew install n
-# 2. 安装 node16
-sudo n 16
-# 3. 安装 pnpm
-brew install pnpm
-# 4. pnpm 安装 node14、node16
-pnpm env use --global 14
-pnpm env use --global 16
-# 5. node16 降低 pnpm 版本
-corepack enable
-corepack prepare pnpm@7.32.4 --activate
-# 6. 卸载 n/node16
-sudo n rm 16
-brew uninstall n
-# 7. 查看版本
+::: code-group
+
+```shell [windows]
+# 1. 查看 pnpm
+WinGet search pnpm
+# 2. 安装 pnpm 通过 id
+WinGet install pnpm.pnpm
+# 3. 安装 node
+pnpm env use --g 16
+pnpm env use --g 20
+pnpm env list
+# 4. 切换 node 版本
+pnpm env use --g 16
+# 5. 卸载 node 版本
+pnpm env remove --g 16
+# 6. 查看版本
 node -v
 npm -v
 pnpm -v
 ```
+
+```shell [macOS]
+# 1. 安装 pnpm
+brew install pnpm
+# 2. 安装 node
+pnpm env use --g 16
+pnpm env use --g 20
+pnpm env list
+# 3. 切换 node 版本
+pnpm env use --g 16
+# 4. 卸载 node 版本
+pnpm env remove --g 16
+# 5. 降低 pnpm 使用版本
+corepack enable
+corepack prepare pnpm@7.32.4 --activate
+# 6. 查看版本
+node -v
+npm -v
+pnpm -v
+```
+
+:::
 
 ### 5/10/23
 
