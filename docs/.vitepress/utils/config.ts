@@ -21,7 +21,7 @@ export const EXTRA_CONFIG: HeadConfig[] = [
     'meta',
     {
       name: 'referrer',
-      content: 'origin'
+      content: 'no-referrer'
     }
   ]
 ]
