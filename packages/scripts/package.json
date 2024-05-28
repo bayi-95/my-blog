@@ -16,14 +16,14 @@
     },
     "devDependencies": {
         "@types/prompts": "2.4.9",
-        "bumpp": "9.4.0",
+        "bumpp": "9.4.1",
         "c12": "1.10.0",
         "cac": "6.7.14",
         "consola": "3.2.3",
-        "execa": "8.0.1",
+        "execa": "9.1.0",
         "kolorist": "1.8.0",
-        "npm-check-updates": "16.14.18",
+        "npm-check-updates": "16.14.20",
         "prompts": "2.4.2",
-        "rimraf": "5.0.5"
+        "rimraf": "5.0.7"
     }
 }
