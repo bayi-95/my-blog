@@ -6,6 +6,20 @@ sidebar: auto
 
 # 我的日志
 
+### 7/16/24
+
+∆ `Git` 的常用命令集合
+
+![](/images/blog/log/git-cheat-sheet.png)
+
+### 6/21/24
+
+∆ docs: `JavaScript` 模块，新增一篇文章 [计算展示密码强度](/pages/javascript/计算展示密码强度.html)。
+
+### 6/11/24
+
+∆ docs: `JavaScript` 模块，新增一篇文章 [如何用JavaScript画一棵树](/pages/javascript/如何用JavaScript画一棵树.html)。
+
 ### 5/27/24
 
 ∆ `WebDAV` 是一种互联网方法，应用此方法可以在服务器上划出一块存储空间，可以使用用户名和密码来控制访问，让用户可以直接存储、下载、编辑文件。
