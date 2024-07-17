@@ -10,7 +10,8 @@ import { EXTRA_CONFIG, CUSTOM_ELEMENTS } from './utils'
 const RSS: RSSOptions = {
   title: '秋殇の博客',
   baseUrl: 'https://bayi-95.eu.org',
-  copyright: 'Copyright © 2020-present bayi-95'
+  copyright: 'Copyright © 2020-present bayi-95',
+  limit: 24
 }
 
 export default {
