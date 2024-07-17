@@ -102,8 +102,7 @@ export default {
       SvgLoader(),
       // 打包分析
       visualizer({
-        filename: 'rollup-visualizer.html',
-        open: true
+        filename: 'analysis.html'
       })
     ],
     // 别名
