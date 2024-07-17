@@ -10,6 +10,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'home-hero-before': () => h(Components['FourSeasons']),
       'home-hero-after': () => h(Components['CuteBirdButton']),
+      'home-features-before': () => h(Components['Live2D']),
       'layout-top': () => h(Components['GoogleTranslate']),
       'layout-bottom': () => h(Components['Elephant']),
       'doc-after': () => h(Components['GiscusComment'])
