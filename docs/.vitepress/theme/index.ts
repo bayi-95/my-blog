@@ -3,6 +3,7 @@ import * as Components from '../components'
 import { h, App } from 'vue'
 
 import '../style/index.scss'
+import "virtual:uno.css";
 
 export default {
   ...DefaultTheme,

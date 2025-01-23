@@ -6,6 +6,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
 import { getArticles, getSidebarWeekly } from './utils/article'
 import { EXTRA_CONFIG, CUSTOM_ELEMENTS } from './utils'
+import UnoCSS from 'unocss/vite'
 
 const RSS: RSSOptions = {
   title: '秋殇の博客',
@@ -103,7 +104,9 @@ export default {
       // 打包分析
       visualizer({
         filename: 'analysis.html'
-      })
+      }),
+      // 样式
+      UnoCSS()
     ],
     // 别名
     resolve: {
