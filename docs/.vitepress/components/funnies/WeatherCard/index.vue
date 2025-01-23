@@ -1,7 +1,7 @@
 <template>
   <div class="comp-weather-card" :key="key">
     <div v-if="weather.now.temperature" class="background">
-      <div class="container">
+      <div class="container max-w-unset">
         <!-- 背景 -->
         <svg id="back">
           <radialGradient id="SVGID_1_" cx="0" cy="0" r="320.8304" gradientUnits="userSpaceOnUse">
@@ -119,10 +119,7 @@ export default defineComponent({
     fetchWeatherData() {
       return new Promise((resolve) => {
         const xhr = new XMLHttpRequest()
-        xhr.open(
-          'GET',
-          'https://api.seniverse.com/v3/weather/now.json?key=Sj_SMCO68wk7rkJyv&location=wuhan&language=zh-Hans&unit=c'
-        )
+        xhr.open('GET', 'https://api.seniverse.com/v3/weather/now.json?key=Sj_SMCO68wk7rkJyv&location=wuhan&language=zh-Hans&unit=c')
         xhr.responseType = 'json'
         xhr.send()
         xhr.onload = function () {
