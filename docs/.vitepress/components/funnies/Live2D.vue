@@ -18,7 +18,7 @@ export default defineComponent({
       'rem'
     ]
     const models: ModelOptions[] = modelNames.map((name) => ({
-      path: `https://model.oml2d.com/${name}/model.json`,
+      path: `https://model.hacxy.cn/${name}/model.json`,
       position: [0, 60],
       scale: 0.08,
       stageStyle: {
