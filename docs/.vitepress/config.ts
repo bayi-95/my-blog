@@ -26,7 +26,7 @@ export default {
     ['link', { rel: 'icon', href: '/images/index/fish.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#235dc8' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', href: '/images/index/fish.png' }],
     ['link', { rel: 'mask-icon', href: '/images/index/fish.png', color: '#235dc8' }],
@@ -77,8 +77,8 @@ export default {
     returnToTopLabel: '回到顶部',
     // 搜索
     algolia: {
-      appId: '5VSYJHYEBM',
-      apiKey: '3071496c8c2cbabf56c677eb7093170d',
+      appId: '1GE630FKUJ',
+      apiKey: '8373f57daad29cd7dc55b9d5a541459e',
       indexName: 'prod_bayi95'
     }
   },
