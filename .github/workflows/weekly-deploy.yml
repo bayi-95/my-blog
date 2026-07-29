@@ -8,7 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Fetch docs & Git push
         run: |
           npm run fetch:docs
@@ -16,8 +18,11 @@ jobs:
             today=`date +"%Y-%m-%d"`
             git config user.name "${{ github.actor }}"
             git config user.email "${{ github.actor }}@users.noreply.github.com"
-            git remote set-url --add origin https://oauth2:${{ secrets.GITLAB_ACCESS_TOKEN }}@gitlab.com/bayi-95/my-blog.git
             git add .
             git commit -m "docs: update weekly docs on ${today} done"
-            git push
+            git remote add gitlab https://oauth2:${{ secrets.GITLAB_ACCESS_TOKEN }}@gitlab.com/bayi-95/my-blog.git
+            git fetch gitlab master
+            git merge gitlab/master --no-edit
+            git remote set-url --add origin https://oauth2:${{ secrets.GITLAB_ACCESS_TOKEN }}@gitlab.com/bayi-95/my-blog.git
+            git push origin master
           fi
