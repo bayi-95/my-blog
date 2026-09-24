@@ -1,6 +1,7 @@
 {
   "name": "my-blog",
   "version": "1.1.0",
+  "packageManager": "pnpm@10.28.2",
   "description": "我的博客，使用 vitepress 构建",
   "main": "index.js",
   "type": "module",
@@ -26,13 +27,6 @@
   ],
   "author": "申光普",
   "license": "MIT",
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search"
-      ]
-    }
-  },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",

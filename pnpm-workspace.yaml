@@ -1,2 +1,10 @@
 packages:
   - 'packages/*'
+
+peerDependencyRules:
+  ignoreMissing:
+    - '@algolia/client-search'
+
+onlyBuiltDependencies:
+  - esbuild
+  - vue-demi
